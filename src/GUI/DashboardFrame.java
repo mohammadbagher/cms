@@ -14,10 +14,10 @@ package GUI;
  *
  * @author Bagher
  */
-public class DashboardFrame1 extends javax.swing.JFrame {
+public class DashboardFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public DashboardFrame1() {
+    public DashboardFrame() {
         initComponents();
     }
 
@@ -225,7 +225,7 @@ public class DashboardFrame1 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new DashboardFrame1().setVisible(true);
+                new DashboardFrame().setVisible(true);
             }
         });
     }
