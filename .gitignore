@@ -7,3 +7,6 @@
 *.xml
 *.properties
 *.mf
+/nbproject/private/
+/build/
+/dist/
