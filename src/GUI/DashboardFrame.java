@@ -10,6 +10,8 @@
  */
 package GUI;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Bagher
@@ -18,6 +20,11 @@ public class DashboardFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
     public DashboardFrame() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+          System.out.println("Error setting native LAF: " + e);
+        }
         initComponents();
     }
 
@@ -48,17 +55,16 @@ public class DashboardFrame extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24));
+        jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("پیش‌خوان");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
         jButton2.setBackground(new java.awt.Color(60, 0, 91));
-        jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton2.setForeground(new java.awt.Color(254, 254, 254));
+        jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(1, 1, 1));
         jButton2.setText("خروج");
-        jButton2.setBorderPainted(false);
         jButton2.setFocusPainted(false);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -69,10 +75,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
 
         jButton8.setBackground(new java.awt.Color(2, 80, 130));
-        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton8.setForeground(new java.awt.Color(254, 254, 254));
+        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(1, 1, 1));
         jButton8.setText("مدیریت عملیات");
-        jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton8.setFocusPainted(false);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -83,9 +89,9 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 120, 60));
 
         jButton10.setBackground(new java.awt.Color(2, 80, 130));
-        jButton10.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton10.setForeground(new java.awt.Color(254, 254, 254));
-        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(1, 1, 1));
+        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton10.setFocusPainted(false);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -96,10 +102,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 120, 60));
 
         jButton11.setBackground(new java.awt.Color(2, 80, 130));
-        jButton11.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton11.setForeground(new java.awt.Color(254, 254, 254));
+        jButton11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(1, 1, 1));
         jButton11.setText("مدیریت دارایی‌ها");
-        jButton11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton11.setFocusPainted(false);
         jButton11.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -110,10 +116,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 120, 60));
 
         jButton12.setBackground(new java.awt.Color(2, 80, 130));
-        jButton12.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton12.setForeground(new java.awt.Color(254, 254, 254));
+        jButton12.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(1, 1, 1));
         jButton12.setText("مدیریت برچسب‌ها");
-        jButton12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton12.setFocusPainted(false);
         jButton12.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -124,10 +130,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 120, 60));
 
         jButton13.setBackground(new java.awt.Color(2, 80, 130));
-        jButton13.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton13.setForeground(new java.awt.Color(254, 254, 254));
+        jButton13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(1, 1, 1));
         jButton13.setText("تنظیم سیستم");
-        jButton13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton13.setFocusPainted(false);
         jButton13.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -138,10 +144,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 120, 60));
 
         jButton14.setBackground(new java.awt.Color(2, 80, 130));
-        jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton14.setForeground(new java.awt.Color(254, 254, 254));
+        jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(1, 1, 1));
         jButton14.setText("تعریف و گزارش رخداد");
-        jButton14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton14.setFocusPainted(false);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -152,10 +158,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, 60));
 
         jButton15.setBackground(new java.awt.Color(2, 80, 130));
-        jButton15.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton15.setForeground(new java.awt.Color(254, 254, 254));
+        jButton15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(1, 1, 1));
         jButton15.setText("مشاهده‌ی گزارش‌ها");
-        jButton15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton15.setFocusPainted(false);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -166,10 +172,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 120, 60));
 
         jButton16.setBackground(new java.awt.Color(2, 80, 130));
-        jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15));
-        jButton16.setForeground(new java.awt.Color(254, 254, 254));
+        jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(1, 1, 1));
         jButton16.setText("ذخیره و بازیابی مبنا");
-        jButton16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jButton16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton16.setFocusPainted(false);
         jButton16.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton16.addActionListener(new java.awt.event.ActionListener() {

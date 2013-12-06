@@ -87,6 +87,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox();
         jLabel50 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -98,7 +99,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("مشاهده و مدیریت برچسب‌ خیابان");
+        jLabel3.setText("مشاهده و ویرایش برچسب‌ خیابان");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
@@ -436,6 +437,19 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
 
+        jButton18.setBackground(new java.awt.Color(60, 0, 91));
+        jButton18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton18.setForeground(new java.awt.Color(1, 1, 1));
+        jButton18.setText("بروزرسانی پلاگین");
+        jButton18.setFocusPainted(false);
+        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 110, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -479,6 +493,10 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -498,6 +516,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;

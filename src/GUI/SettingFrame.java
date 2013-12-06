@@ -10,6 +10,8 @@
  */
 package GUI;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Bagher
@@ -18,6 +20,11 @@ public class SettingFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
     public SettingFrame() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+          System.out.println("Error setting native LAF: " + e);
+        }
         initComponents();
     }
 
@@ -36,7 +43,6 @@ public class SettingFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
@@ -49,10 +55,11 @@ public class SettingFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
         jComboBox3 = new javax.swing.JComboBox();
+        jButton23 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -88,9 +95,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(94, 2, 2));
         jButton1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(254, 254, 254));
+        jButton1.setForeground(new java.awt.Color(1, 1, 1));
         jButton1.setText("ثبت تغییر");
-        jButton1.setBorderPainted(false);
         jButton1.setFocusPainted(false);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -103,20 +109,6 @@ public class SettingFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel4.setText("مدیر");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, -1));
-
-        jButton2.setBackground(new java.awt.Color(60, 0, 91));
-        jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(254, 254, 254));
-        jButton2.setText("خروج");
-        jButton2.setBorderPainted(false);
-        jButton2.setFocusPainted(false);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
 
         jPasswordField2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPasswordField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -144,9 +136,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(94, 2, 2));
         jButton3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(254, 254, 254));
+        jButton3.setForeground(new java.awt.Color(1, 1, 1));
         jButton3.setText("ثبت تغییر");
-        jButton3.setBorderPainted(false);
         jButton3.setFocusPainted(false);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -167,9 +158,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(94, 2, 2));
         jButton4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(254, 254, 254));
+        jButton4.setForeground(new java.awt.Color(1, 1, 1));
         jButton4.setText("ثبت تغییر");
-        jButton4.setBorderPainted(false);
         jButton4.setFocusPainted(false);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -185,9 +175,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(94, 2, 2));
         jButton5.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(254, 254, 254));
+        jButton5.setForeground(new java.awt.Color(1, 1, 1));
         jButton5.setText("ثبت تغییر");
-        jButton5.setBorderPainted(false);
         jButton5.setFocusPainted(false);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -203,9 +192,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(94, 2, 2));
         jButton6.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(254, 254, 254));
+        jButton6.setForeground(new java.awt.Color(1, 1, 1));
         jButton6.setText("ثبت تغییر");
-        jButton6.setBorderPainted(false);
         jButton6.setFocusPainted(false);
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -217,9 +205,8 @@ public class SettingFrame extends javax.swing.JFrame {
 
         jButton7.setBackground(new java.awt.Color(94, 2, 2));
         jButton7.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(254, 254, 254));
+        jButton7.setForeground(new java.awt.Color(1, 1, 1));
         jButton7.setText("ثبت تغییر");
-        jButton7.setBorderPainted(false);
         jButton7.setFocusPainted(false);
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -228,20 +215,6 @@ public class SettingFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 90, 30));
-
-        jButton8.setBackground(new java.awt.Color(60, 0, 91));
-        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(254, 254, 254));
-        jButton8.setText("پیش‌خوان");
-        jButton8.setBorderPainted(false);
-        jButton8.setFocusPainted(false);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
 
         jComboBox1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "هر ماه", "هر دوماه", "هر سه‌ماه" }));
@@ -260,6 +233,32 @@ public class SettingFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 120, -1));
 
+        jButton23.setBackground(new java.awt.Color(60, 0, 91));
+        jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton23.setForeground(new java.awt.Color(1, 1, 1));
+        jButton23.setText("خروج");
+        jButton23.setFocusPainted(false);
+        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
+
+        jButton8.setBackground(new java.awt.Color(60, 0, 91));
+        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(1, 1, 1));
+        jButton8.setText("پیش‌خوان");
+        jButton8.setFocusPainted(false);
+        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -270,10 +269,6 @@ public class SettingFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
         // TODO add your handling code here:
@@ -303,13 +298,17 @@ public class SettingFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,7 +323,7 @@ public class SettingFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
