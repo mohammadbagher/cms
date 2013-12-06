@@ -270,7 +270,7 @@ public class NewAssetFrameStep4 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new NewLabelFrame().setVisible(true);
+                new NewAssetFrameStep4().setVisible(true);
             }
         });
     }
