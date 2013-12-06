@@ -10,6 +10,8 @@
  */
 package GUI;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Bagher
@@ -18,6 +20,12 @@ public class LoginFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
     public LoginFrame() {
+       
+        try {
+  UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+} catch(Exception e) {
+  System.out.println("Error setting native LAF: " + e);
+}
         initComponents();
     }
 
@@ -36,26 +44,27 @@ public class LoginFrame extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
         setBounds(new java.awt.Rectangle(50, 50, 750, 500));
         setMinimumSize(new java.awt.Dimension(750, 500));
-        setPreferredSize(new java.awt.Dimension(750, 500));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Web Yekan", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Web Yekan", 0, 18));
         jLabel1.setText("نام کاربری");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(410, 180, 71, 29);
 
-        jLabel2.setFont(new java.awt.Font("Web Yekan", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Web Yekan", 0, 18));
         jLabel2.setText("گذرواژه");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(410, 220, 54, 29);
 
-        jPasswordField1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jPasswordField1.setFont(new java.awt.Font("Arial", 0, 15));
         jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPasswordField1.setText("jPassw");
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +84,7 @@ public class LoginFrame extends javax.swing.JFrame {
         getContentPane().add(jTextField1);
         jTextField1.setBounds(286, 181, 120, 30);
 
-        jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 36));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("سامانه‌ی مدیریت پیکربندی شهرداری تهران");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -83,7 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3.setBounds(90, 50, 590, 70);
 
         jButton1.setBackground(new java.awt.Color(94, 2, 2));
-        jButton1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Web Yekan", 0, 15));
         jButton1.setForeground(new java.awt.Color(254, 254, 254));
         jButton1.setText("ورود");
         jButton1.setBorderPainted(false);
@@ -95,7 +104,11 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(286, 265, 37, 30);
+        jButton1.setBounds(286, 265, 57, 30);
+
+        jButton2.setText("jButton2");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(580, 280, 73, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +138,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
