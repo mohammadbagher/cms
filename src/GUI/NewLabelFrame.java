@@ -77,6 +77,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
+        jButton19 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -322,7 +323,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton18.setBackground(new java.awt.Color(60, 0, 91));
         jButton18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton18.setForeground(new java.awt.Color(1, 1, 1));
-        jButton18.setText("اضافه‌کردن");
+        jButton18.setText("تعریف پلاگین");
         jButton18.setFocusPainted(false);
         jButton18.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -330,7 +331,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
                 jButton18ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 90, 30));
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 90, 30));
 
         jRadioButton2.setText("گسسته");
         jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -361,6 +362,19 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel50.setText("ابتدای بازه");
         getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 110, 30));
+
+        jButton19.setBackground(new java.awt.Color(60, 0, 91));
+        jButton19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(1, 1, 1));
+        jButton19.setText("اضافه‌کردن");
+        jButton19.setFocusPainted(false);
+        jButton19.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 90, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -401,6 +415,10 @@ public class NewLabelFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -418,6 +436,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;

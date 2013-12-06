@@ -95,7 +95,7 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(286, 265, 37, 30);
+        jButton1.setBounds(286, 265, 70, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
