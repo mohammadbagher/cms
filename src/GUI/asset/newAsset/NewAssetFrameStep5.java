@@ -206,7 +206,7 @@ public class NewAssetFrameStep5 extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("نام برچسب");
+        jLabel15.setText("نام دارایی");
         jPanel3.add(jLabel15);
         jLabel15.setBounds(220, 0, 60, 40);
 

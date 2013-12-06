@@ -16,10 +16,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class AssetListManagementFrame extends javax.swing.JFrame {
+public class AssetSearchFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public AssetListManagementFrame() {
+    public AssetSearchFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -95,20 +95,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jButton31 = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jLabel41 = new javax.swing.JLabel();
-        jButton33 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -120,14 +109,14 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("مدیریت دارایی‌ها");
+        jLabel3.setText("جستجو در دارایی‌ها");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
         jButton2.setBackground(new java.awt.Color(60, 0, 91));
         jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(1, 1, 1));
-        jButton2.setText("جستجو");
+        jButton2.setText("بگرد");
         jButton2.setFocusPainted(false);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +124,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 70, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 70, 30));
 
         jButton8.setBackground(new java.awt.Color(60, 0, 91));
         jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -161,9 +150,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("مکان‌مند");
+        jLabel9.setText("دوربین پل نواب");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(270, 0, 60, 30);
+        jLabel9.setBounds(250, 0, 100, 30);
 
         jButton1.setForeground(new java.awt.Color(215, 215, 215));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
@@ -189,7 +178,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel2.add(jButton26);
         jButton26.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 410, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 410, 30));
 
         jPanel3.setBackground(new java.awt.Color(160, 196, 255));
         jPanel3.setLayout(null);
@@ -224,7 +213,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel3.add(jLabel19);
         jLabel19.setBounds(0, 0, 90, 40);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 410, 40));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 410, 40));
 
         jPanel4.setBackground(new java.awt.Color(254, 254, 254));
         jPanel4.setLayout(null);
@@ -247,9 +236,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("خیابان");
+        jLabel12.setText("خیابان آزادی");
         jPanel4.add(jLabel12);
-        jLabel12.setBounds(270, 0, 60, 30);
+        jLabel12.setBounds(250, 0, 100, 30);
 
         jButton24.setForeground(new java.awt.Color(215, 215, 215));
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
@@ -265,7 +254,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel4.add(jButton25);
         jButton25.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 410, 30));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 410, 30));
 
         jPanel5.setBackground(new java.awt.Color(205, 205, 205));
         jPanel5.setLayout(null);
@@ -278,9 +267,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("دوربین");
+        jLabel20.setText("دوربین خیابان ژاله");
         jPanel5.add(jLabel20);
-        jLabel20.setBounds(270, 0, 60, 30);
+        jLabel20.setBounds(250, 0, 100, 30);
 
         jButton6.setForeground(new java.awt.Color(215, 215, 215));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
@@ -306,7 +295,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel5.add(jButton28);
         jButton28.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 410, 30));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 410, 30));
 
         jPanel6.setBackground(new java.awt.Color(254, 254, 254));
         jPanel6.setLayout(null);
@@ -336,9 +325,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("خطکشی");
+        jLabel23.setText("خیابان نواب");
         jPanel6.add(jLabel23);
-        jLabel23.setBounds(270, 0, 60, 30);
+        jLabel23.setBounds(250, 0, 100, 30);
 
         jButton27.setForeground(new java.awt.Color(215, 215, 215));
         jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
@@ -347,7 +336,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel6.add(jButton27);
         jButton27.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 410, 30));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 410, 30));
 
         jPanel7.setBackground(new java.awt.Color(205, 205, 205));
         jPanel7.setLayout(null);
@@ -360,9 +349,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("دوربین");
+        jLabel26.setText("خیابان آزادی");
         jPanel7.add(jLabel26);
-        jLabel26.setBounds(270, 0, 60, 30);
+        jLabel26.setBounds(250, 0, 100, 30);
 
         jButton11.setForeground(new java.awt.Color(215, 215, 215));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
@@ -388,7 +377,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel7.add(jButton30);
         jButton30.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 410, 30));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 410, 30));
 
         jPanel8.setBackground(new java.awt.Color(254, 254, 254));
         jPanel8.setLayout(null);
@@ -418,9 +407,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("خطکشی");
+        jLabel29.setText("خیابان انقلاب");
         jPanel8.add(jLabel29);
-        jLabel29.setBounds(270, 0, 60, 30);
+        jLabel29.setBounds(250, 0, 100, 30);
 
         jButton29.setForeground(new java.awt.Color(215, 215, 215));
         jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
@@ -429,23 +418,23 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel8.add(jButton29);
         jButton29.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 410, 30));
-        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, -1, 340));
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 410, 30));
+        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, 280));
 
         jPanel9.setBackground(new java.awt.Color(205, 205, 205));
         jPanel9.setLayout(null);
 
         jLabel31.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("4");
+        jLabel31.setText("۸");
         jPanel9.add(jLabel31);
         jLabel31.setBounds(350, 0, 60, 30);
 
         jLabel32.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("دوربین");
+        jLabel32.setText("دوربین میدان تجریش");
         jPanel9.add(jLabel32);
-        jLabel32.setBounds(270, 0, 60, 30);
+        jLabel32.setBounds(240, 0, 120, 30);
 
         jButton15.setForeground(new java.awt.Color(215, 215, 215));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
@@ -471,14 +460,14 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel9.add(jButton32);
         jButton32.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 410, 30));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 410, 30));
 
         jPanel10.setBackground(new java.awt.Color(254, 254, 254));
         jPanel10.setLayout(null);
 
         jLabel34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("3");
+        jLabel34.setText("۷");
         jPanel10.add(jLabel34);
         jLabel34.setBounds(350, 0, 60, 30);
 
@@ -501,9 +490,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel35.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("خطکشی");
+        jLabel35.setText("دوربین چهاراه ولیعصر");
         jPanel10.add(jLabel35);
-        jLabel35.setBounds(270, 0, 60, 30);
+        jLabel35.setBounds(240, 0, 130, 30);
 
         jButton31.setForeground(new java.awt.Color(215, 215, 215));
         jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
@@ -512,89 +501,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel10.add(jButton31);
         jButton31.setBounds(180, 0, 58, 30);
 
-        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 410, 30));
-
-        jPanel11.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel11.setLayout(null);
-
-        jLabel37.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("۶");
-        jPanel11.add(jLabel37);
-        jLabel37.setBounds(350, 0, 60, 30);
-
-        jLabel38.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setText("دوربین");
-        jPanel11.add(jLabel38);
-        jLabel38.setBounds(270, 0, 60, 30);
-
-        jButton19.setForeground(new java.awt.Color(215, 215, 215));
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton19.setBorder(null);
-        jButton19.setBorderPainted(false);
-        jPanel11.add(jButton19);
-        jButton19.setBounds(10, 0, 58, 30);
-
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton20.setBorderPainted(false);
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton20);
-        jButton20.setBounds(90, 0, 50, 30);
-
-        jButton4.setForeground(new java.awt.Color(215, 215, 215));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jPanel11.add(jButton4);
-        jButton4.setBounds(180, 0, 58, 30);
-
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 410, 30));
-
-        jPanel12.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel12.setLayout(null);
-
-        jLabel40.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText("۵");
-        jPanel12.add(jLabel40);
-        jLabel40.setBounds(350, 0, 60, 30);
-
-        jButton21.setForeground(new java.awt.Color(215, 215, 215));
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton21.setBorder(null);
-        jButton21.setBorderPainted(false);
-        jPanel12.add(jButton21);
-        jButton21.setBounds(10, 0, 58, 30);
-
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton22.setBorderPainted(false);
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-        jPanel12.add(jButton22);
-        jButton22.setBounds(90, 0, 50, 30);
-
-        jLabel41.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setText("خطکشی");
-        jPanel12.add(jLabel41);
-        jLabel41.setBounds(270, 0, 60, 30);
-
-        jButton33.setForeground(new java.awt.Color(215, 215, 215));
-        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
-        jButton33.setBorder(null);
-        jButton33.setBorderPainted(false);
-        jPanel12.add(jButton33);
-        jButton33.setBounds(180, 0, 58, 30);
-
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 410, 30));
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 410, 30));
 
         jButton23.setBackground(new java.awt.Color(60, 0, 91));
         jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -609,18 +516,21 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
 
-        jButton34.setBackground(new java.awt.Color(60, 0, 91));
-        jButton34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton34.setForeground(new java.awt.Color(1, 1, 1));
-        jButton34.setText("تعریف دارایی جدید");
-        jButton34.setFocusPainted(false);
-        jButton34.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField1.setText("دوربین خیابان");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 320, -1));
+
+        jCheckBox1.setSelected(true);
+        jCheckBox1.setText("جستجو محدود به نام و شناسه‌ی دارایی باشد");
+        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 130, 30));
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 150, 330, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -665,21 +575,13 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton34ActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -688,7 +590,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new AssetListManagementFrame().setVisible(true);
+                new AssetSearchFrame().setVisible(true);
             }
         });
     }
@@ -703,11 +605,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
@@ -719,14 +617,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
@@ -747,15 +643,9 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -765,5 +655,6 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
