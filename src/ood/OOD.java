@@ -4,6 +4,8 @@
  */
 package ood;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Bagher
@@ -14,6 +16,10 @@ public class OOD {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+  UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+} catch(Exception e) {
+  System.out.println("Error setting native LAF: " + e);
+}
     }
 }
