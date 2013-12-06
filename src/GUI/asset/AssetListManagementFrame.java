@@ -45,7 +45,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        jButton26 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -54,59 +54,59 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        jButton27 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
+        jButton30 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        jButton29 = new javax.swing.JButton();
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel9 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
+        jButton32 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
+        jButton31 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
-        jLabel39 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
+        jButton33 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,11 +168,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
         jPanel2.add(jButton1);
         jButton1.setBounds(10, 0, 58, 30);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -181,11 +181,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel2.add(jButton3);
         jButton3.setBounds(90, 0, 50, 30);
 
-        jLabel11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("ساده");
-        jPanel2.add(jLabel11);
-        jLabel11.setBounds(180, 0, 60, 30);
+        jButton26.setForeground(new java.awt.Color(215, 215, 215));
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton26.setBorder(null);
+        jButton26.setBorderPainted(false);
+        jPanel2.add(jButton26);
+        jButton26.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 410, 30));
 
@@ -206,7 +207,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("مرکب/ساده");
+        jLabel16.setText("مشاهده سابقه");
         jPanel3.add(jLabel16);
         jLabel16.setBounds(160, 0, 90, 40);
 
@@ -233,15 +234,8 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel4.add(jLabel10);
         jLabel10.setBounds(350, 0, 60, 30);
 
-        jButton4.setForeground(new java.awt.Color(215, 215, 215));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jPanel4.add(jButton4);
-        jButton4.setBounds(10, 0, 58, 30);
-
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -256,11 +250,19 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel4.add(jLabel12);
         jLabel12.setBounds(270, 0, 60, 30);
 
-        jLabel13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("مرکب");
-        jPanel4.add(jLabel13);
-        jLabel13.setBounds(180, 0, 60, 30);
+        jButton24.setForeground(new java.awt.Color(215, 215, 215));
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
+        jButton24.setBorder(null);
+        jButton24.setBorderPainted(false);
+        jPanel4.add(jButton24);
+        jButton24.setBounds(10, 0, 58, 30);
+
+        jButton25.setForeground(new java.awt.Color(215, 215, 215));
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton25.setBorder(null);
+        jButton25.setBorderPainted(false);
+        jPanel4.add(jButton25);
+        jButton25.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 410, 30));
 
@@ -283,11 +285,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
         jPanel5.add(jButton6);
         jButton6.setBounds(10, 0, 58, 30);
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton7.setBorderPainted(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -296,11 +298,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel5.add(jButton7);
         jButton7.setBounds(90, 0, 50, 30);
 
-        jLabel21.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("ساده");
-        jPanel5.add(jLabel21);
-        jLabel21.setBounds(180, 0, 60, 30);
+        jButton28.setForeground(new java.awt.Color(215, 215, 215));
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton28.setBorder(null);
+        jButton28.setBorderPainted(false);
+        jPanel5.add(jButton28);
+        jButton28.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 410, 30));
 
@@ -317,11 +320,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
         jPanel6.add(jButton9);
         jButton9.setBounds(10, 0, 58, 30);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton10.setBorderPainted(false);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -336,11 +339,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel6.add(jLabel23);
         jLabel23.setBounds(270, 0, 60, 30);
 
-        jLabel24.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("ساده");
-        jPanel6.add(jLabel24);
-        jLabel24.setBounds(180, 0, 60, 30);
+        jButton27.setForeground(new java.awt.Color(215, 215, 215));
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton27.setBorder(null);
+        jButton27.setBorderPainted(false);
+        jPanel6.add(jButton27);
+        jButton27.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 410, 30));
 
@@ -363,11 +367,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
-        jButton11.setContentAreaFilled(false);
         jPanel7.add(jButton11);
         jButton11.setBounds(10, 0, 58, 30);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton12.setBorderPainted(false);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -376,11 +380,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel7.add(jButton12);
         jButton12.setBounds(90, 0, 50, 30);
 
-        jLabel27.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("ساده");
-        jPanel7.add(jLabel27);
-        jLabel27.setBounds(180, 0, 60, 30);
+        jButton30.setForeground(new java.awt.Color(215, 215, 215));
+        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton30.setBorder(null);
+        jButton30.setBorderPainted(false);
+        jPanel7.add(jButton30);
+        jButton30.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 410, 30));
 
@@ -397,11 +402,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
-        jButton13.setContentAreaFilled(false);
         jPanel8.add(jButton13);
         jButton13.setBounds(10, 0, 58, 30);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton14.setBorderPainted(false);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -416,11 +421,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel8.add(jLabel29);
         jLabel29.setBounds(270, 0, 60, 30);
 
-        jLabel30.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("ساده");
-        jPanel8.add(jLabel30);
-        jLabel30.setBounds(180, 0, 60, 30);
+        jButton29.setForeground(new java.awt.Color(215, 215, 215));
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton29.setBorder(null);
+        jButton29.setBorderPainted(false);
+        jPanel8.add(jButton29);
+        jButton29.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 410, 30));
         getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, -1, 340));
@@ -444,11 +450,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton15.setBorder(null);
         jButton15.setBorderPainted(false);
-        jButton15.setContentAreaFilled(false);
         jPanel9.add(jButton15);
         jButton15.setBounds(10, 0, 58, 30);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton16.setBorderPainted(false);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
@@ -457,11 +463,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel9.add(jButton16);
         jButton16.setBounds(90, 0, 50, 30);
 
-        jLabel33.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("ساده");
-        jPanel9.add(jLabel33);
-        jLabel33.setBounds(180, 0, 60, 30);
+        jButton32.setForeground(new java.awt.Color(215, 215, 215));
+        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton32.setBorder(null);
+        jButton32.setBorderPainted(false);
+        jPanel9.add(jButton32);
+        jButton32.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 410, 30));
 
@@ -478,11 +485,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton17.setBorder(null);
         jButton17.setBorderPainted(false);
-        jButton17.setContentAreaFilled(false);
         jPanel10.add(jButton17);
         jButton17.setBounds(10, 0, 58, 30);
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton18.setBorderPainted(false);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton18ActionPerformed(evt);
@@ -497,11 +504,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel10.add(jLabel35);
         jLabel35.setBounds(270, 0, 60, 30);
 
-        jLabel36.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("ساده");
-        jPanel10.add(jLabel36);
-        jLabel36.setBounds(180, 0, 60, 30);
+        jButton31.setForeground(new java.awt.Color(215, 215, 215));
+        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton31.setBorder(null);
+        jButton31.setBorderPainted(false);
+        jPanel10.add(jButton31);
+        jButton31.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 410, 30));
 
@@ -524,11 +532,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
-        jButton19.setContentAreaFilled(false);
         jPanel11.add(jButton19);
         jButton19.setBounds(10, 0, 58, 30);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton20.setBorderPainted(false);
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -537,11 +545,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel11.add(jButton20);
         jButton20.setBounds(90, 0, 50, 30);
 
-        jLabel39.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("ساده");
-        jPanel11.add(jLabel39);
-        jLabel39.setBounds(180, 0, 60, 30);
+        jButton4.setForeground(new java.awt.Color(215, 215, 215));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jPanel11.add(jButton4);
+        jButton4.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 410, 30));
 
@@ -558,11 +567,11 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
-        jButton21.setContentAreaFilled(false);
         jPanel12.add(jButton21);
         jButton21.setBounds(10, 0, 58, 30);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton22.setBorderPainted(false);
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
@@ -577,11 +586,12 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jPanel12.add(jLabel41);
         jLabel41.setBounds(270, 0, 60, 30);
 
-        jLabel42.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setText("ساده");
-        jPanel12.add(jLabel42);
-        jLabel42.setBounds(180, 0, 60, 30);
+        jButton33.setForeground(new java.awt.Color(215, 215, 215));
+        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/time_machine_shaped.png"))); // NOI18N
+        jButton33.setBorder(null);
+        jButton33.setBorderPainted(false);
+        jPanel12.add(jButton33);
+        jButton33.setBounds(180, 0, 58, 30);
 
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 410, 30));
 
@@ -681,7 +691,17 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -689,9 +709,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -699,29 +717,21 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
