@@ -108,6 +108,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jButton33 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -126,7 +127,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(60, 0, 91));
         jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(1, 1, 1));
-        jButton2.setText("تعریف دارایی جدید");
+        jButton2.setText("جستجو");
         jButton2.setFocusPainted(false);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +135,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 160, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 70, 30));
 
         jButton8.setBackground(new java.awt.Color(60, 0, 91));
         jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -608,6 +609,19 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
 
+        jButton34.setBackground(new java.awt.Color(60, 0, 91));
+        jButton34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton34.setForeground(new java.awt.Color(1, 1, 1));
+        jButton34.setText("تعریف دارایی جدید");
+        jButton34.setFocusPainted(false);
+        jButton34.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 130, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -663,6 +677,10 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton34ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -702,6 +720,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
