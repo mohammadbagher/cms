@@ -16,10 +16,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class LabelManagementFrame extends javax.swing.JFrame {
+public class NewLabelFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public LabelManagementFrame() {
+    public NewLabelFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -38,7 +38,6 @@ public class LabelManagementFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -51,24 +50,12 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jButton23 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
@@ -78,15 +65,18 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jTextField1 = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox();
-        jLabel50 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jButton18 = new javax.swing.JButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -98,22 +88,9 @@ public class LabelManagementFrame extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("مشاهده و مدیریت برچسب‌ خیابان");
+        jLabel3.setText("تعریف برچسب جدید");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
-
-        jButton8.setBackground(new java.awt.Color(60, 0, 91));
-        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(1, 1, 1));
-        jButton8.setText("ویرایش");
-        jButton8.setFocusPainted(false);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 90, 30));
 
         jPanel2.setBackground(new java.awt.Color(205, 205, 205));
         jPanel2.setLayout(null);
@@ -153,7 +130,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jPanel2.add(jLabel11);
         jLabel11.setBounds(180, 0, 60, 30);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 410, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 410, 30));
 
         jPanel3.setBackground(new java.awt.Color(160, 196, 255));
         jPanel3.setLayout(null);
@@ -188,47 +165,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jPanel3.add(jLabel19);
         jLabel19.setBounds(0, 0, 90, 40);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 410, 40));
-
-        jPanel5.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel5.setLayout(null);
-
-        jLabel17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("4");
-        jPanel5.add(jLabel17);
-        jLabel17.setBounds(350, 0, 60, 30);
-
-        jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("دوربین");
-        jPanel5.add(jLabel20);
-        jLabel20.setBounds(270, 0, 60, 30);
-
-        jButton6.setForeground(new java.awt.Color(215, 215, 215));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jPanel5.add(jButton6);
-        jButton6.setBounds(10, 0, 58, 30);
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jButton7);
-        jButton7.setBounds(90, 0, 50, 30);
-
-        jLabel21.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("ساده");
-        jPanel5.add(jLabel21);
-        jLabel21.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 410, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 410, 40));
 
         jPanel6.setBackground(new java.awt.Color(254, 254, 254));
         jPanel6.setLayout(null);
@@ -268,48 +205,8 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jPanel6.add(jLabel24);
         jLabel24.setBounds(180, 0, 60, 30);
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 410, 30));
-
-        jPanel8.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel8.setLayout(null);
-
-        jLabel28.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("۵");
-        jPanel8.add(jLabel28);
-        jLabel28.setBounds(350, 0, 60, 30);
-
-        jButton13.setForeground(new java.awt.Color(215, 215, 215));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton13.setBorder(null);
-        jButton13.setBorderPainted(false);
-        jButton13.setContentAreaFilled(false);
-        jPanel8.add(jButton13);
-        jButton13.setBounds(10, 0, 58, 30);
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton14);
-        jButton14.setBounds(90, 0, 50, 30);
-
-        jLabel29.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("خطکشی");
-        jPanel8.add(jLabel29);
-        jLabel29.setBounds(270, 0, 60, 30);
-
-        jLabel30.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("ساده");
-        jPanel8.add(jLabel30);
-        jLabel30.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 410, 30));
-        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, 190));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 410, 30));
+        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, 130));
 
         jButton23.setBackground(new java.awt.Color(60, 0, 91));
         jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -362,66 +259,27 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jPanel13.add(jLabel48);
         jLabel48.setBounds(270, 0, 60, 30);
 
-        getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 410, 30));
+        getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 410, 30));
 
         jLabel44.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setText("مقادیر ممکن برچسب");
-        getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 110, 30));
-
-        jComboBox1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "۱     ۱۰ متری ", "۲     ۱۲ متری", "۳     ۱۶ متری", "۴     ۲۴ متری" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 150, -1));
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel44.setText("انتهای بازه");
+        getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 110, 30));
 
         jTextField1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField1.setText("خیابان");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 150, -1));
+        jTextField1.setText("۱۰۰۰");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 150, -1));
 
         jLabel47.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel47.setText("نام برچسب");
         getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
 
-        jButton15.setBackground(new java.awt.Color(60, 0, 91));
-        jButton15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(1, 1, 1));
-        jButton15.setText("اضافه‌کردن");
-        jButton15.setFocusPainted(false);
-        jButton15.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 90, 30));
-
         jLabel49.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel49.setText("زیربرچسب‌ها");
-        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, -1, -1));
-
-        jButton11.setBackground(new java.awt.Color(60, 0, 91));
-        jButton11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(1, 1, 1));
-        jButton11.setText("اضافه کردن");
-        jButton11.setFocusPainted(false);
-        jButton11.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 90, 30));
-
-        jComboBox2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "۱۰ متری", "۱۲ متری", "۱۶ متری", "۲۴ متری" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 150, -1));
-
-        jLabel50.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel50.setText("ترتیب بین مقادیر");
-        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, -1, -1));
+        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, -1, -1));
 
         jButton16.setBackground(new java.awt.Color(60, 0, 91));
         jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -436,28 +294,84 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
 
+        jButton17.setBackground(new java.awt.Color(217, 167, 28));
+        jButton17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(1, 1, 1));
+        jButton17.setText("ثبت برچسب جدید");
+        jButton17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 163, 0), 1, true));
+        jButton17.setFocusPainted(false);
+        jButton17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 120, 30));
+
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("پیوسته");
+        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jRadioButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 80, -1));
+
+        jButton18.setBackground(new java.awt.Color(60, 0, 91));
+        jButton18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton18.setForeground(new java.awt.Color(1, 1, 1));
+        jButton18.setText("اضافه‌کردن");
+        jButton18.setFocusPainted(false);
+        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 90, 30));
+
+        jRadioButton2.setText("گسسته");
+        jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jRadioButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 80, -1));
+
+        jTextField2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField2.setText("برچسب جدید");
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 150, -1));
+
+        jTextField3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField3.setText("۱۰");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 150, -1));
+
+        jLabel46.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel46.setText("مقادیر ممکن برچسب");
+        getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 110, 30));
+
+        jLabel50.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel50.setText("ابتدای بازه");
+        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 110, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
@@ -467,17 +381,25 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton25ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,47 +408,35 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new LabelManagementFrame().setVisible(true);
+                new NewLabelFrame().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -536,10 +446,12 @@ public class LabelManagementFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
