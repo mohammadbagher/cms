@@ -8,8 +8,9 @@
  *
  * Created on Nov 29, 2013, 2:04:52 PM
  */
-package GUI.asset;
+package GUI.asset.update;
 
+import GUI.asset.*;
 import GUI.label.*;
 import javax.swing.UIManager;
 
@@ -17,10 +18,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class NewAssetFrameStep3 extends javax.swing.JFrame {
+public class UpdateAssetFrameStep4 extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public NewAssetFrameStep3() {
+    public UpdateAssetFrameStep4() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -46,17 +47,16 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -131,39 +131,23 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel52.setText("azadi.squar.371");
+        jLabel52.setText("human.1253");
         getContentPane().add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 170, -1));
 
         jLabel54.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel54.setText("میدان آزادی");
+        jLabel54.setText("محمدرضا بشارتی");
         getContentPane().add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 170, -1));
-
-        jTextField1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField1.setText("بیمه‌ی ساختمانی بیمه‌ی ایران تا آخر ۹۷");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 310, 30));
-
-        jLabel56.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel56.setText("شرح بیمه");
-        jLabel56.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 130, 30));
 
         jLabel57.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel57.setText("مشخصات ظاهری دارایی");
+        jLabel57.setText("نام");
         jLabel57.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 130, 30));
 
         jTextField2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField2.setText("برج سفید رنگ. چهارپایه");
+        jTextField2.setText("محمدرضا");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -171,62 +155,73 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 310, 30));
 
-        jRadioButton1.setText("بیمه ندارد");
-        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jRadioButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 100, -1));
+        jLabel59.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel59.setText("نام خانوداگی");
+        jLabel59.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 130, 30));
 
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("بیمه دارد");
-        jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jRadioButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        jTextField4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField4.setText("بشارتی");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 100, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 310, 30));
 
-        jRadioButton3.setText("سند موضوعیت ندارد");
-        jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jRadioButton3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 170, -1));
+        jLabel60.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel60.setText("شماره ملی");
+        jLabel60.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 130, 30));
 
-        jRadioButton4.setSelected(true);
-        jRadioButton4.setText("سند دارد");
-        jRadioButton4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jRadioButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jTextField5.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField5.setText("۰۰۳۱۲۳۱۲۴۳");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 100, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 310, 30));
 
-        jRadioButton5.setText("سند ندارد");
-        jRadioButton5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jRadioButton5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 100, -1));
-
-        jTextField3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField3.setText("سند شش دانگ به نام سازمان شهرداری تهران");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jTextField6.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField6.setText("۱۲۱۲-۱");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jTextField6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 310, 30));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 310, 30));
 
-        jLabel58.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel58.setText("شرح سند");
-        jLabel58.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 130, 30));
+        jLabel61.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel61.setText("کد ‍پرسنلی");
+        jLabel61.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 130, 30));
+
+        jLabel62.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel62.setText("توضیحات");
+        jLabel62.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 130, 30));
+
+        jTextField7.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField7.setText("پشتیبان دارایی در دانشگاه شریف");
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 310, 30));
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("تعریف دارایی جدید - مشخصات دارایی فیزیکی");
+        jLabel3.setText("مشاهده و تغییر دارایی - مشخصات دارایی انسانی");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 510, 70));
 
@@ -249,25 +244,25 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,7 +271,7 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new NewAssetFrameStep3().setVisible(true);
+                new UpdateAssetFrameStep4().setVisible(true);
             }
         });
     }
@@ -290,16 +285,15 @@ public class NewAssetFrameStep3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,8 +8,9 @@
  *
  * Created on Nov 29, 2013, 2:04:52 PM
  */
-package GUI.asset;
+package GUI.asset.update;
 
+import GUI.asset.*;
 import GUI.label.*;
 import javax.swing.UIManager;
 
@@ -17,10 +18,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class NewAssetFrameStep5 extends javax.swing.JFrame {
+public class UpdateAssetFrameStep5 extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public NewAssetFrameStep5() {
+    public UpdateAssetFrameStep5() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -130,7 +131,7 @@ public class NewAssetFrameStep5 extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("تعریف دارایی جدید - زیردارایی‌ها");
+        jLabel3.setText("مشاهده و تغییر دارایی - زیردارایی‌ها");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 510, 70));
 
@@ -206,7 +207,7 @@ public class NewAssetFrameStep5 extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("نام برچسب");
+        jLabel15.setText("نام دارایی");
         jPanel3.add(jLabel15);
         jLabel15.setBounds(220, 0, 60, 40);
 
@@ -321,7 +322,7 @@ public class NewAssetFrameStep5 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new NewAssetFrameStep5().setVisible(true);
+                new UpdateAssetFrameStep5().setVisible(true);
             }
         });
     }

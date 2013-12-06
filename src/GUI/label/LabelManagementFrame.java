@@ -88,6 +88,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -450,6 +451,20 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 110, 30));
 
+        jButton17.setBackground(new java.awt.Color(217, 167, 28));
+        jButton17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(1, 1, 1));
+        jButton17.setText("ذخیره‌ی برچسب");
+        jButton17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 163, 0), 1, true));
+        jButton17.setFocusPainted(false);
+        jButton17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 120, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -497,6 +512,10 @@ public class LabelManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,6 +535,7 @@ public class LabelManagementFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
