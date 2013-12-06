@@ -8,7 +8,7 @@
  *
  * Created on Nov 29, 2013, 2:04:52 PM
  */
-package GUI;
+package GUI.label;
 
 import javax.swing.UIManager;
 
@@ -16,10 +16,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class AssetListManagementFrame extends javax.swing.JFrame {
+public class LabelListManagementFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public AssetListManagementFrame() {
+    public LabelListManagementFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -660,7 +660,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new AssetListManagementFrame().setVisible(true);
+                new LabelListManagementFrame().setVisible(true);
             }
         });
     }

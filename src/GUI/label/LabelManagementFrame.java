@@ -8,7 +8,7 @@
  *
  * Created on Nov 29, 2013, 2:04:52 PM
  */
-package GUI;
+package GUI.label;
 
 import javax.swing.UIManager;
 

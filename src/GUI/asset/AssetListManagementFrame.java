@@ -8,7 +8,7 @@
  *
  * Created on Nov 29, 2013, 2:04:52 PM
  */
-package GUI;
+package GUI.asset;
 
 import javax.swing.UIManager;
 
@@ -16,10 +16,10 @@ import javax.swing.UIManager;
  *
  * @author Bagher
  */
-public class LabelListManagementFrame extends javax.swing.JFrame {
+public class AssetListManagementFrame extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
-    public LabelListManagementFrame() {
+    public AssetListManagementFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -119,14 +119,14 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("مدیریت برچسب‌ها");
+        jLabel3.setText("مدیریت دارایی‌ها");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
         jButton2.setBackground(new java.awt.Color(60, 0, 91));
         jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(1, 1, 1));
-        jButton2.setText("تعریف برچسب جدید");
+        jButton2.setText("تعریف دارایی جدید");
         jButton2.setFocusPainted(false);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +200,7 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("نام برچسب");
+        jLabel15.setText("نام دارایی");
         jPanel3.add(jLabel15);
         jLabel15.setBounds(270, 0, 60, 40);
 
@@ -660,7 +660,7 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new LabelListManagementFrame().setVisible(true);
+                new AssetListManagementFrame().setVisible(true);
             }
         });
     }
