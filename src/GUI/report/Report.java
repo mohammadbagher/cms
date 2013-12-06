@@ -10,6 +10,7 @@
  */
 package GUI.report;
 import GUI.operation.*;
+import javax.swing.UIManager;
 
 
 /**
@@ -20,6 +21,11 @@ public class Report extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
     public Report() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+          System.out.println("Error setting native LAF: " + e);
+        }
         initComponents();
     }
 
