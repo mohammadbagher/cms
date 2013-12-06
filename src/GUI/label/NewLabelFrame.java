@@ -78,6 +78,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -112,11 +113,11 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
         jPanel2.add(jButton1);
         jButton1.setBounds(10, 0, 58, 30);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -181,11 +182,11 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
         jPanel6.add(jButton9);
         jButton9.setBounds(10, 0, 58, 30);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton10.setBorderPainted(false);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -235,11 +236,11 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
-        jButton24.setContentAreaFilled(false);
         jPanel13.add(jButton24);
         jButton24.setBounds(10, 0, 58, 30);
 
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton25.setBorderPainted(false);
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton25ActionPerformed(evt);
@@ -298,7 +299,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton17.setBackground(new java.awt.Color(217, 167, 28));
         jButton17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton17.setForeground(new java.awt.Color(1, 1, 1));
-        jButton17.setText("ثبت برچسب جدید");
+        jButton17.setText("ذخیره‌ی برچسب");
         jButton17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 163, 0), 1, true));
         jButton17.setFocusPainted(false);
         jButton17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -323,7 +324,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jButton18.setBackground(new java.awt.Color(60, 0, 91));
         jButton18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton18.setForeground(new java.awt.Color(1, 1, 1));
-        jButton18.setText("تعریف پلاگین");
+        jButton18.setText("تعریف معادله");
         jButton18.setFocusPainted(false);
         jButton18.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -331,7 +332,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
                 jButton18ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 90, 30));
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 90, 30));
 
         jRadioButton2.setText("گسسته");
         jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -376,24 +377,25 @@ public class NewLabelFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 90, 30));
 
+        jButton20.setBackground(new java.awt.Color(60, 0, 91));
+        jButton20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton20.setForeground(new java.awt.Color(1, 1, 1));
+        jButton20.setText("تعریف پلاگین");
+        jButton20.setFocusPainted(false);
+        jButton20.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 90, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
-
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
@@ -419,6 +421,22 @@ public class NewLabelFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton19ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton20ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -437,6 +455,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;

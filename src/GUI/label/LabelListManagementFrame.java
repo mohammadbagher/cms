@@ -168,11 +168,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
         jPanel2.add(jButton1);
         jButton1.setBounds(10, 0, 58, 30);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -237,11 +237,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
         jPanel4.add(jButton4);
         jButton4.setBounds(10, 0, 58, 30);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -283,11 +283,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
         jPanel5.add(jButton6);
         jButton6.setBounds(10, 0, 58, 30);
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton7.setBorderPainted(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -317,11 +317,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
         jPanel6.add(jButton9);
         jButton9.setBounds(10, 0, 58, 30);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton10.setBorderPainted(false);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -363,11 +363,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
-        jButton11.setContentAreaFilled(false);
         jPanel7.add(jButton11);
         jButton11.setBounds(10, 0, 58, 30);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton12.setBorderPainted(false);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -397,11 +397,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
-        jButton13.setContentAreaFilled(false);
         jPanel8.add(jButton13);
         jButton13.setBounds(10, 0, 58, 30);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton14.setBorderPainted(false);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -444,11 +444,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton15.setBorder(null);
         jButton15.setBorderPainted(false);
-        jButton15.setContentAreaFilled(false);
         jPanel9.add(jButton15);
         jButton15.setBounds(10, 0, 58, 30);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton16.setBorderPainted(false);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
@@ -478,11 +478,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton17.setBorder(null);
         jButton17.setBorderPainted(false);
-        jButton17.setContentAreaFilled(false);
         jPanel10.add(jButton17);
         jButton17.setBounds(10, 0, 58, 30);
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton18.setBorderPainted(false);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton18ActionPerformed(evt);
@@ -524,11 +524,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
-        jButton19.setContentAreaFilled(false);
         jPanel11.add(jButton19);
         jButton19.setBounds(10, 0, 58, 30);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton20.setBorderPainted(false);
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -558,11 +558,11 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
-        jButton21.setContentAreaFilled(false);
         jPanel12.add(jButton21);
         jButton21.setBounds(10, 0, 58, 30);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        jButton22.setBorderPainted(false);
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
