@@ -228,7 +228,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1" green="1" red="1" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x62a;&#x639;&#x631;&#x6cc;&#x641; &#x648; &#x6af;&#x632;&#x627;&#x631;&#x634; &#x631;&#x62e;&#x62f;&#x627;&#x62f;"/>
+        <Property name="text" type="java.lang.String" value="&#x62a;&#x639;&#x631;&#x6cc;&#x641; &#x648; &#x645;&#x62f;&#x6cc;&#x631;&#x6cc;&#x62a; &#x631;&#x62e;&#x62f;&#x627;&#x62f;"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>

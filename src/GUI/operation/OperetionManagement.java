@@ -10,6 +10,8 @@
  */
 package GUI.operation;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Bagher
@@ -18,6 +20,12 @@ public class OperetionManagement extends javax.swing.JFrame {
 
     /** Creates new form MainFrame */
     public OperetionManagement() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+          System.out.println("Error setting native LAF: " + e);
+        }
+        initComponents();
         initComponents();
     }
 
