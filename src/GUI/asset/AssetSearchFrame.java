@@ -197,7 +197,7 @@ public class AssetSearchFrame extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText(" سابقه و آمار");
+        jLabel16.setText("سابقه");
         jPanel3.add(jLabel16);
         jLabel16.setBounds(160, 0, 90, 40);
 

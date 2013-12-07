@@ -86,11 +86,12 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 120, 60));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 60));
 
         jButton10.setBackground(new java.awt.Color(2, 80, 130));
         jButton10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton10.setForeground(new java.awt.Color(1, 1, 1));
+        jButton10.setText("الصاق برچسب به دارایی");
         jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton10.setFocusPainted(false);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -99,7 +100,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 120, 60));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 130, 60));
 
         jButton11.setBackground(new java.awt.Color(2, 80, 130));
         jButton11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -113,7 +114,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 120, 60));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 60));
 
         jButton12.setBackground(new java.awt.Color(2, 80, 130));
         jButton12.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -127,7 +128,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 120, 60));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 130, 60));
 
         jButton13.setBackground(new java.awt.Color(2, 80, 130));
         jButton13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -141,7 +142,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton13ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 120, 60));
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 130, 60));
 
         jButton14.setBackground(new java.awt.Color(2, 80, 130));
         jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -155,7 +156,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, 60));
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 130, 60));
 
         jButton15.setBackground(new java.awt.Color(2, 80, 130));
         jButton15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -169,7 +170,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton15ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 120, 60));
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 60));
 
         jButton16.setBackground(new java.awt.Color(2, 80, 130));
         jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -183,7 +184,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 120, 60));
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -42,16 +42,16 @@
           <Font name="Web Yekan" size="24" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#x62c;&#x633;&#x62a;&#x62c;&#x648; &#x62f;&#x631; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;&#x200c;&#x647;&#x627;"/>
+        <Property name="text" type="java.lang.String" value="&#x627;&#x644;&#x635;&#x627;&#x642; &#x628;&#x631;&#x686;&#x633;&#x628; &#x628;&#x647; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; - &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="150" y="0" width="431" height="70"/>
+          <AbsoluteConstraints x="120" y="0" width="510" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButton23">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5b" green="0" red="3c" type="rgb"/>
@@ -62,20 +62,20 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1" green="1" red="1" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x628;&#x6af;&#x631;&#x62f;"/>
+        <Property name="text" type="java.lang.String" value="&#x62e;&#x631;&#x648;&#x62c;"/>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="verticalTextPosition" type="int" value="1"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton23ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="110" width="70" height="30"/>
+          <AbsoluteConstraints x="50" y="60" width="90" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton8">
+    <Component class="javax.swing.JButton" name="jButton17">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5b" green="0" red="3c" type="rgb"/>
@@ -86,16 +86,16 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1" green="1" red="1" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x67e;&#x6cc;&#x634;&#x200c;&#x62e;&#x648;&#x627;&#x646;"/>
+        <Property name="text" type="java.lang.String" value="&#x645;&#x631;&#x62d;&#x644;&#x647; &#x628;&#x639;&#x62f;"/>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="verticalTextPosition" type="int" value="1"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="170" y="60" width="90" height="30"/>
+          <AbsoluteConstraints x="500" y="450" width="90" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -107,7 +107,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="250" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="190" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -135,11 +135,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646; &#x67e;&#x644; &#x646;&#x648;&#x627;&#x628;"/>
+            <Property name="text" type="java.lang.String" value="&#x645;&#x6a9;&#x627;&#x646;&#x200c;&#x645;&#x646;&#x62f;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -213,7 +213,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="180" width="410" height="40"/>
+          <AbsoluteConstraints x="180" y="120" width="410" height="40"/>
         </Constraint>
       </Constraints>
 
@@ -301,7 +301,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="220" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="160" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -345,11 +345,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646; &#x622;&#x632;&#x627;&#x62f;&#x6cc;"/>
+            <Property name="text" type="java.lang.String" value="&#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -407,7 +407,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="310" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="250" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -435,11 +435,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646; &#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646; &#x698;&#x627;&#x644;&#x647;"/>
+            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -513,7 +513,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="280" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="220" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -579,11 +579,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646; &#x646;&#x648;&#x627;&#x628;"/>
+            <Property name="text" type="java.lang.String" value="&#x62e;&#x637;&#x6a9;&#x634;&#x6cc;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -619,7 +619,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="370" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="310" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -647,11 +647,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646; &#x622;&#x632;&#x627;&#x62f;&#x6cc;"/>
+            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -725,7 +725,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="340" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="280" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -791,11 +791,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646; &#x627;&#x646;&#x642;&#x644;&#x627;&#x628;"/>
+            <Property name="text" type="java.lang.String" value="&#x62e;&#x637;&#x6a9;&#x634;&#x6cc;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="0" width="100" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -826,7 +826,7 @@
     <Component class="javax.swing.JScrollBar" name="jScrollBar1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="590" y="180" width="-1" height="280"/>
+          <AbsoluteConstraints x="590" y="120" width="-1" height="310"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -838,7 +838,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="430" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="370" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -852,7 +852,7 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x6f8;"/>
+            <Property name="text" type="java.lang.String" value="4"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -866,11 +866,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646; &#x645;&#x6cc;&#x62f;&#x627;&#x646; &#x62a;&#x62c;&#x631;&#x6cc;&#x634;"/>
+            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="0" width="120" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -944,7 +944,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="400" width="410" height="30"/>
+          <AbsoluteConstraints x="180" y="340" width="410" height="30"/>
         </Constraint>
       </Constraints>
 
@@ -958,7 +958,7 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x6f7;"/>
+            <Property name="text" type="java.lang.String" value="3"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -966,7 +966,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton17">
+        <Component class="javax.swing.JButton" name="jButton18">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,67,111,108,111,114,1,-91,23,-125,16,-113,51,117,2,0,5,70,0,6,102,97,108,112,104,97,73,0,5,118,97,108,117,101,76,0,2,99,115,116,0,27,76,106,97,118,97,47,97,119,116,47,99,111,108,111,114,47,67,111,108,111,114,83,112,97,99,101,59,91,0,9,102,114,103,98,118,97,108,117,101,116,0,2,91,70,91,0,6,102,118,97,108,117,101,113,0,126,0,2,120,112,0,0,0,0,-1,-2,-2,-2,112,112,112"/>
@@ -988,7 +988,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton18">
+        <Component class="javax.swing.JButton" name="jButton19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/GUI/icons/file_edit.png"/>
@@ -996,7 +996,7 @@
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton19ActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1010,11 +1010,11 @@
               <Font name="Web Yekan" size="15" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646; &#x686;&#x647;&#x627;&#x631;&#x627;&#x647; &#x648;&#x644;&#x6cc;&#x639;&#x635;&#x631;"/>
+            <Property name="text" type="java.lang.String" value="&#x62e;&#x637;&#x6a9;&#x634;&#x6cc;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="0" width="130" height="30"/>
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1042,7 +1042,127 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton23">
+    <Container class="javax.swing.JPanel" name="jPanel12">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="180" y="400" width="410" height="30"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel40">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Web Yekan" size="15" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&#x6f5;"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="350" y="0" width="60" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton22">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,67,111,108,111,114,1,-91,23,-125,16,-113,51,117,2,0,5,70,0,6,102,97,108,112,104,97,73,0,5,118,97,108,117,101,76,0,2,99,115,116,0,27,76,106,97,118,97,47,97,119,116,47,99,111,108,111,114,47,67,111,108,111,114,83,112,97,99,101,59,91,0,9,102,114,103,98,118,97,108,117,101,116,0,2,91,70,91,0,6,102,118,97,108,117,101,113,0,126,0,2,120,112,0,0,0,0,-1,-2,-2,-2,112,112,112"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUI/icons/close-24-outside.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="10" y="0" width="58" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton33">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUI/icons/file_edit.png"/>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton33ActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="90" y="0" width="50" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel41">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Web Yekan" size="15" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&#x62e;&#x637;&#x6a9;&#x634;&#x6cc;"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="270" y="0" width="60" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton34">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,67,111,108,111,114,1,-91,23,-125,16,-113,51,117,2,0,5,70,0,6,102,97,108,112,104,97,73,0,5,118,97,108,117,101,76,0,2,99,115,116,0,27,76,106,97,118,97,47,97,119,116,47,99,111,108,111,114,47,67,111,108,111,114,83,112,97,99,101,59,91,0,9,102,114,103,98,118,97,108,117,101,116,0,2,91,70,91,0,6,102,118,97,108,117,101,113,0,126,0,2,120,112,0,0,0,0,-1,-2,-2,-2,112,112,112"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUI/icons/time_machine_shaped.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="180" y="0" width="58" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel30">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Web Yekan" size="15" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="&#x644;&#x637;&#x641;&#x627; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; &#x631;&#x627; &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x6a9;&#x646;&#x6cc;&#x62f;"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="390" y="80" width="200" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton20">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5b" green="0" red="3c" type="rgb"/>
@@ -1053,46 +1173,16 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1" green="1" red="1" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x62e;&#x631;&#x648;&#x62c;"/>
+        <Property name="text" type="java.lang.String" value="&#x67e;&#x6cc;&#x634;&#x200c;&#x62e;&#x648;&#x627;&#x646;"/>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="verticalTextPosition" type="int" value="1"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton23ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton20ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="60" width="90" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Web Yekan" size="15" style="0"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="&#x62f;&#x648;&#x631;&#x628;&#x6cc;&#x646; &#x62e;&#x6cc;&#x627;&#x628;&#x627;&#x646;"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="270" y="110" width="320" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
-      <Properties>
-        <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="&#x62c;&#x633;&#x62a;&#x62c;&#x648; &#x645;&#x62d;&#x62f;&#x648;&#x62f; &#x628;&#x647; &#x646;&#x627;&#x645; &#x648; &#x634;&#x646;&#x627;&#x633;&#x647;&#x200c;&#x6cc; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; &#x628;&#x627;&#x634;&#x62f;"/>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="horizontalTextPosition" type="int" value="2"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
-      </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="261" y="150" width="330" height="-1"/>
+          <AbsoluteConstraints x="170" y="60" width="90" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

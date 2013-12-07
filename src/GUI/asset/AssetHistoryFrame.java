@@ -461,7 +461,7 @@ public class AssetHistoryFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new NewAssetFrameStep1().setVisible(true);
+                new AssetHistoryFrame().setVisible(true);
             }
         });
     }
