@@ -10,7 +10,13 @@
  */
 package GUI.label;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.UIManager;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import label.Label;
+import label.LabelCatalogue;
 
 /**
  *
@@ -26,6 +32,7 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
           System.out.println("Error setting native LAF: " + e);
         }
         initComponents();
+        loadLabelComponents();
     }
 
     /** This method is called from within the constructor to
@@ -37,77 +44,15 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        newLabelButton = new javax.swing.JButton();
+        labelsScrollPane = new javax.swing.JScrollPane();
+        labelsPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jLabel39 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jButton23 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -117,541 +62,84 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("مدیریت برچسب‌ها");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
+        titleLabel.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("مدیریت برچسب‌ها");
+        titleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 431, 70));
 
-        jButton2.setBackground(new java.awt.Color(60, 0, 91));
-        jButton2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(1, 1, 1));
-        jButton2.setText("تعریف برچسب جدید");
-        jButton2.setFocusPainted(false);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        newLabelButton.setBackground(new java.awt.Color(254, 254, 254));
+        newLabelButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        newLabelButton.setForeground(new java.awt.Color(1, 1, 1));
+        newLabelButton.setText("تعریف برچسب جدید");
+        newLabelButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 139, 255), 1, true));
+        newLabelButton.setFocusPainted(false);
+        newLabelButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        newLabelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                newLabelButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 160, 30));
+        getContentPane().add(newLabelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 120, 30));
 
-        jButton8.setBackground(new java.awt.Color(60, 0, 91));
-        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(1, 1, 1));
-        jButton8.setText("پیش‌خوان");
-        jButton8.setFocusPainted(false);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
+        labelsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel2.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel2.setLayout(null);
+        labelsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("2");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(350, 0, 60, 30);
-
-        jLabel9.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("مکان‌مند");
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(270, 0, 60, 30);
-
-        jButton1.setForeground(new java.awt.Color(215, 215, 215));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jPanel2.add(jButton1);
-        jButton1.setBounds(10, 0, 58, 30);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton3.setBorderPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton3);
-        jButton3.setBounds(90, 0, 50, 30);
-
-        jLabel11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("ساده");
-        jPanel2.add(jLabel11);
-        jLabel11.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 410, 30));
-
-        jPanel3.setBackground(new java.awt.Color(160, 196, 255));
-        jPanel3.setLayout(null);
+        headerPanel.setBackground(new java.awt.Color(160, 196, 255));
+        headerPanel.setLayout(null);
 
         jLabel14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ردیف");
-        jPanel3.add(jLabel14);
-        jLabel14.setBounds(350, 0, 60, 40);
+        headerPanel.add(jLabel14);
+        jLabel14.setBounds(250, 0, 60, 30);
 
         jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("نام برچسب");
-        jPanel3.add(jLabel15);
-        jLabel15.setBounds(270, 0, 60, 40);
-
-        jLabel16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("مرکب/ساده");
-        jPanel3.add(jLabel16);
-        jLabel16.setBounds(160, 0, 90, 40);
+        headerPanel.add(jLabel15);
+        jLabel15.setBounds(170, 0, 60, 30);
 
         jLabel18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("ویرایش");
-        jPanel3.add(jLabel18);
-        jLabel18.setBounds(70, 0, 90, 40);
+        headerPanel.add(jLabel18);
+        jLabel18.setBounds(70, 0, 90, 30);
 
         jLabel19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("حذف");
-        jPanel3.add(jLabel19);
-        jLabel19.setBounds(0, 0, 90, 40);
+        headerPanel.add(jLabel19);
+        jLabel19.setBounds(0, 0, 80, 30);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 410, 40));
+        labelsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
 
-        jPanel4.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel4.setLayout(null);
+        labelsScrollPane.setViewportView(labelsPanel);
 
-        jLabel10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("۱");
-        jPanel4.add(jLabel10);
-        jLabel10.setBounds(350, 0, 60, 30);
-
-        jButton4.setForeground(new java.awt.Color(215, 215, 215));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jPanel4.add(jButton4);
-        jButton4.setBounds(10, 0, 58, 30);
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton5);
-        jButton5.setBounds(90, 0, 50, 30);
-
-        jLabel12.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("خیابان");
-        jPanel4.add(jLabel12);
-        jLabel12.setBounds(270, 0, 60, 30);
-
-        jLabel13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("مرکب");
-        jPanel4.add(jLabel13);
-        jLabel13.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 410, 30));
-
-        jPanel5.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel5.setLayout(null);
-
-        jLabel17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("4");
-        jPanel5.add(jLabel17);
-        jLabel17.setBounds(350, 0, 60, 30);
-
-        jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("دوربین");
-        jPanel5.add(jLabel20);
-        jLabel20.setBounds(270, 0, 60, 30);
-
-        jButton6.setForeground(new java.awt.Color(215, 215, 215));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jPanel5.add(jButton6);
-        jButton6.setBounds(10, 0, 58, 30);
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton7.setBorderPainted(false);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jButton7);
-        jButton7.setBounds(90, 0, 50, 30);
-
-        jLabel21.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("ساده");
-        jPanel5.add(jLabel21);
-        jLabel21.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 410, 30));
-
-        jPanel6.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel6.setLayout(null);
-
-        jLabel22.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("3");
-        jPanel6.add(jLabel22);
-        jLabel22.setBounds(350, 0, 60, 30);
-
-        jButton9.setForeground(new java.awt.Color(215, 215, 215));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton9.setBorder(null);
-        jButton9.setBorderPainted(false);
-        jPanel6.add(jButton9);
-        jButton9.setBounds(10, 0, 58, 30);
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton10.setBorderPainted(false);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton10);
-        jButton10.setBounds(90, 0, 50, 30);
-
-        jLabel23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("خطکشی");
-        jPanel6.add(jLabel23);
-        jLabel23.setBounds(270, 0, 60, 30);
-
-        jLabel24.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("ساده");
-        jPanel6.add(jLabel24);
-        jLabel24.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 410, 30));
-
-        jPanel7.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel7.setLayout(null);
-
-        jLabel25.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("۶");
-        jPanel7.add(jLabel25);
-        jLabel25.setBounds(350, 0, 60, 30);
-
-        jLabel26.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("دوربین");
-        jPanel7.add(jLabel26);
-        jLabel26.setBounds(270, 0, 60, 30);
-
-        jButton11.setForeground(new java.awt.Color(215, 215, 215));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton11.setBorder(null);
-        jButton11.setBorderPainted(false);
-        jPanel7.add(jButton11);
-        jButton11.setBounds(10, 0, 58, 30);
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton12.setBorderPainted(false);
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton12);
-        jButton12.setBounds(90, 0, 50, 30);
-
-        jLabel27.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("ساده");
-        jPanel7.add(jLabel27);
-        jLabel27.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 410, 30));
-
-        jPanel8.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel8.setLayout(null);
-
-        jLabel28.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("۵");
-        jPanel8.add(jLabel28);
-        jLabel28.setBounds(350, 0, 60, 30);
-
-        jButton13.setForeground(new java.awt.Color(215, 215, 215));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton13.setBorder(null);
-        jButton13.setBorderPainted(false);
-        jPanel8.add(jButton13);
-        jButton13.setBounds(10, 0, 58, 30);
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton14.setBorderPainted(false);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton14);
-        jButton14.setBounds(90, 0, 50, 30);
-
-        jLabel29.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("خطکشی");
-        jPanel8.add(jLabel29);
-        jLabel29.setBounds(270, 0, 60, 30);
-
-        jLabel30.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("ساده");
-        jPanel8.add(jLabel30);
-        jLabel30.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 410, 30));
-        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, -1, 340));
-
-        jPanel9.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel9.setLayout(null);
-
-        jLabel31.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("4");
-        jPanel9.add(jLabel31);
-        jLabel31.setBounds(350, 0, 60, 30);
-
-        jLabel32.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("دوربین");
-        jPanel9.add(jLabel32);
-        jLabel32.setBounds(270, 0, 60, 30);
-
-        jButton15.setForeground(new java.awt.Color(215, 215, 215));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton15.setBorder(null);
-        jButton15.setBorderPainted(false);
-        jPanel9.add(jButton15);
-        jButton15.setBounds(10, 0, 58, 30);
-
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton16.setBorderPainted(false);
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton16);
-        jButton16.setBounds(90, 0, 50, 30);
-
-        jLabel33.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("ساده");
-        jPanel9.add(jLabel33);
-        jLabel33.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 410, 30));
-
-        jPanel10.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel10.setLayout(null);
-
-        jLabel34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("3");
-        jPanel10.add(jLabel34);
-        jLabel34.setBounds(350, 0, 60, 30);
-
-        jButton17.setForeground(new java.awt.Color(215, 215, 215));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton17.setBorder(null);
-        jButton17.setBorderPainted(false);
-        jPanel10.add(jButton17);
-        jButton17.setBounds(10, 0, 58, 30);
-
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton18.setBorderPainted(false);
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(jButton18);
-        jButton18.setBounds(90, 0, 50, 30);
-
-        jLabel35.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("خطکشی");
-        jPanel10.add(jLabel35);
-        jLabel35.setBounds(270, 0, 60, 30);
-
-        jLabel36.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("ساده");
-        jPanel10.add(jLabel36);
-        jLabel36.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 410, 30));
-
-        jPanel11.setBackground(new java.awt.Color(205, 205, 205));
-        jPanel11.setLayout(null);
-
-        jLabel37.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("۶");
-        jPanel11.add(jLabel37);
-        jLabel37.setBounds(350, 0, 60, 30);
-
-        jLabel38.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setText("دوربین");
-        jPanel11.add(jLabel38);
-        jLabel38.setBounds(270, 0, 60, 30);
-
-        jButton19.setForeground(new java.awt.Color(215, 215, 215));
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton19.setBorder(null);
-        jButton19.setBorderPainted(false);
-        jPanel11.add(jButton19);
-        jButton19.setBounds(10, 0, 58, 30);
-
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton20.setBorderPainted(false);
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton20);
-        jButton20.setBounds(90, 0, 50, 30);
-
-        jLabel39.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("ساده");
-        jPanel11.add(jLabel39);
-        jLabel39.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 410, 30));
-
-        jPanel12.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel12.setLayout(null);
-
-        jLabel40.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText("۵");
-        jPanel12.add(jLabel40);
-        jLabel40.setBounds(350, 0, 60, 30);
-
-        jButton21.setForeground(new java.awt.Color(215, 215, 215));
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
-        jButton21.setBorder(null);
-        jButton21.setBorderPainted(false);
-        jPanel12.add(jButton21);
-        jButton21.setBounds(10, 0, 58, 30);
-
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        jButton22.setBorderPainted(false);
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-        jPanel12.add(jButton22);
-        jButton22.setBounds(90, 0, 50, 30);
-
-        jLabel41.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setText("خطکشی");
-        jPanel12.add(jLabel41);
-        jLabel41.setBounds(270, 0, 60, 30);
-
-        jLabel42.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setText("ساده");
-        jPanel12.add(jLabel42);
-        jLabel42.setBounds(180, 0, 60, 30);
-
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 410, 30));
-
-        jButton23.setBackground(new java.awt.Color(60, 0, 91));
-        jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(1, 1, 1));
-        jButton23.setText("خروج");
-        jButton23.setFocusPainted(false);
-        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
+        getContentPane().add(labelsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 320, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
+    void loadLabelComponents() {
+        labelsPanel.removeAll();
+        labelsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+        int dep = 30;
+        int index = 1;
+        for(Label label :LabelCatalogue.getInstace().getLabels()){
+            labelsPanel.add(new LabelPanel(new Integer(index++).toString(), label, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 320, 30));
+            dep += 30;
+        }
+        validate();
+        repaint();
+    }
+    
+    private void newLabelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newLabelButtonActionPerformed
+        JFrame newLabelFrame = new NewLabelFrame(null, this, NewLabelFrame.MOD_NEW);
+        newLabelFrame.setVisible(true);
+        newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_newLabelButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -665,76 +153,73 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JPanel labelsPanel;
+    private javax.swing.JScrollPane labelsScrollPane;
+    private javax.swing.JButton newLabelButton;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
+
+}
+
+class LabelPanel extends javax.swing.JPanel{
+
+    public LabelPanel(String number, final Label label, final LabelListManagementFrame labelListManagementFrame) {
+        super();
+        
+        this.setBackground(new java.awt.Color(254, 254, 254));
+        this.setLayout(null);
+        
+        JLabel numberLabel = new JLabel();
+
+        numberLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numberLabel.setText(number);
+        this.add(numberLabel);
+        numberLabel.setBounds(250, 0, 60, 30);
+        
+        JButton closeButton = new JButton();
+
+        closeButton.setForeground(new java.awt.Color(215, 215, 215));
+        closeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
+        closeButton.setBorder(null);
+        closeButton.setBorderPainted(false);
+        this.add(closeButton);
+        closeButton.setBounds(10, 0, 58, 30);
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LabelCatalogue.getInstace().remove(label);
+                labelListManagementFrame.loadLabelComponents();
+//                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+//                newLabelFrame.setVisible(true);
+//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            }
+        });
+        
+        JButton editButton = new JButton();
+
+        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        editButton.setBorderPainted(false);
+        this.add(editButton);
+        editButton.setBounds(90, 0, 50, 30);
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+                newLabelFrame.setVisible(true);
+                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            }
+        });
+        
+        JLabel valueLabel = new JLabel();
+
+        valueLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        valueLabel.setText(label.getName());
+        this.add(valueLabel);
+        valueLabel.setBounds(170, 0, 60, 30);
+    }
 }
