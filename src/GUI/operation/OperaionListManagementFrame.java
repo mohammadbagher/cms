@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import operation.Operation;
 import operation.OperationCatalogue;
@@ -28,7 +29,7 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
     public OperaionListManagementFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception e) {
+        } catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
           System.out.println("Error setting native LAF: " + e);
         }
         initComponents();
@@ -136,9 +137,10 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
     }
     
     private void newOperationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newOperationButtonActionPerformed
-//        JFrame newLabelFrame = new NewLabelFrame(null, this, NewLabelFrame.MOD_NEW);
-//        newLabelFrame.setVisible(true);
-//        newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        JFrame newOperationFrame;
+        newOperationFrame = new NewOperationFrame(this);
+        newOperationFrame.setVisible(true);
+        newOperationFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_newOperationButtonActionPerformed
 
     /**
@@ -146,7 +148,7 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-
+            @Override
             public void run() {
                 new OperaionListManagementFrame().setVisible(true);
             }
@@ -191,6 +193,7 @@ class OperationPanel extends javax.swing.JPanel{
         this.add(closeButton);
         closeButton.setBounds(10, 0, 58, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OperationCatalogue.getInstace().remove(operation);
                 operationListManagementFrame.loadOperationComponents();
@@ -204,6 +207,7 @@ class OperationPanel extends javax.swing.JPanel{
         this.add(triggerButton);
         triggerButton.setBounds(90, 0, 50, 30);
         triggerButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 
             }
