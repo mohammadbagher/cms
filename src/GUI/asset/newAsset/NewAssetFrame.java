@@ -17,6 +17,10 @@ public class NewAssetFrame extends javax.swing.JFrame {
      */
     public NewAssetFrame() {
         initComponents();
+        newAssetFrame.setEnabledAt(1, false);
+        newAssetFrame.setEnabledAt(2, false);
+        newAssetFrame.setEnabledAt(3, false);
+        newAssetFrame.setEnabledAt(4, false);
     }
 
     /**
@@ -30,49 +34,47 @@ public class NewAssetFrame extends javax.swing.JFrame {
 
         buttonGroup5 = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        primaryTab = new javax.swing.JTabbedPane();
-        microAssetTab = new javax.swing.JInternalFrame();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel72 = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jInternalFrame2 = new javax.swing.JInternalFrame();
+        newAssetFrame = new javax.swing.JTabbedPane();
+        primaryTab = new javax.swing.JInternalFrame();
         jLabel3 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        assetName = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        assetUID = new javax.swing.JTextField();
+        isComposite = new javax.swing.JCheckBox();
+        hasPlace = new javax.swing.JCheckBox();
+        isHuman = new javax.swing.JCheckBox();
+        isPhysical = new javax.swing.JCheckBox();
+        subAssetTab = new javax.swing.JInternalFrame();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        assetsScrollPane = new javax.swing.JScrollPane();
+        assetsPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jButton34 = new javax.swing.JButton();
+        humanTab = new javax.swing.JInternalFrame();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
         placeTab = new javax.swing.JInternalFrame();
         jLabel4 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         physicalTab = new javax.swing.JInternalFrame();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -85,211 +87,33 @@ public class NewAssetFrame extends javax.swing.JFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jTextField5 = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
+        finalTab = new javax.swing.JInternalFrame();
+        jLabel6 = new javax.swing.JLabel();
+        finalAssetName = new javax.swing.JLabel();
+        finalAssetUID = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        microAssetTab.setVisible(true);
-
-        jLabel6.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("تعریف دارایی جدید - مشخصات دارایی انسانی");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLabel65.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel65.setText("محمدرضا بشارتی");
-
-        jLabel66.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel66.setText("نام دارایی");
-
-        jLabel50.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel50.setText("UID");
-
-        jLabel67.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel67.setText("human.1253");
-
-        jTextField6.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField6.setText("محمدرضا");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-
-        jLabel68.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel68.setText("نام");
-        jLabel68.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jLabel69.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel69.setText("نام خانوداگی");
-        jLabel69.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jTextField7.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField7.setText("بشارتی");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
-        jTextField8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField8.setText("۰۰۳۱۲۳۱۲۴۳");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
-        jLabel70.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel70.setText("شماره ملی");
-        jLabel70.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jLabel71.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel71.setText("کد ‍پرسنلی");
-        jLabel71.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jTextField9.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField9.setText("۱۲۱۲-۱");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
-        jTextField10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField10.setText("پشتیبان دارایی در دانشگاه شریف");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-
-        jLabel72.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel72.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel72.setText("توضیحات");
-        jLabel72.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        javax.swing.GroupLayout microAssetTabLayout = new javax.swing.GroupLayout(microAssetTab.getContentPane());
-        microAssetTab.getContentPane().setLayout(microAssetTabLayout);
-        microAssetTabLayout.setHorizontalGroup(
-            microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(microAssetTabLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, microAssetTabLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel66))
-                        .addGroup(microAssetTabLayout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel50))))
-                .addGap(106, 106, 106))
-        );
-        microAssetTabLayout.setVerticalGroup(
-            microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(microAssetTabLayout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel65)
-                    .addComponent(jLabel66))
-                .addGap(6, 6, 6)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel67)
-                    .addComponent(jLabel50))
-                .addGap(27, 27, 27)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(microAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 70, Short.MAX_VALUE))
-        );
-
-        primaryTab.addTab("زیردارایی", microAssetTab);
-
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        primaryTab.addTab("نهایی کردن", jInternalFrame1);
-
-        jInternalFrame2.setVisible(true);
+        primaryTab.setVisible(true);
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("تعریف دارایی جدید - مشخصات پایه");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jTextField4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField4.setText("میدان آزادی");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        assetName.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        assetName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        assetName.setText("میدان آزادی");
+        assetName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                assetNameActionPerformed(evt);
+            }
+        });
+        assetName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                assetNameFocusLost(evt);
             }
         });
 
@@ -301,116 +125,357 @@ public class NewAssetFrame extends javax.swing.JFrame {
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel47.setText("UID");
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField2.setText("azadi.squar.371");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        assetUID.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        assetUID.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        assetUID.setText("azadi.squar.371");
+        assetUID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                assetUIDActionPerformed(evt);
+            }
+        });
+        assetUID.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                assetUIDFocusLost(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jCheckBox2.setText("دارایی مرکب است");
-        jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        isComposite.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        isComposite.setText("دارایی مرکب است");
+        isComposite.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        isComposite.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        isComposite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                isCompositeActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jCheckBox3.setSelected(true);
-        jCheckBox3.setText("دارایی مکان‌مند است");
-        jCheckBox3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        hasPlace.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        hasPlace.setText("دارایی مکان‌مند است");
+        hasPlace.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        hasPlace.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        hasPlace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                hasPlaceActionPerformed(evt);
             }
         });
 
-        jCheckBox4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jCheckBox4.setText("دارایی انسانی است");
-        jCheckBox4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        isHuman.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        isHuman.setText("دارایی انسانی است");
+        isHuman.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        isHuman.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        isHuman.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                isHumanActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jCheckBox1.setSelected(true);
-        jCheckBox1.setText("دارایی فیزیکی (ملموس) است");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        isPhysical.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        isPhysical.setText("دارایی فیزیکی (ملموس) است");
+        isPhysical.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        isPhysical.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        isPhysical.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                isPhysicalActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                            .addGap(50, 50, 50)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                            .addGap(50, 50, 50)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jInternalFrame2Layout.createSequentialGroup()
+        javax.swing.GroupLayout primaryTabLayout = new javax.swing.GroupLayout(primaryTab.getContentPane());
+        primaryTab.getContentPane().setLayout(primaryTabLayout);
+        primaryTabLayout.setHorizontalGroup(
+            primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(primaryTabLayout.createSequentialGroup()
+                .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(primaryTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(isHuman, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isPhysical, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isComposite, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hasPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(primaryTabLayout.createSequentialGroup()
                             .addGap(87, 87, 87)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, primaryTabLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
+                            .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(assetUID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(assetName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, primaryTabLayout.createSequentialGroup()
                                     .addGap(59, 59, 59)
                                     .addComponent(jLabel51))
-                                .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                                .addGroup(primaryTabLayout.createSequentialGroup()
                                     .addGap(84, 84, 84)
                                     .addComponent(jLabel47))))))
                 .addContainerGap(132, Short.MAX_VALUE))
         );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+        primaryTabLayout.setVerticalGroup(
+            primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(primaryTabLayout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51)
+                    .addComponent(assetName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
-                .addGap(2, 2, 2)
-                .addComponent(jCheckBox3)
-                .addGap(2, 2, 2)
-                .addComponent(jCheckBox4)
-                .addGap(2, 2, 2)
-                .addComponent(jCheckBox1)
-                .addGap(0, 133, Short.MAX_VALUE))
+                .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(assetUID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(isComposite)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(isHuman)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hasPlace)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(isPhysical)
+                .addGap(0, 121, Short.MAX_VALUE))
         );
 
-        primaryTab.addTab("مشخصات اولیه", jInternalFrame2);
+        newAssetFrame.addTab("مشخصات اولیه", primaryTab);
+
+        subAssetTab.setVisible(true);
+
+        jLabel8.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("تعریف دارایی جدید - زیردارایی‌ها");
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("ساختمان زیباسازی منطقه ۹");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("اتاق مدیریت ساختمان زیباسازی منطقه ۹");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("میز چوبی شماره ۱۹۳۲");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("کامپیوتر شماره ۸۲۳");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("اتاق دبیرخانه‌ی ساختمان زیباسازی منطقه ۹");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("میز چوبی شماره ۱۹۳۳");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("کامپیوتر شماره ۸۲۴");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("کمد فایل شماره ۲۹۱۲");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("آب سرد کن شماره ۳۲");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("توالت فرنگی شماره ۴۳۲۱");
+        treeNode1.add(treeNode2);
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jTree1);
+
+        assetsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        assetsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        headerPanel.setBackground(new java.awt.Color(160, 196, 255));
+        headerPanel.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("ردیف");
+        headerPanel.add(jLabel14);
+        jLabel14.setBounds(270, 0, 40, 30);
+
+        jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("نام دارایی");
+        headerPanel.add(jLabel15);
+        jLabel15.setBounds(170, 0, 60, 30);
+
+        jLabel19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("حذف");
+        headerPanel.add(jLabel19);
+        jLabel19.setBounds(0, 0, 80, 30);
+
+        assetsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+
+        assetsScrollPane.setViewportView(assetsPanel);
+
+        jButton34.setBackground(new java.awt.Color(60, 0, 91));
+        jButton34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jButton34.setForeground(new java.awt.Color(1, 1, 1));
+        jButton34.setText("اضافه کردن زیردارایی");
+        jButton34.setFocusPainted(false);
+        jButton34.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout subAssetTabLayout = new javax.swing.GroupLayout(subAssetTab.getContentPane());
+        subAssetTab.getContentPane().setLayout(subAssetTabLayout);
+        subAssetTabLayout.setHorizontalGroup(
+            subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subAssetTabLayout.createSequentialGroup()
+                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(subAssetTabLayout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(subAssetTabLayout.createSequentialGroup()
+                            .addGap(98, 98, 98)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+        subAssetTabLayout.setVerticalGroup(
+            subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subAssetTabLayout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(2, 2, 2)
+                .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                    .addComponent(assetsScrollPane))
+                .addGap(0, 31, Short.MAX_VALUE))
+        );
+
+        newAssetFrame.addTab("زیردارایی", subAssetTab);
+
+        humanTab.setVisible(true);
+
+        jLabel7.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("تعریف دارایی جدید - مشخصات دارایی انسانی");
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextField11.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField11.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField11.setText("محمدرضا");
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+
+        jTextField12.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField12.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField12.setText("بشارتی");
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
+            }
+        });
+
+        jTextField13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField13.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField13.setText("۰۰۳۱۲۳۱۲۴۳");
+        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField13ActionPerformed(evt);
+            }
+        });
+
+        jTextField14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField14.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField14.setText("۱۲۱۲-۱");
+        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField14ActionPerformed(evt);
+            }
+        });
+
+        jTextField15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jTextField15.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField15.setText("پشتیبان دارایی در دانشگاه شریف");
+        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField15ActionPerformed(evt);
+            }
+        });
+
+        jLabel77.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel77.setText("توضیحات");
+        jLabel77.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel78.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel78.setText("کد ‍پرسنلی");
+        jLabel78.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel79.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel79.setText("شماره ملی");
+        jLabel79.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel80.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel80.setText("نام خانوداگی");
+        jLabel80.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel81.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel81.setText("نام");
+        jLabel81.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout humanTabLayout = new javax.swing.GroupLayout(humanTab.getContentPane());
+        humanTab.getContentPane().setLayout(humanTabLayout);
+        humanTabLayout.setHorizontalGroup(
+            humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(humanTabLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, humanTabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(humanTabLayout.createSequentialGroup()
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(humanTabLayout.createSequentialGroup()
+                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(humanTabLayout.createSequentialGroup()
+                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(humanTabLayout.createSequentialGroup()
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(humanTabLayout.createSequentialGroup()
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(106, 106, 106))
+        );
+        humanTabLayout.setVerticalGroup(
+            humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(humanTabLayout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 64, Short.MAX_VALUE))
+        );
+
+        newAssetFrame.addTab("دارایی انسانی", humanTab);
 
         placeTab.getContentPane().setLayout(null);
 
@@ -421,92 +486,44 @@ public class NewAssetFrame extends javax.swing.JFrame {
         placeTab.getContentPane().add(jLabel4);
         jLabel4.setBounds(130, 0, 427, 38);
 
-        jLabel54.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel54.setText("میدان آزادی");
-        placeTab.getContentPane().add(jLabel54);
-        jLabel54.setBounds(470, 80, 65, 24);
-
-        jLabel52.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel52.setText("نام دارایی");
-        placeTab.getContentPane().add(jLabel52);
-        jLabel52.setBounds(560, 80, 50, 24);
-
-        jLabel48.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel48.setText("UID");
-        placeTab.getContentPane().add(jLabel48);
-        jLabel48.setBounds(590, 120, 40, 18);
-
-        jLabel53.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel53.setText("azadi.squar.371");
-        placeTab.getContentPane().add(jLabel53);
-        jLabel53.setBounds(420, 120, 119, 18);
-
         jLabel55.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel55.setText("در حال دریافت اطلاعات مکانی دارایی ...");
         jLabel55.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         placeTab.getContentPane().add(jLabel55);
-        jLabel55.setBounds(420, 160, 201, 24);
+        jLabel55.setBounds(410, 80, 201, 24);
 
         jLabel56.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel56.setText("اطلاعات مکانی با موفقیت دریافت شد.");
         jLabel56.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         placeTab.getContentPane().add(jLabel56);
-        jLabel56.setBounds(430, 210, 190, 24);
+        jLabel56.setBounds(420, 130, 190, 24);
 
         jLabel57.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel57.setText("عرض جغرافیایی: 35.6961 درجه‌ی شمالی");
         jLabel57.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         placeTab.getContentPane().add(jLabel57);
-        jLabel57.setBounds(400, 260, 220, 24);
+        jLabel57.setBounds(390, 180, 220, 24);
 
         jLabel58.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel58.setText("طول جغرافیایی: 51.4231 درجه‌ی شرقی");
         jLabel58.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         placeTab.getContentPane().add(jLabel58);
-        jLabel58.setBounds(410, 310, 213, 24);
+        jLabel58.setBounds(400, 230, 213, 24);
 
-        primaryTab.addTab("دارایی مکان‌مند", placeTab);
+        newAssetFrame.addTab("دارایی مکان‌مند", placeTab);
 
         physicalTab.getContentPane().setLayout(null);
-
-        jLabel59.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel59.setText("نام دارایی");
-        physicalTab.getContentPane().add(jLabel59);
-        jLabel59.setBounds(560, 50, 50, 24);
-
-        jLabel60.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel60.setText("میدان آزادی");
-        physicalTab.getContentPane().add(jLabel60);
-        jLabel60.setBounds(370, 50, 65, 24);
-
-        jLabel49.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel49.setText("UID");
-        physicalTab.getContentPane().add(jLabel49);
-        jLabel49.setBounds(590, 90, 25, 18);
-
-        jLabel61.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel61.setText("azadi.squar.371");
-        physicalTab.getContentPane().add(jLabel61);
-        jLabel61.setBounds(320, 90, 119, 18);
 
         jLabel62.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel62.setText("مشخصات ظاهری دارایی");
         jLabel62.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         physicalTab.getContentPane().add(jLabel62);
-        jLabel62.setBounds(490, 120, 123, 24);
+        jLabel62.setBounds(490, 80, 123, 24);
 
         jTextField3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -517,7 +534,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jTextField3);
-        jTextField3.setBounds(310, 120, 135, 32);
+        jTextField3.setBounds(310, 80, 135, 32);
 
         jLabel5.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -537,7 +554,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(390, 160, 100, 22);
+        jRadioButton2.setBounds(390, 120, 100, 22);
 
         buttonGroup5.add(jRadioButton1);
         jRadioButton1.setText("بیمه ندارد");
@@ -549,14 +566,14 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(540, 160, 84, 22);
+        jRadioButton1.setBounds(540, 120, 84, 22);
 
         jLabel63.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel63.setText("شرح بیمه");
         jLabel63.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         physicalTab.getContentPane().add(jLabel63);
-        jLabel63.setBounds(560, 210, 49, 24);
+        jLabel63.setBounds(560, 170, 49, 24);
 
         jTextField1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -567,7 +584,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jTextField1);
-        jTextField1.setBounds(240, 210, 208, 32);
+        jTextField1.setBounds(240, 170, 208, 32);
 
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setSelected(true);
@@ -580,21 +597,21 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jRadioButton4);
-        jRadioButton4.setBounds(540, 270, 79, 22);
+        jRadioButton4.setBounds(540, 230, 79, 22);
 
         buttonGroup1.add(jRadioButton5);
         jRadioButton5.setText("سند ندارد");
         jRadioButton5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jRadioButton5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         physicalTab.getContentPane().add(jRadioButton5);
-        jRadioButton5.setBounds(400, 270, 84, 22);
+        jRadioButton5.setBounds(400, 230, 84, 22);
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("سند موضوعیت ندارد");
         jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jRadioButton3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         physicalTab.getContentPane().add(jRadioButton3);
-        jRadioButton3.setBounds(180, 270, 154, 22);
+        jRadioButton3.setBounds(180, 230, 154, 22);
 
         jTextField5.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -605,54 +622,132 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(jTextField5);
-        jTextField5.setBounds(200, 320, 248, 32);
+        jTextField5.setBounds(200, 280, 248, 32);
 
         jLabel64.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel64.setText("شرح سند");
         jLabel64.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         physicalTab.getContentPane().add(jLabel64);
-        jLabel64.setBounds(560, 320, 51, 24);
+        jLabel64.setBounds(560, 280, 51, 24);
 
-        primaryTab.addTab("دارایی فیزیکی", physicalTab);
+        newAssetFrame.addTab("دارایی فیزیکی", physicalTab);
+
+        finalTab.setVisible(true);
+
+        jLabel6.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("تعریف دارایی جدید - ذخیره");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        finalAssetName.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        finalAssetName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        finalAssetName.setText("میدان آزادی");
+
+        finalAssetUID.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        finalAssetUID.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        finalAssetUID.setText("azadi.squar.371");
+
+        jLabel48.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel48.setText("UID");
+
+        jLabel52.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel52.setText("نام دارایی");
+
+        javax.swing.GroupLayout finalTabLayout = new javax.swing.GroupLayout(finalTab.getContentPane());
+        finalTab.getContentPane().setLayout(finalTabLayout);
+        finalTabLayout.setHorizontalGroup(
+            finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(finalTabLayout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jLabel6)
+                .addContainerGap(245, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, finalTabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(finalTabLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(finalAssetName)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel52))
+                    .addGroup(finalTabLayout.createSequentialGroup()
+                        .addComponent(finalAssetUID)
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(127, 127, 127))
+        );
+        finalTabLayout.setVerticalGroup(
+            finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(finalTabLayout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addGap(38, 38, 38)
+                .addGroup(finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(finalAssetName)
+                    .addComponent(jLabel52))
+                .addGap(16, 16, 16)
+                .addGroup(finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(finalAssetUID)
+                    .addComponent(jLabel48))
+                .addGap(0, 283, Short.MAX_VALUE))
+        );
+
+        newAssetFrame.addTab("نهایی کردن", finalTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(primaryTab, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(newAssetFrame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(primaryTab, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(newAssetFrame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void assetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_assetNameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void assetUIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetUIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_assetUIDActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    private void isCompositeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isCompositeActionPerformed
+        if (isComposite.isSelected()){
+            newAssetFrame.setEnabledAt(1, true);
+        }else{
+            newAssetFrame.setEnabledAt(1, false);
+        }
+    }//GEN-LAST:event_isCompositeActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    private void hasPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasPlaceActionPerformed
+        if (hasPlace.isSelected()){
+            newAssetFrame.setEnabledAt(3, true);
+        }else{
+            newAssetFrame.setEnabledAt(3, false);
+        }
+    }//GEN-LAST:event_hasPlaceActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    private void isHumanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isHumanActionPerformed
+        if (isHuman.isSelected()){
+            newAssetFrame.setEnabledAt(2, true);
+        }else{
+            newAssetFrame.setEnabledAt(2, false);
+        }
+    }//GEN-LAST:event_isHumanActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void isPhysicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isPhysicalActionPerformed
+        if (isPhysical.isSelected()){
+            newAssetFrame.setEnabledAt(4, true);
+        }else{
+            newAssetFrame.setEnabledAt(4, false);
+        }
+    }//GEN-LAST:event_isPhysicalActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -678,25 +773,37 @@ public class NewAssetFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextField12ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_jTextField13ActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_jTextField14ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_jTextField15ActionPerformed
+
+    private void assetNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetNameFocusLost
+        finalAssetName.setText(assetName.getText());
+    }//GEN-LAST:event_assetNameFocusLost
+
+    private void assetUIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetUIDFocusLost
+        finalAssetUID.setText(assetUID.getText());
+    }//GEN-LAST:event_assetUIDFocusLost
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton34ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -734,62 +841,66 @@ public class NewAssetFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField assetName;
+    private javax.swing.JTextField assetUID;
+    private javax.swing.JPanel assetsPanel;
+    private javax.swing.JScrollPane assetsScrollPane;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JLabel finalAssetName;
+    private javax.swing.JLabel finalAssetUID;
+    private javax.swing.JInternalFrame finalTab;
+    private javax.swing.JCheckBox hasPlace;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JInternalFrame humanTab;
+    private javax.swing.JCheckBox isComposite;
+    private javax.swing.JCheckBox isHuman;
+    private javax.swing.JCheckBox isPhysical;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JInternalFrame microAssetTab;
+    private javax.swing.JTree jTree1;
+    private javax.swing.JTabbedPane newAssetFrame;
     private javax.swing.JInternalFrame physicalTab;
     private javax.swing.JInternalFrame placeTab;
-    private javax.swing.JTabbedPane primaryTab;
+    private javax.swing.JInternalFrame primaryTab;
+    private javax.swing.JInternalFrame subAssetTab;
     // End of variables declaration//GEN-END:variables
 }
