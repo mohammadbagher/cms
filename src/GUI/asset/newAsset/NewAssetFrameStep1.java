@@ -10,8 +10,11 @@
  */
 package GUI.asset.newAsset;
 
+import GUI.asset.AssetListManagementFrame;
 import GUI.label.*;
 import javax.swing.UIManager;
+import asset.Asset;
+
 
 /**
  *
@@ -19,13 +22,18 @@ import javax.swing.UIManager;
  */
 public class NewAssetFrameStep1 extends javax.swing.JFrame {
 
+    private Asset asset;
+    private AssetListManagementFrame assetListManagementFrame;
+
     /** Creates new form MainFrame */
-    public NewAssetFrameStep1() {
+    public NewAssetFrameStep1( AssetListManagementFrame assetListManagementFrame ) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
           System.out.println("Error setting native LAF: " + e);
         }
+        this.assetListManagementFrame = assetListManagementFrame;
+        this.asset = new Asset();
         initComponents();
     }
 
@@ -39,9 +47,7 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jButton23 = new javax.swing.JButton();
         jLabel47 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
@@ -49,8 +55,6 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -64,38 +68,12 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("تعریف دارایی جدید - مشخصات پایه");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 510, 70));
-
-        jButton23.setBackground(new java.awt.Color(60, 0, 91));
-        jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(1, 1, 1));
-        jButton23.setText("خروج");
-        jButton23.setFocusPainted(false);
-        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 510, 70));
 
         jLabel47.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel47.setText("UID");
-        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
-
-        jButton16.setBackground(new java.awt.Color(60, 0, 91));
-        jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(1, 1, 1));
-        jButton16.setText("مرحله بعد");
-        jButton16.setFocusPainted(false);
-        jButton16.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 90, 30));
+        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -105,12 +83,12 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 150, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 150, -1));
 
         jLabel51.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel51.setText("نام دارایی");
-        getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
+        getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
 
         jTextField4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -120,7 +98,7 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 150, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 150, -1));
 
         jCheckBox1.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jCheckBox1.setSelected(true);
@@ -132,7 +110,7 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 270, -1));
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 270, -1));
 
         jCheckBox2.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jCheckBox2.setText("دارایی مرکب است");
@@ -143,7 +121,7 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 220, -1));
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jCheckBox4.setText("دارایی انسانی است");
@@ -154,7 +132,7 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 250, -1));
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 250, -1));
 
         jCheckBox3.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jCheckBox3.setSelected(true);
@@ -166,44 +144,10 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
                 jCheckBox3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 220, -1));
-
-        jButton17.setBackground(new java.awt.Color(60, 0, 91));
-        jButton17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(1, 1, 1));
-        jButton17.setText("پیش‌خوان");
-        jButton17.setFocusPainted(false);
-        jButton17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
-
-        jButton18.setBackground(new java.awt.Color(60, 0, 91));
-        jButton18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(1, 1, 1));
-        jButton18.setText("بازگشت");
-        jButton18.setFocusPainted(false);
-        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 90, 30));
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 220, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -229,30 +173,18 @@ public class NewAssetFrameStep1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new NewAssetFrameStep1().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//
+//            public void run() {
+//                new NewAssetFrameStep1().setVisible(true);
+//            }
+//        });
+//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton23;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
