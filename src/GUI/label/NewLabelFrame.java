@@ -226,30 +226,30 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("ردیف");
         headerPanel.add(jLabel19);
-        jLabel19.setBounds(70, 0, 60, 30);
+        jLabel19.setBounds(210, 0, 40, 30);
 
         jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("مقدار");
         headerPanel.add(jLabel20);
-        jLabel20.setBounds(0, 0, 60, 30);
+        jLabel20.setBounds(0, 0, 210, 30);
 
-        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 30));
+        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
 
         labelValueScrollPane.setViewportView(labelValuesPanel);
 
-        getContentPane().add(labelValueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 150, 190));
+        getContentPane().add(labelValueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 270, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loadLabelVauleComponents(){
         labelValuesPanel.removeAll();
-        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 30));
+        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
         int dep = 30;
         int index = 1;
         for(Object object :label.getValues()){
-            labelValuesPanel.add(new LabelValuePanel(new Integer(index++).toString(), object.toString(), new java.awt.Color(254, 254, 254)), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 150, 30));
+            labelValuesPanel.add(new LabelValuePanel(new Integer(index++).toString(), object.toString(), new java.awt.Color(254, 254, 254)), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 270, 30));
             dep += 30;
         }
         if(label != null && label.getType() != null){
@@ -309,9 +309,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         try{
             label.addVaule(labelValueTextField.getText());
             loadLabelVauleComponents();
-        }catch(DuplicatedValueException e){
-            JOptionPane.showMessageDialog(null, "مقدار وارد شده تکراری است.", "خطا", JOptionPane.ERROR_MESSAGE);
-        }catch(NumberFormatException e){
+        }catch(Exception e){
             JOptionPane.showMessageDialog(null, "مقدار وارد شده با نوع مشخص‌شده سازگار نیست.", "خطا", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_addValueButtonActionPerformed
@@ -368,14 +366,14 @@ class LabelValuePanel extends javax.swing.JPanel{
         numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numberLabel.setText(number);
         this.add(numberLabel);
-        numberLabel.setBounds(70, 0, 60, 30);
+        numberLabel.setBounds(210, 0, 40, 30);
         
         JLabel valueLabel = new JLabel();
         valueLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         valueLabel.setText(value);
         this.add(valueLabel);
-        valueLabel.setBounds(0, 0, 60, 30);
+        valueLabel.setBounds(0, 0, 210, 30);
         
         this.setBackground(color);
     }

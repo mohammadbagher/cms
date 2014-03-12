@@ -6,9 +6,6 @@
 
 package label;
 
-import exceptions.DuplicatedValueException;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +30,7 @@ public class LabelCatalogue {
                 label.setType(new StringLabelType());
                 label.addVaule("تست");
                 labels.add(label);
-            } catch (DuplicatedValueException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
@@ -42,7 +39,7 @@ public class LabelCatalogue {
                 label.setType(new StringLabelType());
                 label.addVaule("تست");
                 labels.add(label);
-            } catch (DuplicatedValueException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
@@ -51,7 +48,7 @@ public class LabelCatalogue {
                 label.setType(new StringLabelType());
                 label.addVaule("تست");
                 labels.add(label);
-            } catch (DuplicatedValueException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
