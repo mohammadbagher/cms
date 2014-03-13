@@ -238,7 +238,7 @@ public class NewAssetFrameStep5 extends javax.swing.JFrame {
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel60.setText("اتاق مدیریت ساختمان زیباسازی منطقه ۹");
         jPanel4.add(jLabel60);
-        jLabel60.setBounds(-140, 0, 420, 30);
+        jLabel60.setBounds(70, 0, 210, 30);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 340, 30));
 
