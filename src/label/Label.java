@@ -7,8 +7,6 @@
 package label;
 
 import exceptions.DuplicatedValueException;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Vector;
 
 /**
@@ -38,10 +36,10 @@ public class Label {
         this.type = type;
     }
     
-    public void addVaule(String value) throws DuplicatedValueException {
+    public void addVaule(String value) throws Exception {
         Object o = type.convertValue(value);
-        if(values.indexOf(o) != -1)
-            throw new DuplicatedValueException();
+//        if(values.indexOf(o) != -1)
+//            throw new DuplicatedValueException();
         values.add(o);
     }
     
