@@ -10,7 +10,8 @@
  */
 package GUI.operation;
 
-import javax.swing.JLabel;
+import GUI.utility.ScrollableListPanel;
+import asset.AssetCatalogue;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import operation.Operation;
@@ -26,6 +27,8 @@ public class NewOperationFrame extends javax.swing.JFrame {
             
     private Operation operation;
     private OperaionListManagementFrame operaionListManagementFrame;
+    private ScrollableListPanel labelScrollPane;
+    private ScrollableListPanel assetScrollPane;
 
     /** Creates new form MainFrame
      * @param operaionListManagementFrame */
@@ -35,9 +38,14 @@ public class NewOperationFrame extends javax.swing.JFrame {
         } catch(Exception e) {
           System.out.println("Error setting native LAF: " + e);
         }
+        labelScrollPane = new ScrollableListPanel("نام برچسب الصاق شده");
+        assetScrollPane = new ScrollableListPanel("نام دارایی");
         this.operaionListManagementFrame = operaionListManagementFrame;
         this.operation = new Operation();
         initComponents();
+        assetScrollPane.reloadValues(AssetCatalogue.getInstace().getAssets().toArray());
+        getContentPane().add(assetScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 270, 190));
+        getContentPane().add(labelScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 270, 190));
     }
 
     /** This method is called from within the constructor to
@@ -50,9 +58,9 @@ public class NewOperationFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         titleLabel = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
         saveOperationButton = new javax.swing.JButton();
         operationNameTextField = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -67,11 +75,6 @@ public class NewOperationFrame extends javax.swing.JFrame {
         titleLabel.setText("تعریف عملیات جدید");
         titleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
-
-        jLabel47.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel47.setText("نام علمیات");
-        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
         saveOperationButton.setBackground(new java.awt.Color(254, 254, 254));
         saveOperationButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -94,7 +97,12 @@ public class NewOperationFrame extends javax.swing.JFrame {
                 operationNameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(operationNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 150, -1));
+        getContentPane().add(operationNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 150, 30));
+
+        jLabel48.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel48.setText("نام علمیات");
+        getContentPane().add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,19 +123,8 @@ public class NewOperationFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_operationNameTextFieldActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//
-//            public void run() {
-//                new NewLabelFrame().setVisible(true);
-//            }
-//        });
-//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JTextField operationNameTextField;
     private javax.swing.JButton saveOperationButton;
     private javax.swing.JLabel titleLabel;

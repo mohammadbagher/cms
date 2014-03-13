@@ -10,8 +10,7 @@
  */
 package GUI.label;
 
-import exceptions.DuplicatedValueException;
-import javax.swing.JLabel;
+import GUI.utility.ScrollableListPanel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import label.BooleanLabelType;
@@ -31,6 +30,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
             
     private Label label;
     private LabelListManagementFrame labelListManagementFrame;
+    private ScrollableListPanel labelValueScrollPane;
     private int mod = MOD_NEW;
 
     /** Creates new form MainFrame
@@ -50,22 +50,11 @@ public class NewLabelFrame extends javax.swing.JFrame {
             this.label.setType(new StringLabelType());
         }else
             this.label = label;
+        labelValueScrollPane = new ScrollableListPanel("مقدار");
         initComponents();
         loadLabelVauleComponents();
+        getContentPane().add(labelValueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 270, 190));
     }
-    
-    /** Creates new form MainFrame */
-//    public NewLabelFrame() {
-//        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch(Exception e) {
-//          System.out.println("Error setting native LAF: " + e);
-//        }
-//        initComponents();
-//        label = new Label();
-//        label.setType(new StringLabelType());
-//        loadLabelVauleComponents();
-//    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -89,11 +78,6 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         addValueButton = new javax.swing.JButton();
         labelNameTextField = new javax.swing.JTextField();
-        labelValueScrollPane = new javax.swing.JScrollPane();
-        labelValuesPanel = new javax.swing.JPanel();
-        headerPanel = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -215,43 +199,12 @@ public class NewLabelFrame extends javax.swing.JFrame {
         });
         getContentPane().add(labelNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 150, -1));
 
-        labelValueScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        labelValuesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        headerPanel.setBackground(new java.awt.Color(160, 196, 255));
-        headerPanel.setLayout(null);
-
-        jLabel19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("ردیف");
-        headerPanel.add(jLabel19);
-        jLabel19.setBounds(210, 0, 40, 30);
-
-        jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("مقدار");
-        headerPanel.add(jLabel20);
-        jLabel20.setBounds(0, 0, 210, 30);
-
-        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
-
-        labelValueScrollPane.setViewportView(labelValuesPanel);
-
-        getContentPane().add(labelValueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 270, 190));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loadLabelVauleComponents(){
-        labelValuesPanel.removeAll();
-        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
-        int dep = 30;
-        int index = 1;
-        for(Object object :label.getValues()){
-            labelValuesPanel.add(new LabelValuePanel(new Integer(index++).toString(), object.toString(), new java.awt.Color(254, 254, 254)), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 270, 30));
-            dep += 30;
-        }
+        labelValueScrollPane.reloadValues(label.getValues());
+        
         if(label != null && label.getType() != null){
             System.out.println(label.getName());
             if(label.getType().getTypeName().equals("String"))
@@ -322,59 +275,19 @@ public class NewLabelFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_labelNameTextFieldActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//
-//            public void run() {
-//                new NewLabelFrame().setVisible(true);
-//            }
-//        });
-//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addValueButton;
     private javax.swing.JRadioButton booleanRadioButton;
     private javax.swing.JRadioButton doubleRadioButton;
-    private javax.swing.JPanel headerPanel;
     private javax.swing.JRadioButton intRadioButton;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JTextField labelNameTextField;
     private javax.swing.ButtonGroup labelTypeButtonGroup;
-    private javax.swing.JScrollPane labelValueScrollPane;
     private javax.swing.JTextField labelValueTextField;
-    private javax.swing.JPanel labelValuesPanel;
     private javax.swing.JButton saveLabelButton;
     private javax.swing.JRadioButton stringRadioButton;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
-}
-
-class LabelValuePanel extends javax.swing.JPanel{
-
-    public LabelValuePanel(String number, String value, java.awt.Color color) {
-        super();
-        this.setBackground(new java.awt.Color(254, 254, 254));
-        this.setLayout(null);
-        JLabel numberLabel = new JLabel();
-        numberLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
-        numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        numberLabel.setText(number);
-        this.add(numberLabel);
-        numberLabel.setBounds(210, 0, 40, 30);
-        
-        JLabel valueLabel = new JLabel();
-        valueLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
-        valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        valueLabel.setText(value);
-        this.add(valueLabel);
-        valueLabel.setBounds(0, 0, 210, 30);
-        
-        this.setBackground(color);
-    }
 }
