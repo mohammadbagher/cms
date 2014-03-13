@@ -50,4 +50,9 @@ public class Label {
     public Object[] getValues() {
         return values.toArray();
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

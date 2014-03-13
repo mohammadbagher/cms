@@ -14,6 +14,7 @@ import GUI.utility.ScrollableListPanel;
 import asset.AssetCatalogue;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import label.LabelCatalogue;
 import operation.Operation;
 import operation.OperationCatalogue;
 
@@ -38,12 +39,13 @@ public class NewOperationFrame extends javax.swing.JFrame {
         } catch(Exception e) {
           System.out.println("Error setting native LAF: " + e);
         }
-        labelScrollPane = new ScrollableListPanel("نام برچسب الصاق شده");
-        assetScrollPane = new ScrollableListPanel("نام دارایی");
+        labelScrollPane = new ScrollableListPanel("نام برچسب الصاق شده", true);
+        assetScrollPane = new ScrollableListPanel("نام دارایی", true);
         this.operaionListManagementFrame = operaionListManagementFrame;
         this.operation = new Operation();
         initComponents();
         assetScrollPane.reloadValues(AssetCatalogue.getInstace().getAssets().toArray());
+        labelScrollPane.reloadValues(LabelCatalogue.getInstace().getLabels().toArray());
         getContentPane().add(assetScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 270, 190));
         getContentPane().add(labelScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 270, 190));
     }
