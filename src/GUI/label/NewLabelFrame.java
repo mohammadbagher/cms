@@ -50,7 +50,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
             this.label.setType(new StringLabelType());
         }else
             this.label = label;
-        labelValueScrollPane = new ScrollableListPanel("مقدار");
+        labelValueScrollPane = new ScrollableListPanel("مقدار", false);
         initComponents();
         loadLabelVauleComponents();
         getContentPane().add(labelValueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 270, 190));
