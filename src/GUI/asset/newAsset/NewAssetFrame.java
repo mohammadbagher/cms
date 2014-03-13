@@ -6,6 +6,17 @@
 
 package GUI.asset.newAsset;
 
+import GUI.label.LabelListManagementFrame;
+import GUI.label.NewLabelFrame;
+import asset.Asset;
+import asset.AssetCatalogue;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import label.Label;
+import label.LabelCatalogue;
+
 /**
  *
  * @author bagher
@@ -21,6 +32,8 @@ public class NewAssetFrame extends javax.swing.JFrame {
         newAssetFrame.setEnabledAt(2, false);
         newAssetFrame.setEnabledAt(3, false);
         newAssetFrame.setEnabledAt(4, false);
+        
+        assets.setModel(new javax.swing.JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
     }
 
     /**
@@ -55,7 +68,8 @@ public class NewAssetFrame extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jButton34 = new javax.swing.JButton();
+        addSubAsset = new javax.swing.JButton();
+        assets = new javax.swing.JComboBox();
         humanTab = new javax.swing.JInternalFrame();
         jLabel7 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
@@ -218,8 +232,8 @@ public class NewAssetFrame extends javax.swing.JFrame {
         primaryTabLayout.setVerticalGroup(
             primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(primaryTabLayout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(38, 38, 38)
                 .addGroup(primaryTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel51)
                     .addComponent(assetName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -278,15 +292,23 @@ public class NewAssetFrame extends javax.swing.JFrame {
 
         assetsScrollPane.setViewportView(assetsPanel);
 
-        jButton34.setBackground(new java.awt.Color(60, 0, 91));
-        jButton34.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton34.setForeground(new java.awt.Color(1, 1, 1));
-        jButton34.setText("اضافه کردن زیردارایی");
-        jButton34.setFocusPainted(false);
-        jButton34.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
+        addSubAsset.setBackground(new java.awt.Color(177, 119, 207));
+        addSubAsset.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        addSubAsset.setForeground(new java.awt.Color(1, 1, 1));
+        addSubAsset.setText("اضافه کردن زیردارایی");
+        addSubAsset.setFocusPainted(false);
+        addSubAsset.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        addSubAsset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
+                addSubAssetActionPerformed(evt);
+            }
+        });
+
+        assets.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        assets.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "دارایی مورد نظر را انتخاب کنید" }));
+        assets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assetsActionPerformed(evt);
             }
         });
 
@@ -295,30 +317,35 @@ public class NewAssetFrame extends javax.swing.JFrame {
         subAssetTabLayout.setHorizontalGroup(
             subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subAssetTabLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(subAssetTabLayout.createSequentialGroup()
-                            .addGap(24, 24, 24)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(subAssetTabLayout.createSequentialGroup()
-                            .addGap(98, 98, 98)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(addSubAsset, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(assets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55))
+            .addGroup(subAssetTabLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         subAssetTabLayout.setVerticalGroup(
             subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subAssetTabLayout.createSequentialGroup()
                 .addComponent(jLabel8)
-                .addGap(2, 2, 2)
-                .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                    .addComponent(assetsScrollPane))
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(assets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addSubAsset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(subAssetTabLayout.createSequentialGroup()
+                        .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 9, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         newAssetFrame.addTab("زیردارایی", subAssetTab);
@@ -436,8 +463,8 @@ public class NewAssetFrame extends javax.swing.JFrame {
         humanTabLayout.setVerticalGroup(
             humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(humanTabLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
+                .addComponent(jLabel7)
+                .addGap(125, 125, 125)
                 .addGroup(humanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -526,7 +553,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
         jLabel5.setText("تعریف دارایی جدید - مشخصات دارایی فیزیکی");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         physicalTab.getContentPane().add(jLabel5);
-        jLabel5.setBounds(160, 0, 420, 38);
+        jLabel5.setBounds(140, 0, 420, 38);
 
         buttonGroup5.add(jRadioButton2);
         jRadioButton2.setSelected(true);
@@ -673,10 +700,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
         finalTab.getContentPane().setLayout(finalTabLayout);
         finalTabLayout.setHorizontalGroup(
             finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(finalTabLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel6)
-                .addContainerGap(245, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, finalTabLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -702,6 +725,10 @@ public class NewAssetFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, finalTabLayout.createSequentialGroup()
                         .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(298, 298, 298))))
+            .addGroup(finalTabLayout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(jLabel6)
+                .addGap(0, 274, Short.MAX_VALUE))
         );
         finalTabLayout.setVerticalGroup(
             finalTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -734,7 +761,10 @@ public class NewAssetFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(newAssetFrame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(newAssetFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -835,14 +865,19 @@ public class NewAssetFrame extends javax.swing.JFrame {
     private void assetUIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetUIDFocusLost
         finalAssetUID.setText(assetUID.getText());
     }//GEN-LAST:event_assetUIDFocusLost
-
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton34ActionPerformed
+        
+    private void addSubAssetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubAssetActionPerformed
+        System.out.println(((Asset)assets.getSelectedItem()).getName());
+        this.loadLabelComponents();
+    }//GEN-LAST:event_addSubAssetActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void assetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assetsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -880,8 +915,10 @@ public class NewAssetFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addSubAsset;
     private javax.swing.JTextField assetName;
     private javax.swing.JTextField assetUID;
+    private javax.swing.JComboBox assets;
     private javax.swing.JPanel assetsPanel;
     private javax.swing.JScrollPane assetsScrollPane;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -899,7 +936,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox isComposite;
     private javax.swing.JCheckBox isHuman;
     private javax.swing.JCheckBox isPhysical;
-    private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -947,4 +983,77 @@ public class NewAssetFrame extends javax.swing.JFrame {
     private javax.swing.JInternalFrame primaryTab;
     private javax.swing.JInternalFrame subAssetTab;
     // End of variables declaration//GEN-END:variables
+
+
+
+    void loadLabelComponents() {
+        assetsPanel.removeAll();
+        assetsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+        int dep = 30;
+        int index = 1;
+        Asset asset = (Asset)assets.getSelectedItem();
+//        for(Asset asset :AssetCatalogue.getInstace().getAssets()){
+            assetsPanel.add(new LabelPanel(new Integer(index++).toString(), asset, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 320, 30));
+            dep += 30;
+//        }
+        validate();
+        repaint();
+    }
+}
+
+class LabelPanel extends javax.swing.JPanel{
+
+    public LabelPanel(String number, final Asset asset, final NewAssetFrame newAssetFrame) {
+        super();
+        this.setBackground(new java.awt.Color(254, 254, 254));
+        this.setLayout(null);
+        
+        JLabel numberLabel = new JLabel();
+
+        numberLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numberLabel.setText(number);
+        this.add(numberLabel);
+        numberLabel.setBounds(250, 0, 60, 30);
+        
+        JButton closeButton = new JButton();
+
+        closeButton.setForeground(new java.awt.Color(215, 215, 215));
+        closeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
+        closeButton.setBorder(null);
+        closeButton.setBorderPainted(false);
+        this.add(closeButton);
+        closeButton.setBounds(10, 0, 58, 30);
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssetCatalogue.getInstace().remove(asset);
+                newAssetFrame.loadLabelComponents();
+//                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+//                newLabelFrame.setVisible(true);
+//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            }
+        });
+        
+        JButton editButton = new JButton();
+
+        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+        editButton.setBorderPainted(false);
+        this.add(editButton);
+        editButton.setBounds(90, 0, 50, 30);
+//        editButton.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+////                JFrame newLabelFrame = new NewLabelFrame(asset, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+////                newLabelFrame.setVisible(true);
+////                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+////            }
+//        });
+        
+        JLabel valueLabel = new JLabel();
+
+        valueLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        valueLabel.setText(asset.getName());
+        this.add(valueLabel);
+        valueLabel.setBounds(170, 0, 60, 30);
+    }
 }

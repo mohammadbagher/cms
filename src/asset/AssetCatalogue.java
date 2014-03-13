@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class AssetCatalogue {
     private static AssetCatalogue instance = null;
-    
     private final ArrayList<Asset> assets = new ArrayList<Asset>();
     
     private AssetCatalogue(){
