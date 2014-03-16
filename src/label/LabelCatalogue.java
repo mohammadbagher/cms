@@ -22,31 +22,45 @@ public class LabelCatalogue {
     
     private LabelCatalogue(){
         /*mocking*/
-        int t = 4;
+        int t = 1;
         while(t-- > 0){
             try {
                 Label label = new Label();
-                label.setName("باقر");
-                label.setType(new StringLabelType());
-                label.addVaule("تست");
+                label.setName("صحیح");
+                label.setType(new IntegerLabelType());
+                label.addVaule("۱");
+                label.addVaule("-2");
+                label.addVaule("[-5..-4]");
                 labels.add(label);
             } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
                 Label label = new Label();
-                label.setName("تبریزی");
-                label.setType(new StringLabelType());
-                label.addVaule("تست");
+                label.setName("دودویی");
+                label.setType(new BooleanLabelType());
+                label.addVaule("ندارد");
+                label.addVaule("درست");
                 labels.add(label);
             } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
                 Label label = new Label();
-                label.setName("کوهیخیلی");
+                label.setName("اعشاری");
+                label.setType(new DoubleLabelType());
+                label.addVaule("[1..2]");
+                label.addVaule("3");
+                label.addVaule("-5.5");
+                labels.add(label);
+            } catch (Exception ex) {
+                Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                Label label = new Label();
+                label.setName("رشته");
                 label.setType(new StringLabelType());
-                label.addVaule("تست");
+                label.addVaule("تست می‌شود.");
                 labels.add(label);
             } catch (Exception ex) {
                 Logger.getLogger(LabelCatalogue.class.getName()).log(Level.SEVERE, null, ex);

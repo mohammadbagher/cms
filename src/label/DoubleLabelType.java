@@ -46,10 +46,30 @@ public class DoubleLabelType extends LabelType{
             return new DoubleRange(start, end);
         }
     }
+
+    @Override
+    public boolean inRangeOrEqual(String input, Object value) {
+        System.err.println("input: " + input + ", value = " + value + " " + (value instanceof Double));
+        if(value instanceof Double)
+            return value.equals(Double.parseDouble(input));
+        if(value instanceof DoubleRange){
+            return (((DoubleRange)value).getStart() <= Double.parseDouble(input)) &&
+                    (Double.parseDouble(input) <= ((DoubleRange)value).getEnd());
+        }
+        throw new NumberFormatException();
+    }
 }
 
 class DoubleRange{
     private double start, end;
+    
+    public Double getStart() {
+        return start;
+    }
+
+    public Double getEnd() {
+        return end;
+    }
 
     public DoubleRange(double start, double end) {
         this.start = start;

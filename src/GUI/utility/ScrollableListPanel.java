@@ -6,6 +6,7 @@
 
 package GUI.utility;
 
+import java.util.Vector;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +27,27 @@ public class ScrollableListPanel extends JScrollPane{
     private JLabel jLabel19 = new javax.swing.JLabel();
     private JLabel jLabel20 = new javax.swing.JLabel();
     private ButtonGroup buttonGroup = null;
+    private Object selectedItem;
+    private Vector<Callback> callbacks;
+    
+    public void addCallback(Callback callback){
+        callbacks.add(callback);
+    }
+    
+    void setSelectedItem(Object object){
+        this.selectedItem = object;
+        for(Callback callback: callbacks)
+            callback.trigger();
+    }
+    
+    public Object getSelectedItem(){
+        return selectedItem;
+    }
+    
+    public void deSelect(){
+        selectedItem = null;
+        buttonGroup.clearSelection();
+    }
 
     public ScrollableListPanel(String title, boolean hasButton) {
         super();
@@ -48,11 +70,11 @@ public class ScrollableListPanel extends JScrollPane{
         jLabel20.setBounds(30, 0, 180, 30);
 
         labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
-
         if(hasButton)
             buttonGroup = new ButtonGroup();
-        
         this.setViewportView(labelValuesPanel);
+        
+        callbacks = new Vector<>();
     }
     
     public void reloadValues(Object[] values){
@@ -61,7 +83,7 @@ public class ScrollableListPanel extends JScrollPane{
         int dep = 30;
         int index = 1;
         for(Object object :values){
-            labelValuesPanel.add(new ListItemPanel(new Integer(index++).toString(), object, new java.awt.Color(254, 254, 254), buttonGroup),
+            labelValuesPanel.add(new ListItemPanel(new Integer(index++).toString(), object, new java.awt.Color(254, 254, 254), buttonGroup, this),
                     new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 270, 30));
             dep += 30;
         }
@@ -72,7 +94,7 @@ public class ScrollableListPanel extends JScrollPane{
 
 class ListItemPanel extends javax.swing.JPanel{
 
-    public ListItemPanel(String number, Object value, java.awt.Color color, ButtonGroup buttonGroup) {
+    public ListItemPanel(String number, final Object value, java.awt.Color color, ButtonGroup buttonGroup, final ScrollableListPanel list) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -96,6 +118,12 @@ class ListItemPanel extends javax.swing.JPanel{
             JRadioButton radioButton = new JRadioButton();
             radioButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             radioButton.setBounds(0, 0, 30, 30);
+            radioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                list.setSelectedItem(value);
+            }
+        });
             buttonGroup.add(radioButton);
             this.add(radioButton);
         }

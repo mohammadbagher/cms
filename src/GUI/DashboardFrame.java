@@ -11,6 +11,7 @@
 package GUI;
 
 import GUI.asset.AssetListManagementFrame;
+import GUI.asset.addLabel.AssetAttachLabelFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
 import javax.swing.JFrame;
@@ -187,7 +188,9 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_operationManagementButtonActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        JFrame frame = new AssetAttachLabelFrame();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void assetManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetManagementButtonActionPerformed

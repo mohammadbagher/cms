@@ -30,5 +30,14 @@ public class BooleanLabelType extends LabelType{
             return false;
         throw new NumberFormatException();
     }
+
+    @Override
+    public boolean inRangeOrEqual(String input, Object value) {
+        if(input.equals("true") || input.equals("درست") || input.equals("دارد") || input.equals("1") || input.equals("۱"))
+            return value.equals(true);
+        if(input.equals("false") || input.equals("نادرست") || input.equals("ندارد") || input.equals("0") || input.equals("۰"))
+            return value.equals(false);
+        throw new NumberFormatException();
+    }
     
 }

@@ -45,15 +45,36 @@ public class IntegerLabelType extends LabelType{
             return new IntegerRange(start, end);
         }
     }
+
+    @Override
+    public boolean inRangeOrEqual(String input, Object value) {
+        if(value instanceof Integer)
+            return value.equals(Integer.parseInt(input));
+        if(value instanceof IntegerRange){
+            return (((IntegerRange)value).getStart() <= Integer.parseInt(input)) &&
+                    (Integer.parseInt(input) <= ((IntegerRange)value).getEnd());
+        }
+        throw new NumberFormatException();
+    }
 }
 
 class IntegerRange{
+    
     private Integer start, end;
+    
+    public Integer getStart() {
+        return start;
+    }
+
+    public Integer getEnd() {
+        return end;
+    }
 
     public IntegerRange(Integer start, Integer end) {
         this.start = start;
         this.end = end;
     }
+    
 
     @Override
     public String toString() {

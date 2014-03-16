@@ -14,9 +14,6 @@ public abstract class LabelType {
     public abstract String getTypeName();
     public abstract Boolean isDiscrete();
     public abstract Object convertValue(String value);
+    public abstract boolean inRangeOrEqual(String input, Object value);
 //    abstract boolean isGreater(Object o1, Object o2);
 }
-
-//class BooleanLabelType extends LabelType{
-//    
-//}

@@ -6,6 +6,8 @@
 package asset;
 
 import java.util.ArrayList;
+import java.util.Vector;
+import label.AttachedLabel;
 
 /**
  *
@@ -20,6 +22,19 @@ public class Asset {
     private boolean isComposite;
     private boolean isPlace;
     private boolean isPhysical;
+    private Vector<AttachedLabel> attachedLabels;
+
+    public Asset() {
+        attachedLabels = new Vector<>();
+    }
+    
+    public AttachedLabel[] getAttachedLabels(){
+        return attachedLabels.toArray(new AttachedLabel[0]);
+    }
+    
+    public void attachLable(AttachedLabel attachedLabel){
+        attachedLabels.add(attachedLabel);
+    }
     
     public String getUID() {
         return UID;

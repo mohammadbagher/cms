@@ -25,4 +25,11 @@ public class StringLabelType extends LabelType{
     public Object convertValue(String value) {
         return value;
     }
+
+    @Override
+    public boolean inRangeOrEqual(String input, Object value) {
+        if(input.equals(value))
+            return true;
+        return false;
+    }
 }

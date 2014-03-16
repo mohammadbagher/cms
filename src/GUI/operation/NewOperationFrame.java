@@ -10,10 +10,13 @@
  */
 package GUI.operation;
 
+import GUI.utility.Callback;
 import GUI.utility.ScrollableListPanel;
+import asset.Asset;
 import asset.AssetCatalogue;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import label.AttachedLabel;
 import label.LabelCatalogue;
 import operation.Operation;
 import operation.OperationCatalogue;
@@ -45,7 +48,14 @@ public class NewOperationFrame extends javax.swing.JFrame {
         this.operation = new Operation();
         initComponents();
         assetScrollPane.reloadValues(AssetCatalogue.getInstace().getAssets().toArray());
-        labelScrollPane.reloadValues(LabelCatalogue.getInstace().getLabels().toArray());
+        assetScrollPane.addCallback(new Callback() {
+            @Override
+            public void trigger() {
+                Asset asset = (Asset)assetScrollPane.getSelectedItem();
+                if(asset != null)
+                    labelScrollPane.reloadValues(asset.getAttachedLabels());
+            }
+        });
         getContentPane().add(assetScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 270, 190));
         getContentPane().add(labelScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 270, 190));
     }
@@ -114,10 +124,25 @@ public class NewOperationFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "برای عملیات نامی انتخاب نشده است.", "خطا", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        if(assetScrollPane.getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "دارایی انتخاب نشده است.", "خطا", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(labelScrollPane.getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "برچسب الصاق شده انتخاب نشده است.", "خطا", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        operation.setAsset((Asset)assetScrollPane.getSelectedItem());
+        operation.setAttachedLabel((AttachedLabel)labelScrollPane.getSelectedItem());
         operation.setName(operationNameTextField.getText());
         OperationCatalogue.getInstace().addOperation(operation);
+        JOptionPane.showMessageDialog(null, "عملیات با موفقیت تعریف شد.", "", JOptionPane.INFORMATION_MESSAGE);
+        
+        //clear
         operation = new Operation();
         operationNameTextField.setText("");
+        assetScrollPane.deSelect();
+        labelScrollPane.deSelect();
         operaionListManagementFrame.loadOperationComponents();
     }//GEN-LAST:event_saveOperationButtonActionPerformed
 

@@ -6,7 +6,6 @@
 
 package label;
 
-import exceptions.DuplicatedValueException;
 import java.util.Vector;
 
 /**
@@ -36,10 +35,18 @@ public class Label {
         this.type = type;
     }
     
+    public boolean isValidValue(String input){
+        for(Object value: values){
+            try {
+                if(type.inRangeOrEqual(input, value))
+                    return true;
+            } catch (Exception e) {}
+        }
+        return false;
+    }
+    
     public void addVaule(String value) throws Exception {
         Object o = type.convertValue(value);
-//        if(values.indexOf(o) != -1)
-//            throw new DuplicatedValueException();
         values.add(o);
     }
     
