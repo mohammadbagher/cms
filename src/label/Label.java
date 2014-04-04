@@ -6,6 +6,7 @@
 
 package label;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Vector;
 import rule.ApplyRule;
@@ -14,12 +15,12 @@ import rule.ApplyRule;
  *
  * @author ali
  */
-public class Label {
+public class Label  implements Serializable{
 
     private String name;
     private Vector<Object> values;
     private LabelType type;
-    private ArrayList<ApplyRule> rules;
+    private ArrayList<ApplyRule> rules = new ArrayList<ApplyRule>();
     
     public String getName() {
         return name;
@@ -41,6 +42,7 @@ public class Label {
     public boolean isValidValue(String input){
         for(Object value: values){
             try {
+                System.out.println(type);
                 if(type.inRangeOrEqual(input, value))
                     return true;
             } catch (Exception e) {}

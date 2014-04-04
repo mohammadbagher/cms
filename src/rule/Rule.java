@@ -5,11 +5,13 @@
  */
 package rule;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bagher
  */
-public class Rule {
+public class Rule  implements Serializable{
 
     private String comment;
     private int type;

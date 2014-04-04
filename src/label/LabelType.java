@@ -6,11 +6,13 @@
 
 package label;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ali
  */
-public abstract class LabelType {
+public abstract class LabelType  implements Serializable{
     public abstract String getTypeName();
     public abstract Boolean isDiscrete();
     public abstract Object convertValue(String value);

@@ -5,7 +5,8 @@
  */
 package GUI.rule;
 
-
+import GUI.asset.addLabel.AssetAttachLabelFrame;
+import GUI.asset.newAsset.NewAssetFrame;
 import asset.Asset;
 import asset.AssetCatalogue;
 import javax.swing.JOptionPane;
@@ -20,14 +21,18 @@ import rule.*;
 public class ApplyRuleForm extends javax.swing.JFrame {
 
     private final Asset inMeasureAsset;
-    private final int mode;
+    private int mode = 1;
     public static final int MOD_NEW = 1;
     public static final int MOD_UPDATE = 2;
+    public static final int MOD_LABEL = 3;
     private ApplyRule apr;
+    private NewAssetFrame newAssetFrame;
+    private AssetAttachLabelFrame attachLabelFrame;
 
-    public ApplyRuleForm(Asset inMeasureAsset, int mode) {
+    public ApplyRuleForm(Asset inMeasureAsset, int mode, NewAssetFrame newAssetFrame) {
         this.mode = mode;
         initComponents();
+        this.newAssetFrame = newAssetFrame;
         this.inMeasureAsset = inMeasureAsset;
         inMeasureProperty.doClick();
         baseProperty.doClick();
@@ -45,14 +50,14 @@ public class ApplyRuleForm extends javax.swing.JFrame {
 
         this.inMeasureAsset = applyRuleForm.getInMeasureAsset();
         baseAsset.setSelectedItem(applyRuleForm.getBaseAsset());
-        if (applyRuleForm.getInMeasurePropertyNumber() == 0) {
+        if (applyRuleForm.getInMeasurePropertyNumber() == -1) {
             inMeasureProperty.doClick();
             inMeasureData.setSelectedIndex(applyRuleForm.getInMeasurePropertyNumber());
         } else {
             inMeasureLabel.doClick();
             inMeasureData.setSelectedItem(applyRuleForm.getInMeasureLabel());
         }
-        if (applyRuleForm.getBasePropertyNumber() == 0) {
+        if (applyRuleForm.getBasePropertyNumber() == -1) {
             baseProperty.doClick();
             baseData.setSelectedIndex(applyRuleForm.getBasePropertyNumber());
         } else {
@@ -63,6 +68,22 @@ public class ApplyRuleForm extends javax.swing.JFrame {
 
         inMeasureAssetName.setText(inMeasureAsset.getName());
 
+    }
+
+    public ApplyRuleForm(Asset asset, Label label, int mode, AssetAttachLabelFrame alf) {
+        initComponents();
+        this.mode = mode;
+        this.attachLabelFrame =alf;
+        this.inMeasureAsset = asset;
+        inMeasureLabel.setSelected(true);
+        inMeasureLabel.setEnabled(false);
+        inMeasureProperty.setEnabled(false);
+        baseProperty.doClick();
+        inMeasureAssetName.setText(inMeasureAsset.getName());
+        Label[] imMeasureL = {label};
+        inMeasureData.setModel(new JComboBox<Label>(imMeasureL).getModel());
+        baseAsset.setModel(new JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
+        rulesComboBox.setModel(new JComboBox<Rule>(ConsistencyRules.getInstance().getRules().toArray(new Rule[ConsistencyRules.getInstance().getRules().size()])).getModel());
     }
 
     /**
@@ -388,6 +409,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         if (mode == MOD_NEW) {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
             if (inMeasureProperty.isSelected() && baseProperty.isSelected()) {
+                System.out.print(inMeasureData.getSelectedIndex());
                 inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
@@ -396,58 +418,81 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 }
             } else if (inMeasureProperty.isSelected() && baseLabel.isSelected()) {
                 Label selectedBaseLabel = (Label) baseData.getSelectedItem();
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), 0, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), 0, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
                 }
             } else if (baseProperty.isSelected() && inMeasureLabel.isSelected()) {
                 Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, 0, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, 0, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
                 }
             } else if (baseLabel.isSelected() && inMeasureLabel.isSelected()) {
                 Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
                 Label selectedBaseLabel = (Label) baseData.getSelectedItem();
 
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, 0, 0, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, 0, 0, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
             }
-        } else {
+            this.newAssetFrame.loadRuleLabelComponnets();
+        } else if (mode == MOD_UPDATE) {
             if (apr == null) {
                 this.dispose();
                 JOptionPane.showMessageDialog(null, "مشکلی در بروزرسانی دارایی پیش‌آمده است.", "خطا", JOptionPane.ERROR_MESSAGE);
                 return;
-            }else{
-                apr.setBaseAsset((Asset)baseAsset.getSelectedItem());
+            } else {
+                apr.setBaseAsset((Asset) baseAsset.getSelectedItem());
                 apr.setInMeasureAsset(inMeasureAsset);
-                if(baseProperty.isSelected()){
+                if (baseProperty.isSelected()) {
                     apr.setBasePropertyNumber(baseData.getSelectedIndex());
                     apr.setBaseLabel(null);
-                }else{
-                    apr.setBasePropertyNumber(0);
-                    apr.setBaseLabel((Label)baseData.getSelectedItem());
+                } else {
+                    apr.setBasePropertyNumber(-1);
+                    apr.setBaseLabel((Label) baseData.getSelectedItem());
                 }
-                if(inMeasureProperty.isSelected()){
+                if (inMeasureProperty.isSelected()) {
                     apr.setInMeasurePropertyNumber(inMeasureData.getSelectedIndex());
                     apr.setInMeasureLabel(null);
-                }else{
-                    apr.setInMeasurePropertyNumber(0);
-                    apr.setInMeasureLabel((Label)inMeasureData.getSelectedItem());
+                } else {
+                    apr.setInMeasurePropertyNumber(-1);
+                    apr.setInMeasureLabel((Label) inMeasureData.getSelectedItem());
                 }
                 apr.setRule(rulesComboBox.getSelectedIndex());
             }
+            this.newAssetFrame.loadRuleLabelComponnets();
+        } else if (mode == MOD_LABEL) {
+            Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
+            if (baseProperty.isSelected()) {
+                //TODO improve adding applyrule
+                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+
+                } else {
+                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                }
+            } else if (baseLabel.isSelected()) {
+                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
+                Label selectedBaseLabel = (Label) baseData.getSelectedItem();
+
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+            }
+            this.attachLabelFrame.loadRuleLabelComponnets();
         }
 
         this.dispose();
         if (this.mode == MOD_NEW) {
             JOptionPane.showMessageDialog(null, "قانون مورد نظر شما با موفقیت ثبت شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
-        } else {
+        } else if (mode == MOD_UPDATE) {
             JOptionPane.showMessageDialog(null, "قانون مورد نظر با موفقیت بروزرسانی شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
+        } else if (mode == MOD_LABEL) {
+            JOptionPane.showMessageDialog(null, "قانون مورد نظر شما با موفقیت ثبت شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_saveRuleActionPerformed
 
@@ -501,41 +546,41 @@ public class ApplyRuleForm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Asset asset = new Asset();
-                asset.setName("منم منم");
-                asset.setUID("manam manam");
-                new ApplyRuleForm(asset, 1).setVisible(true);
-
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(ApplyRuleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                Asset asset = new Asset();
+//                asset.setName("منم منم");
+//                asset.setUID("manam manam");
+//                new ApplyRuleForm(asset, 1).setVisible(true);
+//
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox baseAsset;

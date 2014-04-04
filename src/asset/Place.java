@@ -6,11 +6,13 @@
 
 package asset;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bagher
  */
-public class Place {
+public class Place implements Serializable{
     double east;
     double north;
     

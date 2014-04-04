@@ -14,9 +14,7 @@ import asset.AssetCatalogue;
 import asset.Human;
 import asset.Place;
 import gis.GISInfo;
-import java.awt.Color;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import label.Label;
 //import javax.swing.JFrame;
@@ -24,10 +22,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.WindowConstants;
-import javax.swing.border.Border;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import rule.ConsistencyRules;
+import rule.ApplyRule;
 //import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 //import label.Label;
 //import label.LabelCatalogue;
@@ -1086,12 +1084,18 @@ public class NewAssetFrame extends javax.swing.JFrame {
 
     private void assetNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetNameFocusLost
         finalAssetName.setText(assetName.getText());
-//        finalAsset.setName(assetName.getText());
+        if (mode == MOD_NEW) {
+            finalAsset.setName(assetName.getText());
+        }
         subAssetTree.repaint();
+        loadRuleLabelComponnets();
     }//GEN-LAST:event_assetNameFocusLost
 
     private void assetUIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetUIDFocusLost
         finalAssetUID.setText(assetUID.getText());
+        if (mode == MOD_NEW) {
+            finalAsset.setUID(assetUID.getText());
+        }
 //        finalAsset.setUID(assetUID.getText());
 //        loadLabelComponents();
         setPlace();
@@ -1214,7 +1218,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_noDocActionPerformed
 
     private void addRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRuleActionPerformed
-        ApplyRuleForm arf = new ApplyRuleForm(finalAsset,ApplyRuleForm.MOD_NEW);
+        ApplyRuleForm arf = new ApplyRuleForm(finalAsset, ApplyRuleForm.MOD_NEW, this);
         arf.setVisible(true);
         arf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_addRuleActionPerformed
@@ -1353,7 +1357,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
     }
 
     void loadLabelComponents() {
-
         rootAsset = new DefaultMutableTreeNode(finalAsset);
         for (int i = 0; i < subAssets.size(); i++) {
             rootAsset.add(new DefaultMutableTreeNode(subAssets.get(i)));
@@ -1362,25 +1365,26 @@ public class NewAssetFrame extends javax.swing.JFrame {
         subAssetTree.setModel(treeModel);
         assetsPanel.removeAll();
         assetsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
-        ///////////////////////////
-        rulePanel.removeAll();
-        rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
-        int ruleDep = 30;
-        int ruleIndex = 1;
-        for (rule.ApplyRule apr: ConsistencyRules.getInstance().getApplyRules()){
-            rulePanel.add(new RuleLabelPanel(new Integer(ruleIndex++).toString(),apr.getInMeasureAsset(),apr.getBaseAsset(), apr.getInMeasurePropertyNumber(),apr.getBasePropertyNumber(),apr.getInMeasureLabel(),apr.getBaseLabel(),apr.getRule(),this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, ruleDep, 780, 30));
-            ruleDep += 30;
-        }
-        ///////////////////////////
         int dep = 30;
         int index = 1;
         for (Asset asset : subAssets) {
             assetsPanel.add(new LabelPanel(new Integer(index++).toString(), asset, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 320, 30));
             dep += 30;
         }
-        
+
         validate();
         repaint();
+    }
+
+    public void loadRuleLabelComponnets() {
+        rulePanel.removeAll();
+        rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
+        int ruleDep = 30;
+        int ruleIndex = 1;
+        for (rule.ApplyRule apr : finalAsset.getRules()) {
+            rulePanel.add(new RuleLabelPanel(new Integer(ruleIndex++).toString(), apr, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, ruleDep, 780, 30));
+            ruleDep += 30;
+        }
     }
 
     void setPlace() {
@@ -1464,17 +1468,26 @@ class LabelPanel extends javax.swing.JPanel {
 
 class RuleLabelPanel extends javax.swing.JPanel {
 
-    public RuleLabelPanel(String number, Asset inMeasureAsset, Asset baseAsset, int inMeasureProperty, int baseProperty, Label inMeasureLabel, Label baseLabel, int rule, final NewAssetFrame newAssetFrame) {
+    public RuleLabelPanel(String number, ApplyRule apr, final NewAssetFrame newAssetFrame) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
+
+        Asset inMeasureAsset = apr.getInMeasureAsset();
+        Asset baseAsset = apr.getBaseAsset();
+        int inMeasureProperty = apr.getInMeasurePropertyNumber();
+        int baseProperty = apr.getBasePropertyNumber();
+        Label inMeasureLabel = apr.getInMeasureLabel();
+        Label baseLabel = apr.getBaseLabel();
+        int rule = apr.getRule();
+
         //1
         JLabel numberLabel = new JLabel();
 
         numberLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numberLabel.setText(number);
-        
+
         this.add(numberLabel);
         numberLabel.setBounds(740, 0, 40, 30);
 //        numberLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
@@ -1494,7 +1507,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
 
         inMeasureTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         inMeasureTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        if (inMeasureProperty == 0) {
+        if (inMeasureProperty == -1) {
             inMeasureTextLabel.setText(inMeasureLabel.getName());
         } else {
             inMeasureTextLabel.setText(Asset.getPropertyComment(inMeasureProperty));
@@ -1528,7 +1541,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
 
         baseTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         baseTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        if (baseProperty == 0) {
+        if (baseProperty == -1) {
             baseTextLabel.setText(baseLabel.getName());
         } else {
             baseTextLabel.setText(Asset.getPropertyComment(baseProperty));

@@ -9,13 +9,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author bagher
  */
-public class GISInfo {
+public class GISInfo implements Serializable{
     private static GISInfo gisInfo;
     public ArrayList<LocationInfo> locations = new ArrayList<LocationInfo>();
     private GISInfo() {

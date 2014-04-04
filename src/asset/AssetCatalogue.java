@@ -3,58 +3,65 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package asset;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+
 /**
  *
  * @author bagher
  */
-public class AssetCatalogue {
+public class AssetCatalogue implements Serializable {
+
     private static AssetCatalogue instance = null;
-    private final ArrayList<Asset> assets = new ArrayList<Asset>();    
-    
-    
-    private AssetCatalogue(){
+    private final ArrayList<Asset> assets = new ArrayList<Asset>();
+
+    private AssetCatalogue() {
         /*mocking*/
-        int t = 5;
-        while(t-- > 0){
-            Asset asset = new Asset();
-            asset.setName("علی");
-            asset.setUID("ali"+t);
-            assets.add(asset);
-            asset = new Asset();
-            asset.setName("چشمه");
-            asset.setUID("cheshme"+t);
-            assets.add(asset);
-            asset = new Asset();
-            asset.setName("احمد");
-            asset.setUID("ahmad"+t);
-            assets.add(asset);
-            asset = new Asset();
-            asset.setName("رضا");
-            asset.setUID("reza"+t);
-            assets.add(asset);
-        }
+//        int t = 5;
+//        while(t-- > 0){
+        Asset asset = new Asset();
+        asset.setName("برج آزادی");
+        asset.setUID("tower.azadi");
+        assets.add(asset);
+        asset = new Asset();
+        asset.setName("برج میلاد");
+        asset.setUID("tower.milad");
+        assets.add(asset);
+        asset = new Asset();
+        asset.setName("خیابان آزادی");
+        asset.setUID("street.azadi");
+        assets.add(asset);
+        asset = new Asset();
+        asset.setName("جرثقیل شماره ۱۲۳");
+        asset.setUID("jarsaghil.123");
+        assets.add(asset);
+        asset = new Asset();
+        asset.setName("پایه‌ی جرثقیل شماره ۴۱");
+        asset.setUID("payesaghil.41");
+        assets.add(asset);
+        
+//        }
     }
-    
-    public static AssetCatalogue getInstace(){
-        if(instance == null)
+
+    public static AssetCatalogue getInstace() {
+        if (instance == null) {
             instance = new AssetCatalogue();
+        }
         return instance;
     }
-    
-    public void addOperation(Asset asset){
+
+    public void addOperation(Asset asset) {
         assets.add(asset);
     }
-    
-    public Boolean remove(Asset asset){
+
+    public Boolean remove(Asset asset) {
         return assets.remove(asset);
     }
-    
-    public ArrayList<Asset> getAssets(){
+
+    public ArrayList<Asset> getAssets() {
         return assets;
     }
-    
+
 }

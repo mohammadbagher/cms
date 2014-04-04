@@ -6,9 +6,11 @@
 
 package exceptions;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ali
  */
-public class DuplicatedValueException extends Exception{
+public class DuplicatedValueException extends Exception implements Serializable{
 }

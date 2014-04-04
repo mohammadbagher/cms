@@ -6,11 +6,13 @@
 
 package label;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ali
  */
-public class BooleanLabelType extends LabelType{
+public class BooleanLabelType extends LabelType implements Serializable{
 
     @Override
     public String getTypeName() {

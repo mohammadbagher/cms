@@ -6,13 +6,14 @@
 
 package operation;
 
+import java.io.Serializable;
 import java.util.Vector;
 
 /**
  *
  * @author ali
  */
-public class OperationCatalogue {
+public class OperationCatalogue  implements Serializable{
     
     private static OperationCatalogue instance = null;
     

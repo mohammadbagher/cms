@@ -6,6 +6,7 @@
 
 package label;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,7 +14,7 @@ import java.util.regex.Pattern;
  *
  * @author ali
  */
-public class IntegerLabelType extends LabelType{
+public class IntegerLabelType extends LabelType implements Serializable{
     @Override
     public String getTypeName() {
         return "Integer";

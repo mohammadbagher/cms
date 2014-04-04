@@ -8,13 +8,14 @@ package label;
 
 import asset.Asset;
 import exceptions.DuplicatedValueException;
+import java.io.Serializable;
 import java.util.Vector;
 
 /**
  *
  * @author ali
  */
-public class AttachedLabel {
+public class AttachedLabel implements Serializable{
     private Label label;
     private Asset asset;
     private Vector<String> values;

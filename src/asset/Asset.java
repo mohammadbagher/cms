@@ -5,6 +5,7 @@
  */
 package asset;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Vector;
 import label.AttachedLabel;
@@ -14,7 +15,7 @@ import rule.ApplyRule;
  *
  * @author bagher
  */
-public class Asset {
+public class Asset implements Serializable{
     
     private ArrayList<AttachedLabel> attachedLabels;
     
@@ -204,49 +205,49 @@ public class Asset {
 
     public static String getPropertyComment(int i){
         switch (i){
-            case 1:{
+            case 0:{
                 return assetProperties[0];
             }
-            case 2:{
+            case 1:{
                 return assetProperties[1];
             }
-            case 3:{
+            case 2:{
                 return assetProperties[2];
             }
-            case 4:{
+            case 3:{
                 return assetProperties[3];
             }
-            case 5:{
+            case 4:{
                 return assetProperties[4];
             }
-            case 6:{
+            case 5:{
                 return assetProperties[5];
             }
-            case 7:{
+            case 6:{
                 return assetProperties[6];
             }
-            case 8:{
+            case 7:{
                 return assetProperties[7];
             }
-            case 9:{
+            case 8:{
                 return assetProperties[8];
             }
-            case 10:{
+            case 9:{
                 return assetProperties[9];
             }
-            case 11:{
+            case 10:{
                 return assetProperties[10];
             }
-            case 12:{
+            case 11:{
                 return assetProperties[11];
             }
-            case 13:{
+            case 12:{
                 return assetProperties[12];
             }
-            case 14:{
+            case 13:{
                 return assetProperties[13];
             }
-            case 15:{
+            case 14:{
                 return assetProperties[14];
             }
         }

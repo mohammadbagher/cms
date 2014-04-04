@@ -7,13 +7,14 @@
 package operation;
 
 import asset.Asset;
+import java.io.Serializable;
 import label.AttachedLabel;
 
 /**
  *
  * @author ali
  */
-public class Operation {
+public class Operation  implements Serializable{
     private String name;
     private Asset asset;
     private AttachedLabel attachedLabel;

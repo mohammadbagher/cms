@@ -6,11 +6,14 @@
 
 package label;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ali
  */
-public class StringLabelType extends LabelType{
+public class StringLabelType extends LabelType implements Serializable
+{
     @Override
     public String getTypeName() {
         return "String";

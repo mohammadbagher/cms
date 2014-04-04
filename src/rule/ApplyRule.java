@@ -7,19 +7,20 @@ package rule;
 
 import java.util.ArrayList;
 import asset.Asset;
+import java.io.Serializable;
 import label.Label;
 
 /**
  *
  * @author bagher
  */
-public class ApplyRule {
+public class ApplyRule  implements Serializable{
 
     private int rule;
     private Asset inMeasureAsset;
     private Asset baseAsset;
-    private int inMeasurePropertyNumber = 0;
-    private int basePropertyNumber = 0;
+    private int inMeasurePropertyNumber = -1;
+    private int basePropertyNumber = -1;
     private Label inMeasureLabel;
     private Label baseLabel;
 

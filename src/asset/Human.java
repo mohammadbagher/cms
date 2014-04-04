@@ -6,11 +6,13 @@
 
 package asset;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bagher
  */
-public class Human {
+public class Human implements Serializable{
     String name;
     String familyName;
     int nationalCode;
