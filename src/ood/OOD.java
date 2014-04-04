@@ -23,21 +23,27 @@ public class OOD implements Serializable {
     ArrayList<Asset> assets;
     ArrayList<Label> labels;
     ArrayList<ApplyRule> applyRules;
+    String name;
+    private static OOD ood;
 
     private OOD() {
+        name = "salam";
         assets = AssetCatalogue.getInstace().getAssets();
         labels = LabelCatalogue.getInstace().getLabels();
         applyRules = ConsistencyRules.getInstance().getApplyRules();
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            System.out.println("Error setting native LAF: " + e);
+    public static OOD getInstance() {
+        if (ood == null) {
+            ood = new OOD();
+            return ood;
         }
+        return ood;
+    }
+
+    public void initial(OOD ood) {
+        AssetCatalogue.getInstace().setAssets(ood.assets);
+        LabelCatalogue.getInstace().setLabels(ood.labels);
+        ConsistencyRules.getInstance().setApplyRles(ood.applyRules);
     }
 }

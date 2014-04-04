@@ -59,7 +59,7 @@ public class IntegerLabelType extends LabelType implements Serializable{
     }
 }
 
-class IntegerRange{
+class IntegerRange implements Serializable{
     
     private Integer start, end;
     

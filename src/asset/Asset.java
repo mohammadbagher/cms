@@ -7,7 +7,6 @@ package asset;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Vector;
 import label.AttachedLabel;
 import rule.ApplyRule;
 
@@ -252,5 +251,9 @@ public class Asset implements Serializable{
             }
         }
         return "ویژگی نامعلوم";
+    }
+    
+    public void removeApplyRule(ApplyRule apr ){
+        this.rules.remove(apr);
     }
 }

@@ -24,6 +24,7 @@ import javax.swing.JTree;
 import javax.swing.WindowConstants;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import label.AttachedLabel;
 import rule.ConsistencyRules;
 import rule.ApplyRule;
 //import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
@@ -1468,7 +1469,7 @@ class LabelPanel extends javax.swing.JPanel {
 
 class RuleLabelPanel extends javax.swing.JPanel {
 
-    public RuleLabelPanel(String number, ApplyRule apr, final NewAssetFrame newAssetFrame) {
+    public RuleLabelPanel(String number,final ApplyRule apr, final NewAssetFrame newAssetFrame) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -1574,14 +1575,12 @@ class RuleLabelPanel extends javax.swing.JPanel {
         closeButton.setBounds(5, 0, 50, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //TODO
-                for (int i = 0; i < newAssetFrame.rootAsset.getChildCount(); i++) {
-                    System.out.println(((Asset) ((DefaultMutableTreeNode) newAssetFrame.rootAsset.getChildAt(i)).getUserObject()));
-                }
-//                System.out.println(newAssetFrame.rootAsset.getUserObject());
-
-                newAssetFrame.loadLabelComponents();
-                newAssetFrame.setAssetComboBox(newAssetFrame.allAssetForSubAsset);
+                apr.getInMeasureAsset().removeApplyRule(apr);
+                apr.getBaseAsset().removeApplyRule(apr);
+//                for(AttachedLabel label: apr.getInMeasureAsset().getAttachedLabels()){
+//                    label.
+//                }
+                newAssetFrame.loadRuleLabelComponnets();
 //                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
                 newAssetFrame.setVisible(true);
                 newAssetFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

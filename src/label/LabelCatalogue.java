@@ -18,7 +18,7 @@ public class LabelCatalogue  implements Serializable{
 
     private static LabelCatalogue instance = null;
 
-    private final ArrayList<Label> labels = new ArrayList<Label>();
+    private ArrayList<Label> labels = new ArrayList<Label>();
 
     private LabelCatalogue() {
         /*mocking*/
@@ -85,5 +85,9 @@ public class LabelCatalogue  implements Serializable{
 
     public ArrayList<Label> getLabels() {
         return labels;
+    }
+    
+    public void setLabels(ArrayList<Label>labels){
+        this.labels=labels;
     }
 }

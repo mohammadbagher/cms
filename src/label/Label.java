@@ -8,7 +8,6 @@ package label;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Vector;
 import rule.ApplyRule;
 
 /**
@@ -18,7 +17,7 @@ import rule.ApplyRule;
 public class Label  implements Serializable{
 
     private String name;
-    private Vector<Object> values;
+    private ArrayList<Object> values;
     private LabelType type;
     private ArrayList<ApplyRule> rules = new ArrayList<ApplyRule>();
     
@@ -35,7 +34,7 @@ public class Label  implements Serializable{
     }
 
     public void setType(LabelType type) {
-        values = new Vector<>();
+        values = new ArrayList<>();
         this.type = type;
     }
     
@@ -76,4 +75,7 @@ public class Label  implements Serializable{
         this.rules = rules;
     }
     
+    public void remveApplyRule(ApplyRule apr ){
+        this.rules.remove(apr);
+    }
 }

@@ -9,7 +9,7 @@ package label;
 import asset.Asset;
 import exceptions.DuplicatedValueException;
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,10 +18,10 @@ import java.util.Vector;
 public class AttachedLabel implements Serializable{
     private Label label;
     private Asset asset;
-    private Vector<String> values;
+    private ArrayList<String> values;
 
     public AttachedLabel() {
-        values = new Vector<>();
+        values = new ArrayList<>();
     }
     
     public boolean addValue(String value) throws DuplicatedValueException {
@@ -43,7 +43,7 @@ public class AttachedLabel implements Serializable{
     }
 
     public void setLabel(Label label) {
-        values = new Vector<>();
+        values = new ArrayList<>();
         this.label = label;
     }
 

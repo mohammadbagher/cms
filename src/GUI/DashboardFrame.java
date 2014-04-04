@@ -14,29 +14,24 @@ import GUI.asset.AssetListManagementFrame;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
-import asset.AssetCatalogue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
+import java.io.FileInputStream;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import asset.Asset;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import label.Label;
-import label.LabelCatalogue;
-import rule.ApplyRule;
-import rule.ConsistencyRules;
+import java.io.Serializable;
+import ood.OOD;
 
 /**
  *
  * @author Bagher
  */
-public class DashboardFrame extends javax.swing.JFrame {
-
-    
+public class DashboardFrame extends javax.swing.JFrame implements Serializable {
 
     /**
      * Creates new form MainFrame
@@ -55,12 +50,11 @@ public class DashboardFrame extends javax.swing.JFrame {
                 String ObjButtons[] = {"بله", "خیر"};
                 int PromptResult = JOptionPane.showOptionDialog(null, "آیا مطمئن به خروج از برنامه هستید؟", "تایید خروج", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, ObjButtons, ObjButtons[1]);
                 if (PromptResult == JOptionPane.YES_OPTION) {
-    
+                    OOD ood = OOD.getInstance();
                     try {
-
-                        FileOutputStream fout = new FileOutputStream("c:\\address.ser");
+                        FileOutputStream fout = new FileOutputStream("ood.cms");
                         ObjectOutputStream oos = new ObjectOutputStream(fout);
-//                        oos.writeObject();
+                        oos.writeObject(ood);
                         oos.close();
                         System.out.println("Done");
 
@@ -71,6 +65,18 @@ public class DashboardFrame extends javax.swing.JFrame {
                 }
             }
         });
+        
+        try {
+            FileInputStream fin = new FileInputStream("ood.cms");
+            ObjectInputStream oos = new ObjectInputStream(fin);
+            OOD ood = (OOD)oos.readObject();
+            oos.close();
+            ood.initial(ood);
+            System.out.println("Initializaion Done!");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**

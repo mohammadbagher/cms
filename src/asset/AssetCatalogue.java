@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class AssetCatalogue implements Serializable {
 
     private static AssetCatalogue instance = null;
-    private final ArrayList<Asset> assets = new ArrayList<Asset>();
+    private ArrayList<Asset> assets = new ArrayList<Asset>();
 
     private AssetCatalogue() {
         /*mocking*/
@@ -63,5 +63,8 @@ public class AssetCatalogue implements Serializable {
     public ArrayList<Asset> getAssets() {
         return assets;
     }
-
+    
+    public void setAssets(ArrayList<Asset>assets){
+        this.assets=assets;
+    }
 }

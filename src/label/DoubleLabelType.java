@@ -61,7 +61,7 @@ public class DoubleLabelType extends LabelType implements Serializable{
     }
 }
 
-class DoubleRange{
+class DoubleRange implements Serializable{
     private double start, end;
     
     public Double getStart() {

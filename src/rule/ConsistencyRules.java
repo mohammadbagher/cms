@@ -81,4 +81,8 @@ public class ConsistencyRules  implements Serializable{
     public void addApplyRule(ApplyRule apr) {
         this.applyRules.add(apr);
     }
+    
+    public void setApplyRles(ArrayList<ApplyRule> rules){
+        this.applyRules=rules;
+    }
 }
