@@ -8,34 +8,139 @@ package asset;
 import java.util.ArrayList;
 import java.util.Vector;
 import label.AttachedLabel;
+import rule.ApplyRule;
 
 /**
  *
  * @author bagher
  */
 public class Asset {
+    
+    private ArrayList<AttachedLabel> attachedLabels;
+    
+    public final static String[] assetProperties = {
+                                    "انسان بودن",
+                                    "مرکب بودن",
+                                    "مکان‌مند بودن",
+                                    "فیزیکی بودن",
+                                    "بیمه داشتن",
+                                    "سند داشتن",
+                                    "نام",
+                                    "شناسه‌ی یکتا",
+                                    "زیردارایی‌ها",
+                                    "انسان",
+                                    "مکان",
+                                    "وضعیت سند",    
+                                    "توضیح بیمه",    
+                                    "توضیح سند",
+                                    "ویژگی‌های فیزیکی",
+    };
+    
+    private boolean isHuman;        //1
+    private boolean isComposite;    //2
+    private boolean isPlace;        //3
+    private boolean isPhysical;     //4
+    private boolean hasBime;        //5
+    private boolean hasDoc;         //6
+    private String name;            //7
+    private String UID;             //8
+    private ArrayList<Asset> subAssets = new ArrayList<Asset>();    //9
+    private Human human;            //10
+    private Place place;            //11
+    private int docMode;            //12
+    private String bimeComment;     //13
+    private String docComment;      //14
+    private String physicalProperties;//15
+    
+    private ArrayList<ApplyRule> rules = new ArrayList<ApplyRule>();
 
-    private String name;
-    private String UID;
-    private ArrayList<Asset> subAssets = new ArrayList<Asset>();
-    private boolean isHuman;
-    private boolean isComposite;
-    private boolean isPlace;
-    private boolean isPhysical;
-    private Vector<AttachedLabel> attachedLabels;
+    public ArrayList<ApplyRule> getRules() {
+        return rules;
+    }
+
+    public void setRules(ArrayList<ApplyRule> rules) {
+        this.rules = rules;
+    }
+
+    public void setDocMode(int docMode) {
+        this.docMode = docMode;
+    }
+
+    public int getDocMode() {
+        return docMode;
+    }
+
+    public boolean isHasBime() {
+        return hasBime;
+    }
+
+    public boolean isHasDoc() {
+        return hasDoc;
+    }
+
+    public void setHasBime(boolean hasBime) {
+        this.hasBime = hasBime;
+    }
+
+    public void setHasDoc(boolean hasDoc) {
+        this.hasDoc = hasDoc;
+    }
+    
+    public String getBimeComment() {
+        return bimeComment;
+    }
+
+    public void setBimeComment(String bimeComment) {
+        this.bimeComment = bimeComment;
+    }
+
+    public void setDocComment(String docComment) {
+        this.docComment = docComment;
+    }
+
+    public void setPhysicalProperties(String physicalProperties) {
+        this.physicalProperties = physicalProperties;
+    }
+
+    public String getDocComment() {
+        return docComment;
+    }
+
+    public String getPhysicalProperties() {
+        return physicalProperties;
+    }
+    
+    
+    
+    public Human getHuman() {
+        return human;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setHuman(Human human) {
+        this.human = human;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+    
 
     public Asset() {
-        attachedLabels = new Vector<>();
+        attachedLabels = new ArrayList<>();
     }
-    
-    public AttachedLabel[] getAttachedLabels(){
+
+    public AttachedLabel[] getAttachedLabels() {
         return attachedLabels.toArray(new AttachedLabel[0]);
     }
-    
-    public void attachLable(AttachedLabel attachedLabel){
+
+    public void attachLable(AttachedLabel attachedLabel) {
         attachedLabels.add(attachedLabel);
     }
-    
+
     public String getUID() {
         return UID;
     }
@@ -83,12 +188,12 @@ public class Asset {
     public void setIsPhysical(boolean isPhysical) {
         this.isPhysical = isPhysical;
     }
-    
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
 
@@ -96,5 +201,55 @@ public class Asset {
     public String toString() {
         return name;
     }
-    
+
+    public static String getPropertyComment(int i){
+        switch (i){
+            case 1:{
+                return assetProperties[0];
+            }
+            case 2:{
+                return assetProperties[1];
+            }
+            case 3:{
+                return assetProperties[2];
+            }
+            case 4:{
+                return assetProperties[3];
+            }
+            case 5:{
+                return assetProperties[4];
+            }
+            case 6:{
+                return assetProperties[5];
+            }
+            case 7:{
+                return assetProperties[6];
+            }
+            case 8:{
+                return assetProperties[7];
+            }
+            case 9:{
+                return assetProperties[8];
+            }
+            case 10:{
+                return assetProperties[9];
+            }
+            case 11:{
+                return assetProperties[10];
+            }
+            case 12:{
+                return assetProperties[11];
+            }
+            case 13:{
+                return assetProperties[12];
+            }
+            case 14:{
+                return assetProperties[13];
+            }
+            case 15:{
+                return assetProperties[14];
+            }
+        }
+        return "ویژگی نامعلوم";
+    }
 }

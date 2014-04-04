@@ -10,7 +10,7 @@
  */
 package GUI;
 
-import GUI.asset.AssetListManagementFrame;
+import GUI.asset.AssetListManagementFrame1;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
@@ -194,7 +194,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void assetManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetManagementButtonActionPerformed
-        JFrame assetFrame = new AssetListManagementFrame();
+        JFrame assetFrame = new AssetListManagementFrame1();
         assetFrame.setVisible(true);
         assetFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_assetManagementButtonActionPerformed

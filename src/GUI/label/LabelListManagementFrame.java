@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import javax.swing.tree.DefaultMutableTreeNode;
 import label.Label;
 import label.LabelCatalogue;
 
@@ -23,7 +24,6 @@ import label.LabelCatalogue;
  * @author Bagher
  */
 public class LabelListManagementFrame extends javax.swing.JFrame {
-
     /** Creates new form MainFrame */
     public LabelListManagementFrame() {
         try {

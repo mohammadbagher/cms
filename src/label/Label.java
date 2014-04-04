@@ -6,7 +6,9 @@
 
 package label;
 
+import java.util.ArrayList;
 import java.util.Vector;
+import rule.ApplyRule;
 
 /**
  *
@@ -17,7 +19,8 @@ public class Label {
     private String name;
     private Vector<Object> values;
     private LabelType type;
-
+    private ArrayList<ApplyRule> rules;
+    
     public String getName() {
         return name;
     }
@@ -62,4 +65,13 @@ public class Label {
     public String toString() {
         return name;
     }
+
+    public ArrayList<ApplyRule> getRules() {
+        return rules;
+    }
+
+    public void setRules(ArrayList<ApplyRule> rules) {
+        this.rules = rules;
+    }
+    
 }

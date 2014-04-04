@@ -10,7 +10,7 @@
  */
 package GUI.asset.newAsset;
 
-import GUI.asset.AssetListManagementFrame;
+import GUI.asset.AssetListManagementFrame1;
 import GUI.label.*;
 import javax.swing.UIManager;
 import asset.Asset;
@@ -23,10 +23,10 @@ import asset.Asset;
 public class NewAssetFrameStep1 extends javax.swing.JFrame {
 
     private Asset asset;
-    private AssetListManagementFrame assetListManagementFrame;
+    private AssetListManagementFrame1 assetListManagementFrame;
 
     /** Creates new form MainFrame */
-    public NewAssetFrameStep1( AssetListManagementFrame assetListManagementFrame ) {
+    public NewAssetFrameStep1( AssetListManagementFrame1 assetListManagementFrame ) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {

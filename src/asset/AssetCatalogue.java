@@ -13,7 +13,8 @@ import java.util.ArrayList;
  */
 public class AssetCatalogue {
     private static AssetCatalogue instance = null;
-    private final ArrayList<Asset> assets = new ArrayList<Asset>();
+    private final ArrayList<Asset> assets = new ArrayList<Asset>();    
+    
     
     private AssetCatalogue(){
         /*mocking*/
@@ -21,15 +22,19 @@ public class AssetCatalogue {
         while(t-- > 0){
             Asset asset = new Asset();
             asset.setName("علی");
+            asset.setUID("ali"+t);
             assets.add(asset);
             asset = new Asset();
             asset.setName("چشمه");
+            asset.setUID("cheshme"+t);
             assets.add(asset);
             asset = new Asset();
             asset.setName("احمد");
+            asset.setUID("ahmad"+t);
             assets.add(asset);
             asset = new Asset();
             asset.setName("رضا");
+            asset.setUID("reza"+t);
             assets.add(asset);
         }
     }

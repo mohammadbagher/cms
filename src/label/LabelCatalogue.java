@@ -6,7 +6,7 @@
 
 package label;
 
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +18,7 @@ public class LabelCatalogue {
     
     private static LabelCatalogue instance = null;
     
-    private final Vector<Label> labels = new Vector<Label>();
+    private final ArrayList<Label> labels = new ArrayList<Label>();
     
     private LabelCatalogue(){
         /*mocking*/
@@ -82,7 +82,7 @@ public class LabelCatalogue {
         return labels.remove(label);
     }
     
-    public Vector<Label> getLabels(){
+    public ArrayList<Label> getLabels(){
         return labels;
     }
 }
