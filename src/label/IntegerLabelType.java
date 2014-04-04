@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  * @author ali
  */
 public class IntegerLabelType extends LabelType implements Serializable{
+    private static final long serialVersionUID = 1L;
     @Override
     public String getTypeName() {
         return "Integer";
@@ -60,6 +61,7 @@ public class IntegerLabelType extends LabelType implements Serializable{
 }
 
 class IntegerRange implements Serializable{
+    private static final long serialVersionUID = 1L;
     
     private Integer start, end;
     

@@ -15,6 +15,7 @@ import rule.ApplyRule;
  * @author ali
  */
 public class Label  implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private ArrayList<Object> values;

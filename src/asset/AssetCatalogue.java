@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author bagher
  */
 public class AssetCatalogue implements Serializable {
-
+    private static final long serialVersionUID = 1L;
     private static AssetCatalogue instance = null;
     private ArrayList<Asset> assets = new ArrayList<Asset>();
 

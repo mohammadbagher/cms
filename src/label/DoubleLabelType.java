@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  * @author ali
  */
 public class DoubleLabelType extends LabelType implements Serializable{
+    private static final long serialVersionUID = 1L;
     @Override
     public String getTypeName() {
         return "Double";
@@ -62,6 +63,7 @@ public class DoubleLabelType extends LabelType implements Serializable{
 }
 
 class DoubleRange implements Serializable{
+    private static final long serialVersionUID = 1L;
     private double start, end;
     
     public Double getStart() {

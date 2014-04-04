@@ -209,7 +209,9 @@ class OperationPanel extends javax.swing.JPanel{
         triggerButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
+                JFrame newFrame = new TriggerOperationFrame(operation);
+                newFrame.setVisible(true);
+                newFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             }
         });
         

@@ -15,6 +15,7 @@ import label.Label;
  * @author bagher
  */
 public class ApplyRule  implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private int rule;
     private Asset inMeasureAsset;

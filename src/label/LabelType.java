@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author ali
  */
 public abstract class LabelType  implements Serializable{
+    private static final long serialVersionUID = 1L;
     public abstract String getTypeName();
     public abstract Boolean isDiscrete();
     public abstract Object convertValue(String value);

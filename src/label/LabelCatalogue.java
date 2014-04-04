@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  * @author ali
  */
 public class LabelCatalogue  implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private static LabelCatalogue instance = null;
 

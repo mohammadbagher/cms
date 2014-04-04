@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @author bagher
  */
 public class ConsistencyRules  implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private ArrayList<Rule> rules = new ArrayList<>();
     private static ConsistencyRules CR;

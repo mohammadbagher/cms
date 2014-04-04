@@ -75,7 +75,8 @@ public class DashboardFrame extends javax.swing.JFrame implements Serializable {
             System.out.println("Initializaion Done!");
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.err.println("no file to load.");
+//            ex.printStackTrace();
         }
     }
 

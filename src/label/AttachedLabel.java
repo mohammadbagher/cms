@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @author ali
  */
 public class AttachedLabel implements Serializable{
+    private static final long serialVersionUID = 1L;
     private Label label;
     private Asset asset;
     private ArrayList<String> values;
@@ -40,6 +41,10 @@ public class AttachedLabel implements Serializable{
 
     public Label getLabel() {
         return label;
+    }
+    
+    public void clearValues(){
+        values = new ArrayList<>();
     }
 
     public void setLabel(Label label) {

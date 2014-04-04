@@ -16,7 +16,7 @@ import rule.ApplyRule;
  */
 public class Asset implements Serializable{
     
-    private ArrayList<AttachedLabel> attachedLabels;
+    private final ArrayList<AttachedLabel> attachedLabels;
     
     public final static String[] assetProperties = {
                                     "انسان بودن",
@@ -44,7 +44,7 @@ public class Asset implements Serializable{
     private boolean hasDoc;         //6
     private String name;            //7
     private String UID;             //8
-    private ArrayList<Asset> subAssets = new ArrayList<Asset>();    //9
+    private ArrayList<Asset> subAssets = new ArrayList<>();    //9
     private Human human;            //10
     private Place place;            //11
     private int docMode;            //12
@@ -52,7 +52,7 @@ public class Asset implements Serializable{
     private String docComment;      //14
     private String physicalProperties;//15
     
-    private ArrayList<ApplyRule> rules = new ArrayList<ApplyRule>();
+    private ArrayList<ApplyRule> rules = new ArrayList<>();
 
     public ArrayList<ApplyRule> getRules() {
         return rules;

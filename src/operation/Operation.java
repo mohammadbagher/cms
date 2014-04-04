@@ -15,6 +15,7 @@ import label.AttachedLabel;
  * @author ali
  */
 public class Operation  implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String name;
     private Asset asset;
     private AttachedLabel attachedLabel;

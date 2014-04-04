@@ -6,16 +6,12 @@
 
 package GUI.asset.addLabel;
 
-import GUI.asset.newAsset.*;
 import GUI.rule.ApplyRuleForm;
 import GUI.utility.ScrollableListPanel;
 import asset.Asset;
 import asset.AssetCatalogue;
 import exceptions.DuplicatedValueException;
 import java.awt.ComponentOrientation;
-import java.awt.font.TextAttribute;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,7 +20,6 @@ import javax.swing.WindowConstants;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-import javax.swing.tree.DefaultMutableTreeNode;
 import label.AttachedLabel;
 import label.Label;
 import label.LabelCatalogue;

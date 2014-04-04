@@ -14,6 +14,7 @@ import java.util.Vector;
  * @author ali
  */
 public class OperationCatalogue  implements Serializable{
+    private static final long serialVersionUID = 1L;
     
     private static OperationCatalogue instance = null;
     
