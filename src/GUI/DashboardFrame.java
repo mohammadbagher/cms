@@ -16,6 +16,7 @@ import GUI.event.EventManagementFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
 import GUI.report.Report;
+import GUI.snapshop.SnapshotFrame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
@@ -265,7 +266,9 @@ public class DashboardFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_consistencyRuleButtonActionPerformed
 
     private void BaselineManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaselineManagementButtonActionPerformed
-        // TODO add your handling code here:
+        SnapshotFrame s = new SnapshotFrame();
+        s.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        s.setVisible(true);
     }//GEN-LAST:event_BaselineManagementButtonActionPerformed
 
     private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed

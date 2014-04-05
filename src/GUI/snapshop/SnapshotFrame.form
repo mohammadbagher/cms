@@ -117,7 +117,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="520" y="0" width="60" height="30"/>
+                      <AbsoluteConstraints x="500" y="0" width="60" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -131,7 +131,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="410" y="0" width="70" height="30"/>
+                      <AbsoluteConstraints x="360" y="0" width="70" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -159,7 +159,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="250" y="0" width="90" height="30"/>
+                      <AbsoluteConstraints x="170" y="0" width="90" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -169,11 +169,11 @@
                       <Font name="Web Yekan" size="15" style="0"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x631;&#x62f;&#x627;&#x646;&#x62f;&#x646; &#x633;&#x6cc;&#x633;&#x62a;&#x645; &#x628;&#x647; &#x645;&#x628;&#x646;&#x627;"/>
+                    <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x631;&#x62f;&#x627;&#x646;&#x62f;&#x646;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="90" y="0" width="140" height="30"/>
+                      <AbsoluteConstraints x="90" y="0" width="60" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>

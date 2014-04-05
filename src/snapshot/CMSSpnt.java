@@ -6,11 +6,13 @@
 
 package snapshot;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bagher
  */
-public class CMSSpnt {
+public class CMSSpnt implements Serializable{
     String name;
     String time;
     public CMSSpnt(String name,String time){

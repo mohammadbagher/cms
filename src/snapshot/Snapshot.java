@@ -6,21 +6,20 @@
 package snapshot;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 
 /**
  *
  * @author bagher
  */
-public class Snapshot {
+public class Snapshot implements Serializable {
 
     private static Snapshot snpt;
     private ArrayList<CMSSpnt> snapshots = new ArrayList<>();
     private Snapshot() {
-        final File folder = new File("snapshots");
-        listFilesForFolder(folder);
+        
     }
 
     public static void setSnpt(Snapshot snpt) {
@@ -38,12 +37,15 @@ public class Snapshot {
     public ArrayList<CMSSpnt> getSnapshots() {
         return snapshots;
     }
-
-    public static void main(String[] args) {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        System.out.println(timeStamp);
-        new Snapshot();
+    public void addSnapshot(CMSSpnt s){
+        this.snapshots.add(s);
     }
+
+//    public static void main(String[] args) {
+//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+//        System.out.println(timeStamp);
+//        new Snapshot();
+//    }
 
     public void listFilesForFolder(final File folder) {
 //        for (final File fileEntry : folder.listFiles()) {

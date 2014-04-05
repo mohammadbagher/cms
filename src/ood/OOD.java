@@ -16,6 +16,7 @@ import operation.Operation;
 import operation.OperationCatalogue;
 import rule.ApplyRule;
 import rule.ConsistencyRules;
+import snapshot.CMSSpnt;
 
 /**
  *
@@ -28,9 +29,11 @@ public class OOD implements Serializable {
     ArrayList<ApplyRule> applyRules;
     ArrayList<Event> events;
     ArrayList<Operation> operations;
+    ArrayList<CMSSpnt> snapshots;
     private static OOD ood;
 
     private OOD() {
+        snapshots = snapshot.Snapshot.getInstance().getSnapshots();
         assets = AssetCatalogue.getInstace().getAssets();
         labels = LabelCatalogue.getInstace().getLabels();
         applyRules = ConsistencyRules.getInstance().getApplyRules();
@@ -47,6 +50,7 @@ public class OOD implements Serializable {
     }
 
     public void initial(OOD ood) {
+        snapshot.Snapshot.getInstance().setSnapshots(snapshots);
         AssetCatalogue.getInstace().setAssets(ood.assets);
         LabelCatalogue.getInstace().setLabels(ood.labels);
         ConsistencyRules.getInstance().setApplyRles(ood.applyRules);

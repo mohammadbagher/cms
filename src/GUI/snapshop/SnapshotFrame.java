@@ -14,7 +14,9 @@ import GUI.event.EventManagementFrame;
 import GUI.operation.*;
 import asset.Asset;
 import asset.AssetCatalogue;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import ood.OOD;
 import snapshot.CMSSpnt;
 
@@ -29,12 +32,12 @@ import snapshot.CMSSpnt;
  *
  * @author Bagher
  */
-public class Snapshot extends javax.swing.JFrame {
+public class SnapshotFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
      */
-    public Snapshot() {
+    public SnapshotFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
@@ -101,12 +104,12 @@ public class Snapshot extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("ردیف");
-        headerPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 60, 30));
+        headerPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 60, 30));
 
         jLabel26.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("نام مبنا");
-        headerPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 70, 30));
+        headerPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 70, 30));
 
         jLabel31.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -116,12 +119,12 @@ public class Snapshot extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel17.setText("تاریخ ایجاد");
-        headerPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 90, 30));
+        headerPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 90, 30));
 
         jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("بازگرداندن سیستم به مبنا");
-        headerPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 140, 30));
+        jLabel20.setText("بازگرداندن");
+        headerPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 60, 30));
 
         snptsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
 
@@ -136,6 +139,7 @@ public class Snapshot extends javax.swing.JFrame {
         String name = JOptionPane.showInputDialog("نام مبنا را وارد کنید");
         if (name == null) {
             System.out.println("The user canceled");
+            return;
         }
         if (name.equals("")) {
             JOptionPane.showMessageDialog(null, "نام مبنا نمی‌تواند خالی باشد.", "خطا", JOptionPane.ERROR_MESSAGE);
@@ -152,8 +156,8 @@ public class Snapshot extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        snapshot.Snapshot.getInstance().getSnapshots().add(new CMSSpnt(name, timeStamp));
-
+        snapshot.Snapshot.getInstance().addSnapshot(new CMSSpnt(name, timeStamp));
+        loadLabelComponents();
 
 }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -164,7 +168,7 @@ public class Snapshot extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Snapshot().setVisible(true);
+                new SnapshotFrame().setVisible(true);
             }
         });
     }
@@ -184,6 +188,7 @@ public void loadLabelComponents() {
         int dep = 30;
         int index = 1;
         for (CMSSpnt snpt : snapshot.Snapshot.getInstance().getSnapshots()) {
+            System.out.println("saefefewf");
             snptsPanel.add(new LabelPanel(new Integer(index++).toString(), snpt, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 580, 30));
             dep += 30;
         }
@@ -195,7 +200,7 @@ public void loadLabelComponents() {
 
 class LabelPanel extends javax.swing.JPanel {
 
-    public LabelPanel(String number, final snapshot.CMSSpnt snpt, final Snapshot Snapshot) {
+    public LabelPanel(String number, final snapshot.CMSSpnt snpt, final SnapshotFrame snap) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -234,11 +239,12 @@ class LabelPanel extends javax.swing.JPanel {
         closeButton.setBounds(10, 0, 58, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                AssetCatalogue.getInstace().remove(asset);
-                Snapshot.loadLabelComponents();
-//                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
-//                newLabelFrame.setVisible(true);
-//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                snapshot.Snapshot.getInstance().getSnapshots().remove(snpt);
+                snap.loadLabelComponents();
+                snap.setVisible(true);
+                snap.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                validate();
+                repaint();
             }
         });
 
@@ -250,9 +256,18 @@ class LabelPanel extends javax.swing.JPanel {
         actionButton.setBounds(90, 0, 50, 30);
         actionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                JFrame newLabelFrame = new NewAssetFrame(asset, assetListManagementFrame, NewAssetFrame.MOD_UPDATE);
-//                newLabelFrame.setVisible(true);
-//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                try {
+                    FileInputStream fin = new FileInputStream("snapshots/"+snpt.getTime()+".data");
+                    ObjectInputStream oos = new ObjectInputStream(fin);
+                    OOD ood = (OOD) oos.readObject();
+                    oos.close();
+                    ood.initial(ood);
+                    System.out.println("Initializaion Done!");
+                    JOptionPane.showMessageDialog(null, "سیستم به حالت مورد نظر شما با موفقیت بازگردانی شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception ex) {
+                    System.err.println("no file to load. snapshot");
+//            ex.printStackTrace();
+                }
             }
         });
     }
