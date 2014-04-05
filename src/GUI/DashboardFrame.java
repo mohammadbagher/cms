@@ -24,14 +24,13 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import ood.OOD;
 
 /**
  *
  * @author Bagher
  */
-public class DashboardFrame extends javax.swing.JFrame implements Serializable {
+public class DashboardFrame extends javax.swing.JFrame  {
 
     /**
      * Creates new form MainFrame
