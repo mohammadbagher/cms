@@ -5,6 +5,7 @@
  */
 package rule;
 
+import asset.Asset;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -44,14 +45,14 @@ public class ConsistencyRules  implements Serializable{
         rules.add(rule8);
         rules.add(rule9);
         rules.add(rule10);
-//        asset.Asset asset1 = new Asset();
-//        asset.Asset asset2 = new Asset();
-//        asset1.setName("علی");
-//        asset1.setUID("ali.cheshme");
-//        asset2.setName("باقر");
-//        asset2.setUID("bagher.tabriz");
-//        ApplyRule apr = new ApplyRule(asset1, asset2, 1, 1, null, null, 0);
-//        applyRules.add(apr);
+        asset.Asset asset1 = new Asset();
+        asset.Asset asset2 = new Asset();
+        asset1.setName("علی");
+        asset1.setUID("ali.cheshme");
+        asset2.setName("باقر");
+        asset2.setUID("bagher.tabriz");
+        ApplyRule apr = new ApplyRule(asset1, asset2, 1, 1, null, null, 0,1);
+        applyRules.add(apr);
     }
 
     public static ConsistencyRules getInstance() {

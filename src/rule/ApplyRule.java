@@ -171,4 +171,15 @@ public class ApplyRule  implements Serializable{
         }
         return false;
     }
+    public static boolean isIn(ApplyRule apr, ArrayList<ApplyRule> aprs){
+        boolean flag = false;
+        for (ApplyRule applyRule: aprs){
+            if(applyRule.getBaseAsset().getUID().equals(apr.getBaseAsset().getUID()) &&
+                    applyRule.getInMeasureAsset().getUID().equals(apr.getInMeasureAsset().getUID())
+                    ){
+                
+            }
+        }
+    return true;
+    }
 }
