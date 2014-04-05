@@ -41,10 +41,13 @@ public class NewEvent extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
-        jButton24 = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox4 = new javax.swing.JComboBox();
+        eventName = new javax.swing.JTextField();
+        attachedLabels = new javax.swing.JComboBox();
+        operations = new javax.swing.JComboBox();
+        jLabel51 = new javax.swing.JLabel();
+        asset = new javax.swing.JComboBox();
+        jLabel52 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -52,18 +55,16 @@ public class NewEvent extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(50, 50, 750, 500));
         setMinimumSize(new java.awt.Dimension(750, 500));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("تعریف رخداد جدید");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 431, 70));
 
         jButton16.setBackground(new java.awt.Color(60, 0, 91));
         jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton16.setForeground(new java.awt.Color(1, 1, 1));
-        jButton16.setText("افزودن");
+        jButton16.setText("ذخیره");
         jButton16.setFocusPainted(false);
         jButton16.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -71,44 +72,102 @@ public class NewEvent extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 90, 30));
 
         jLabel49.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel49.setText("عملیات مربوطه");
-        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
-
-        jButton24.setBackground(new java.awt.Color(60, 0, 91));
-        jButton24.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(1, 1, 1));
-        jButton24.setText("انصراف");
-        jButton24.setFocusPainted(false);
-        jButton24.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 90, 30));
+        jLabel49.setText("برچسب:");
 
         jLabel50.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel50.setText("نام رخداد");
-        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
+        jLabel50.setText("نام رخداد:");
 
-        jTextField4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField4.setText("آتش");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        eventName.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        eventName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        eventName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                eventNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 140, -1));
 
-        jComboBox4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "عملیات مربوط به آتش", "خطکشی خیابان رودکی", "آبیاری پارک لاله", "عملیات مربوط به سیل", "عملیات مربوط به زلزله" }));
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 140, -1));
+        attachedLabels.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        attachedLabels.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "عملیات مربوط به آتش", "خطکشی خیابان رودکی", "آبیاری پارک لاله", "عملیات مربوط به سیل", "عملیات مربوط به زلزله" }));
+
+        operations.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        operations.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "عملیات مربوط به آتش", "خطکشی خیابان رودکی", "آبیاری پارک لاله", "عملیات مربوط به سیل", "عملیات مربوط به زلزله" }));
+
+        jLabel51.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel51.setText("عملیات مربوطه:");
+
+        asset.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        asset.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "عملیات مربوط به آتش", "خطکشی خیابان رودکی", "آبیاری پارک لاله", "عملیات مربوط به سیل", "عملیات مربوط به زلزله" }));
+
+        jLabel52.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel52.setText("دارایی:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(eventName, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(300, 300, 300)
+                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(asset, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(attachedLabels, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(operations, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(189, 189, 189))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(eventName)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(operations)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(asset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(attachedLabels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,13 +176,9 @@ public class NewEvent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void eventNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_eventNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,13 +192,16 @@ public class NewEvent extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox asset;
+    private javax.swing.JComboBox attachedLabels;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField eventName;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JComboBox operations;
     // End of variables declaration//GEN-END:variables
 }
