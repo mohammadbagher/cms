@@ -30,7 +30,7 @@ import ood.OOD;
  *
  * @author Bagher
  */
-public class DashboardFrame extends javax.swing.JFrame {
+public class DashboardFrame extends javax.swing.JFrame  {
 
     /**
      * Creates new form MainFrame
