@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author bagher
  */
 public class Human implements Serializable{
+    private static final long serialVersionUID = 1L;
     String name;
     String familyName;
     int nationalCode;

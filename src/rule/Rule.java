@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author bagher
  */
 public class Rule  implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private String comment;
     private int type;

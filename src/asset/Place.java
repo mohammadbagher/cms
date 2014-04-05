@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author bagher
  */
 public class Place implements Serializable{
+    private static final long serialVersionUID = 1L;
     double east;
     double north;
     

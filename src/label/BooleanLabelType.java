@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @author ali
  */
 public class BooleanLabelType extends LabelType implements Serializable{
-
+    private static final long serialVersionUID = 1L;
     @Override
     public String getTypeName() {
         return "Boolean";

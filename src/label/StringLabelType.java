@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 public class StringLabelType extends LabelType implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     @Override
     public String getTypeName() {
         return "String";

@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * @author bagher
  */
 public class GISInfo implements Serializable{
+    private static final long serialVersionUID = 1L;
     private static GISInfo gisInfo;
     public ArrayList<LocationInfo> locations = new ArrayList<LocationInfo>();
     private GISInfo() {
