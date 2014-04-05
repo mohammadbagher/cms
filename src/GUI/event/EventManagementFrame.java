@@ -9,9 +9,19 @@
  * Created on Nov 29, 2013, 2:04:52 PM
  */
 package GUI.event;
+import GUI.asset.AssetListManagementFrame;
+import GUI.asset.newAsset.NewAssetFrame;
 import GUI.label.*;
+import asset.Asset;
+import asset.AssetCatalogue;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import javax.swing.UIManager;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -40,7 +50,6 @@ public class EventManagementFrame extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -49,8 +58,6 @@ public class EventManagementFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -78,7 +85,14 @@ public class EventManagementFrame extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
-        jButton23 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        eventsPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -105,20 +119,7 @@ public class EventManagementFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 150, 30));
-
-        jButton8.setBackground(new java.awt.Color(60, 0, 91));
-        jButton8.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(1, 1, 1));
-        jButton8.setText("پیش‌خوان");
-        jButton8.setFocusPainted(false);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 150, 30));
 
         jPanel2.setBackground(new java.awt.Color(205, 205, 205));
         jPanel2.setLayout(null);
@@ -168,18 +169,6 @@ public class EventManagementFrame extends javax.swing.JFrame {
         jLabel14.setText("ردیف");
         jPanel3.add(jLabel14);
         jLabel14.setBounds(490, 0, 60, 40);
-
-        jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("عملیات مربوطه");
-        jPanel3.add(jLabel15);
-        jLabel15.setBounds(290, 0, 90, 40);
-
-        jLabel18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("گزارش وقوع");
-        jPanel3.add(jLabel18);
-        jLabel18.setBounds(100, 0, 90, 40);
 
         jLabel19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -356,18 +345,43 @@ public class EventManagementFrame extends javax.swing.JFrame {
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 550, 30));
         getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, 190));
 
-        jButton23.setBackground(new java.awt.Color(60, 0, 91));
-        jButton23.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(1, 1, 1));
-        jButton23.setText("خروج");
-        jButton23.setFocusPainted(false);
-        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        eventsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        headerPanel.setBackground(new java.awt.Color(160, 196, 255));
+        headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("ردیف");
+        headerPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 60, 30));
+
+        jLabel26.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("نام رخداد");
+        headerPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 70, 30));
+
+        jLabel31.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("حذف");
+        headerPanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("عملیات مربوطه");
+        headerPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 90, 30));
+
+        jLabel18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("گزارش وقوع");
+        headerPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 90, 30));
+
+        eventsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
+
+        jScrollPane2.setViewportView(eventsPanel);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 580, 327));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -376,17 +390,9 @@ public class EventManagementFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -416,18 +422,18 @@ public class EventManagementFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel eventsPanel;
+    private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -444,10 +450,13 @@ public class EventManagementFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
@@ -457,5 +466,86 @@ public class EventManagementFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+    public void loadLabelComponents(){
+        eventsPanel.removeAll();
+        eventsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
+        int dep = 30;
+        int index = 1;
+        for (Asset asset: AssetCatalogue.getInstace().getAssets()) {
+            eventsPanel.add(new LabelPanel(new Integer(index++).toString(), asset, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 580, 30));
+            dep += 30;
+        }
+        validate();
+        repaint();
+    }
+}
+
+class LabelPanel extends javax.swing.JPanel {
+
+    public LabelPanel(String number, final Asset asset, final EventManagementFrame eventManagementFrame) {
+        super();
+        this.setBackground(new java.awt.Color(254, 254, 254));
+        this.setLayout(null);
+
+        JLabel numberLabel = new JLabel();
+
+        numberLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numberLabel.setText(number);
+        this.add(numberLabel);
+        numberLabel.setBounds(500, 0, 70, 30);
+
+        
+        JLabel eventNameLabel = new JLabel();
+
+        eventNameLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        eventNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eventNameLabel.setText(asset.getName());
+        this.add(eventNameLabel);
+        eventNameLabel.setBounds(330, 0, 150, 30);
+        
+        
+        JLabel operationLabel = new JLabel();
+
+        operationLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        operationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        operationLabel.setText(asset.getName());
+        this.add(operationLabel);
+        operationLabel.setBounds(160, 0, 150, 30);
+        
+        
+        JButton closeButton = new JButton();
+
+        closeButton.setForeground(new java.awt.Color(215, 215, 215));
+        closeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/close-24-outside.png"))); // NOI18N
+        closeButton.setBorder(null);
+        closeButton.setBorderPainted(false);
+        this.add(closeButton);
+        closeButton.setBounds(10, 0, 58, 30);
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssetCatalogue.getInstace().remove(asset);
+                eventManagementFrame.loadLabelComponents();
+//                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+//                newLabelFrame.setVisible(true);
+//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            }
+        });
+
+        JButton actionButton = new JButton();
+
+        actionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/action.png"))); // NOI18N
+        actionButton.setBorderPainted(false);
+        this.add(actionButton);
+        actionButton.setBounds(90, 0, 50, 30);
+        actionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                JFrame newLabelFrame = new NewAssetFrame(asset, assetListManagementFrame, NewAssetFrame.MOD_UPDATE);
+//                newLabelFrame.setVisible(true);
+//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            }
+        });
+    }
 }
