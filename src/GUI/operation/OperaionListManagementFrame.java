@@ -94,13 +94,13 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ردیف");
         headerPanel.add(jLabel14);
-        jLabel14.setBounds(250, 0, 60, 30);
+        jLabel14.setBounds(310, 0, 60, 30);
 
         jLabel15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("نام عملیات");
         headerPanel.add(jLabel15);
-        jLabel15.setBounds(170, 0, 60, 30);
+        jLabel15.setBounds(160, 0, 150, 30);
 
         jLabel18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,22 +114,22 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
         headerPanel.add(jLabel19);
         jLabel19.setBounds(0, 0, 80, 30);
 
-        operationsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+        operationsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 30));
 
         operationScrollPane.setViewportView(operationsPanel);
 
-        getContentPane().add(operationScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 320, 270));
+        getContentPane().add(operationScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 370, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     void loadOperationComponents() {
         operationsPanel.removeAll();
-        operationsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+        operationsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 30));
         int dep = 30;
         int index = 1;
         for(Operation operation :OperationCatalogue.getInstace().getOperations()){
-            operationsPanel.add(new OperationPanel(new Integer(index++).toString(), operation, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 320, 30));
+            operationsPanel.add(new OperationPanel(new Integer(index++).toString(), operation, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 370, 30));
             dep += 30;
         }
         validate();
@@ -182,7 +182,7 @@ class OperationPanel extends javax.swing.JPanel{
         numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numberLabel.setText(number);
         this.add(numberLabel);
-        numberLabel.setBounds(250, 0, 60, 30);
+        numberLabel.setBounds(310, 0, 60, 30);
         
         JButton closeButton = new JButton();
 
@@ -191,7 +191,7 @@ class OperationPanel extends javax.swing.JPanel{
         closeButton.setBorder(null);
         closeButton.setBorderPainted(false);
         this.add(closeButton);
-        closeButton.setBounds(10, 0, 58, 30);
+        closeButton.setBounds(0, 0, 80, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +205,7 @@ class OperationPanel extends javax.swing.JPanel{
         triggerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/run.png"))); // NOI18N
         triggerButton.setBorderPainted(false);
         this.add(triggerButton);
-        triggerButton.setBounds(90, 0, 50, 30);
+        triggerButton.setBounds(70, 0, 90, 30);
         triggerButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,6 +221,6 @@ class OperationPanel extends javax.swing.JPanel{
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         valueLabel.setText(operation.getName());
         this.add(valueLabel);
-        valueLabel.setBounds(170, 0, 60, 30);
+        valueLabel.setBounds(160, 0, 150, 30);
     }
 }
