@@ -7,6 +7,9 @@ package asset;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import label.AttachedLabel;
+import label.Label;
+import label.LabelCatalogue;
 
 /**
  *
@@ -18,13 +21,16 @@ public class AssetCatalogue implements Serializable {
     private ArrayList<Asset> assets = new ArrayList<Asset>();
 
     private AssetCatalogue() {
-        /*mocking*/
-//        int t = 5;
-//        while(t-- > 0){
         Asset asset = new Asset();
         asset.setName("برج آزادی");
         asset.setUID("tower.azadi");
         assets.add(asset);
+        ArrayList<Label> labels = LabelCatalogue.getInstace().getLabels();
+        AttachedLabel attachedLabel = new AttachedLabel();
+        attachedLabel.setAsset(asset);
+        attachedLabel.setLabel(labels.get(0));
+        asset.attachLable(attachedLabel);
+        
         asset = new Asset();
         asset.setName("برج میلاد");
         asset.setUID("tower.milad");

@@ -6,6 +6,7 @@
 
 package operation;
 
+import asset.AssetCatalogue;
 import java.io.Serializable;
 import java.util.Vector;
 
@@ -22,18 +23,17 @@ public class OperationCatalogue  implements Serializable{
     
     private OperationCatalogue(){
         /*mocking*/
-        int t = 4;
-        while(t-- > 0){
-            Operation operation = new Operation();
-            operation.setName("باقر");
-            operations.add(operation);
-            operation = new Operation();
-            operation.setName("تبریزی");
-            operations.add(operation);
-            operation = new Operation();
-            operation.setName("کوهی");
-            operations.add(operation);
-        }
+        Operation operation = new Operation();
+        operation.setName("تخریب برج آزادی");
+        operations.add(operation);
+        operation.setAsset(AssetCatalogue.getInstace().getAssets().get(0));
+        operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
+        operation = new Operation();
+        operation.setName("تعمیر برج آزادی");
+        operations.add(operation);
+        operation = new Operation();
+        operation.setName("تشکیل ");
+        operations.add(operation);
     }
     
     public static OperationCatalogue getInstace(){
