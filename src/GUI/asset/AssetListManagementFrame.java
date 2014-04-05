@@ -278,6 +278,7 @@ public class AssetListManagementFrame extends javax.swing.JFrame {
             assetsPanel.add(new LabelPanel(new Integer(index++).toString(), asset, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 460, 30));
             dep += 30;
         }
+        System.err.println("Hi, i'm here realoding asset list data! " + this);
         validate();
         repaint();
     }
