@@ -32,7 +32,7 @@ public class OperationCatalogue  implements Serializable{
         operation.setName("تعمیر برج آزادی");
         operations.add(operation);
         operation = new Operation();
-        operation.setName("تشکیل ");
+        operation.setName("تزئین برج آزادی");
         operations.add(operation);
     }
     

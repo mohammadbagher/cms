@@ -58,7 +58,7 @@ public class NewEvent extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("تعریف رخداد جدید");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 431, 70));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 431, 70));
 
         jButton16.setBackground(new java.awt.Color(60, 0, 91));
         jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -71,12 +71,12 @@ public class NewEvent extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, 30));
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 90, 30));
 
         jLabel49.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel49.setText("عملیات مربوطه");
-        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
+        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
 
         jButton24.setBackground(new java.awt.Color(60, 0, 91));
         jButton24.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -89,12 +89,12 @@ public class NewEvent extends javax.swing.JFrame {
                 jButton24ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 30));
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 90, 30));
 
         jLabel50.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel50.setText("نام رخداد");
-        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
+        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
         jTextField4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -104,11 +104,11 @@ public class NewEvent extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 140, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 140, -1));
 
         jComboBox4.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "عملیات مربوط به آتش", "خطکشی خیابان رودکی", "آبیاری پارک لاله", "عملیات مربوط به سیل", "عملیات مربوط به زلزله" }));
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 140, -1));
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 140, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
