@@ -30,6 +30,7 @@ public class GISInfo implements Serializable{
             while ((line = br.readLine()) != null) {
                 // use comma as separator
                 String[] location = line.split(cvsSplitBy);
+                System.out.println(line);
                 System.out.println("Asset [N= " + location[1] + " , E=" + location[2] + "]");
                 locations.add(new LocationInfo(location[0], Double.parseDouble(location[1]), Double.parseDouble(location[2])));
             }

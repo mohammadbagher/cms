@@ -442,11 +442,13 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
         rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
         int ruleDep = 30;
         int ruleIndex = 1;
-        AttachedLabel label = (AttachedLabel)labelScrollPane.getSelectedItem();
-        for (rule.ApplyRule apr : label.getRules()) {
+        
+        for (rule.ApplyRule apr : attachedLabel.getRules()) {
             rulePanel.add(new RuleLabelPanel(new Integer(ruleIndex++).toString(),apr, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, ruleDep, 780, 30));
             ruleDep += 30;
         }
+        validate();
+        repaint();
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -483,7 +485,7 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
 
 class RuleLabelPanel extends javax.swing.JPanel {
 
-    public RuleLabelPanel(String number, ApplyRule apr, final AssetAttachLabelFrame attachLabelFrame) {
+    public RuleLabelPanel(String number,final ApplyRule apr, final AssetAttachLabelFrame attachLabelFrame) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -565,21 +567,6 @@ class RuleLabelPanel extends javax.swing.JPanel {
         }
         this.add(baseTextLabel);
         baseTextLabel.setBounds(120, 0, 110, 30);
-//        baseTextLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-
-//        JButton editButton = new JButton();
-//
-//        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-//        editButton.setBorderPainted(false);
-//        this.add(editButton);
-//        editButton.setBounds(60, 0, 50, 30);
-//        editButton.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-////                JFrame newLabelFrame = new NewLabelFrame(asset, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
-////                newLabelFrame.setVisible(true);
-////                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-//            }
-//        });
 
         JButton closeButton = new JButton();
 
@@ -591,15 +578,16 @@ class RuleLabelPanel extends javax.swing.JPanel {
         closeButton.setBounds(5, 0, 50, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //TODO
-//                for (int i = 0; i < newAssetFrame.rootAsset.getChildCount(); i++) {
-//                    System.out.println(((Asset) ((DefaultMutableTreeNode) newAssetFrame.rootAsset.getChildAt(i)).getUserObject()));
+//                apr.getInMeasureAsset().removeApplyRule(apr);
+//                apr.getBaseAsset().removeApplyRule(apr);
+                apr.getInMeasureLabel().remveApplyRule(apr);
+//                for(AttachedLabel label: apr.getInMeasureAsset().getAttachedLabels()){
+//                    label.
 //                }
-////                System.out.println(newAssetFrame.rootAsset.getUserObject());
-//
-//                newAssetFrame.loadLabelComponents();
-//                newAssetFrame.setAssetComboBox(newAssetFrame.allAssetForSubAsset);
+                attachLabelFrame.loadRuleLabelComponnets();
 //                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+                attachLabelFrame.setVisible(true);
+                attachLabelFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 attachLabelFrame.setVisible(true);
                 attachLabelFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             }

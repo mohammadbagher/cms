@@ -203,7 +203,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
         saveAssetbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         primaryTab.setVisible(true);
 
@@ -428,10 +427,10 @@ public class NewAssetFrame extends javax.swing.JFrame {
                     .addComponent(addSubAsset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(subAssetTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                     .addGroup(subAssetTabLayout.createSequentialGroup()
-                        .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 29, Short.MAX_VALUE)))
+                        .addComponent(assetsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -660,7 +659,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(hasBime);
-        hasBime.setBounds(420, 120, 100, 22);
+        hasBime.setBounds(400, 120, 100, 22);
 
         bimeOption.add(noBime);
         noBime.setSelected(true);
@@ -673,7 +672,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(noBime);
-        noBime.setBounds(540, 120, 84, 22);
+        noBime.setBounds(524, 120, 100, 22);
 
         jLabel63.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -703,7 +702,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(hasDoc);
-        hasDoc.setBounds(280, 230, 79, 22);
+        hasDoc.setBounds(239, 230, 90, 22);
 
         docOption.add(withoutDoc);
         withoutDoc.setSelected(true);
@@ -716,7 +715,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(withoutDoc);
-        withoutDoc.setBounds(530, 230, 84, 22);
+        withoutDoc.setBounds(514, 230, 100, 22);
 
         docOption.add(noDoc);
         noDoc.setText("سند موضوعیت ندارد");
@@ -728,7 +727,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
             }
         });
         physicalTab.getContentPane().add(noDoc);
-        noDoc.setBounds(370, 230, 154, 22);
+        noDoc.setBounds(344, 230, 170, 22);
 
         docComment.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         docComment.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
