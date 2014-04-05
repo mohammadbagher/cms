@@ -12,6 +12,7 @@ package GUI;
 
 import GUI.asset.AssetListManagementFrame;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
+import GUI.event.EventManagementFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
 import GUI.report.Report;
@@ -94,7 +95,12 @@ public class DashboardFrame extends javax.swing.JFrame  {
         jButton10 = new javax.swing.JButton();
         assetManagementButton = new javax.swing.JButton();
         labelManagementButton = new javax.swing.JButton();
+<<<<<<< HEAD
         jButton14 = new javax.swing.JButton();
+=======
+        SettingsButton = new javax.swing.JButton();
+        eventManagementButton = new javax.swing.JButton();
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
         consistencyRule = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
 
@@ -161,6 +167,7 @@ public class DashboardFrame extends javax.swing.JFrame  {
             }
         });
 
+<<<<<<< HEAD
         jButton14.setBackground(new java.awt.Color(2, 80, 130));
         jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jButton14.setForeground(new java.awt.Color(1, 1, 1));
@@ -169,8 +176,31 @@ public class DashboardFrame extends javax.swing.JFrame  {
         jButton14.setFocusPainted(false);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
+=======
+        SettingsButton.setBackground(new java.awt.Color(2, 80, 130));
+        SettingsButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        SettingsButton.setForeground(new java.awt.Color(1, 1, 1));
+        SettingsButton.setText("تنظیم سیستم");
+        SettingsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SettingsButton.setFocusPainted(false);
+        SettingsButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        SettingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                SettingsButtonActionPerformed(evt);
+            }
+        });
+
+        eventManagementButton.setBackground(new java.awt.Color(2, 80, 130));
+        eventManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        eventManagementButton.setForeground(new java.awt.Color(1, 1, 1));
+        eventManagementButton.setText("تعریف و مدیریت رخداد");
+        eventManagementButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        eventManagementButton.setFocusPainted(false);
+        eventManagementButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        eventManagementButton.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventManagementButtonActionPerformed(evt);
             }
         });
 
@@ -214,16 +244,37 @@ public class DashboardFrame extends javax.swing.JFrame  {
                         .addGap(18, 18, 18)
                         .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                        .addGap(136, 136, 136)
+                        .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
+<<<<<<< HEAD
                                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(184, 184, 184))
+=======
+                                .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(eventManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addGap(55, 55, 55))
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,10 +284,15 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(operationManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                     .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                    .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eventManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -271,9 +327,21 @@ public class DashboardFrame extends javax.swing.JFrame  {
         labelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_labelManagementButtonActionPerformed
 
+<<<<<<< HEAD
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
+=======
+    private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SettingsButtonActionPerformed
+
+    private void eventManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventManagementButtonActionPerformed
+        JFrame jframe = new EventManagementFrame();
+        jframe.setVisible(true);
+        jframe.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_eventManagementButtonActionPerformed
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
 
     private void consistencyRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consistencyRuleActionPerformed
         Report rp = new Report();
@@ -297,10 +365,15 @@ public class DashboardFrame extends javax.swing.JFrame  {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SettingsButton;
     private javax.swing.JButton assetManagementButton;
     private javax.swing.JButton consistencyRule;
+    private javax.swing.JButton eventManagementButton;
     private javax.swing.JButton jButton10;
+<<<<<<< HEAD
     private javax.swing.JButton jButton14;
+=======
+>>>>>>> 8e27af524f97e9b0c825611bfacf472fd4317639
     private javax.swing.JButton jButton16;
     private javax.swing.JButton labelManagementButton;
     private javax.swing.JButton operationManagementButton;

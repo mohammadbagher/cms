@@ -41,6 +41,17 @@ public class AttachedLabel implements Serializable {
     public Object[] getValues() {
         return values.toArray();
     }
+    
+    public String getHumanReadableValues(){
+        if(values.size() == 0)
+            return "مقداری تعیین نشده است.";
+        if(values.size() == 1)
+            return values.get(0);
+        String ret = values.get(0);
+        for(int i = 1; i < values.size(); i++)
+            ret += ", " + values.get(i);
+        return ret;
+    }
 
     public Label getLabel() {
         return label;

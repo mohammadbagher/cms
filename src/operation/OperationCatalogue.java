@@ -8,7 +8,7 @@ package operation;
 
 import asset.AssetCatalogue;
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,7 +19,7 @@ public class OperationCatalogue  implements Serializable{
     
     private static OperationCatalogue instance = null;
     
-    private final Vector<Operation> operations = new Vector<Operation>();
+    private ArrayList<Operation> operations = new ArrayList<>();
     
     private OperationCatalogue(){
         /*mocking*/
@@ -30,9 +30,13 @@ public class OperationCatalogue  implements Serializable{
         operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operation = new Operation();
         operation.setName("تعمیر برج آزادی");
+        operation.setAsset(AssetCatalogue.getInstace().getAssets().get(0));
+        operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operations.add(operation);
         operation = new Operation();
         operation.setName("تزئین برج آزادی");
+        operation.setAsset(AssetCatalogue.getInstace().getAssets().get(0));
+        operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operations.add(operation);
     }
     
@@ -50,7 +54,11 @@ public class OperationCatalogue  implements Serializable{
         return operations.remove(operation);
     }
     
-    public Vector<Operation> getOperations(){
+    public ArrayList<Operation> getOperations(){
         return operations;
+    }
+
+    public void setOperations(ArrayList<Operation> operations) {
+        this.operations = operations;
     }
 }

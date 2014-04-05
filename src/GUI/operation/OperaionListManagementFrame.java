@@ -81,7 +81,7 @@ public class OperaionListManagementFrame extends javax.swing.JFrame {
                 newOperationButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(newOperationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 120, 30));
+        getContentPane().add(newOperationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 120, 30));
 
         operationScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
