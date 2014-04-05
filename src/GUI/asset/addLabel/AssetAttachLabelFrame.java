@@ -102,6 +102,7 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         attachAssetLabel.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
         attachAssetLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -298,7 +299,7 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(attachAssetLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+            .addComponent(attachAssetLabel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

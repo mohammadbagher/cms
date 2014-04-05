@@ -14,6 +14,7 @@ import GUI.asset.AssetListManagementFrame;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
+import GUI.report.Report;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
@@ -95,7 +96,7 @@ public class DashboardFrame extends javax.swing.JFrame  {
         labelManagementButton = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        consistencyRule = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,13 +104,11 @@ public class DashboardFrame extends javax.swing.JFrame  {
         setBounds(new java.awt.Rectangle(50, 50, 750, 500));
         setMinimumSize(new java.awt.Dimension(750, 500));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleLabel.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("پیش‌خوان سامانه‌ی مدیریت پیکربندی شهرداری");
         titleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
         operationManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         operationManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -123,7 +122,6 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 operationManagementButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(operationManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 60));
 
         jButton10.setBackground(new java.awt.Color(2, 80, 130));
         jButton10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -137,7 +135,6 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 130, 60));
 
         assetManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         assetManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -151,7 +148,6 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 assetManagementButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(assetManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 60));
 
         labelManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         labelManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -165,7 +161,6 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 labelManagementButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(labelManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 130, 60));
 
         jButton13.setBackground(new java.awt.Color(2, 80, 130));
         jButton13.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -179,7 +174,6 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 jButton13ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 130, 60));
 
         jButton14.setBackground(new java.awt.Color(2, 80, 130));
         jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -193,21 +187,19 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 jButton14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 130, 60));
 
-        jButton15.setBackground(new java.awt.Color(2, 80, 130));
-        jButton15.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(1, 1, 1));
-        jButton15.setText("مشاهده‌ی گزارش‌ها");
-        jButton15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton15.setFocusPainted(false);
-        jButton15.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        consistencyRule.setBackground(new java.awt.Color(2, 80, 130));
+        consistencyRule.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        consistencyRule.setForeground(new java.awt.Color(1, 1, 1));
+        consistencyRule.setText("مشاهده‌ی گزارش قوانین سازگارسنجی");
+        consistencyRule.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        consistencyRule.setFocusPainted(false);
+        consistencyRule.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        consistencyRule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                consistencyRuleActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 60));
 
         jButton16.setBackground(new java.awt.Color(2, 80, 130));
         jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -221,7 +213,57 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 jButton16ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, 60));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(operationManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addGap(55, 55, 55))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(operationManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,9 +300,11 @@ public class DashboardFrame extends javax.swing.JFrame  {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    private void consistencyRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consistencyRuleActionPerformed
+        Report rp = new Report();
+        rp.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        rp.setVisible(true);
+    }//GEN-LAST:event_consistencyRuleActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
@@ -279,10 +323,10 @@ public class DashboardFrame extends javax.swing.JFrame  {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assetManagementButton;
+    private javax.swing.JButton consistencyRule;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton labelManagementButton;
     private javax.swing.JButton operationManagementButton;

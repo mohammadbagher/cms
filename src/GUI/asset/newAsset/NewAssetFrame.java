@@ -59,7 +59,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
         for (int i = 0; i < AssetCatalogue.getInstace().getAssets().size(); i++) {
             allAssetForSubAsset.add(AssetCatalogue.getInstace().getAssets().get(i));
         }
-        assets.setModel(new javax.swing.JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
+        assets.setModel(new javax.swing.JComboBox<>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
         rootAsset = new DefaultMutableTreeNode(finalAsset);
         DefaultTreeModel treeModel = new DefaultTreeModel(rootAsset);
         subAssetTree.setModel(treeModel);
@@ -107,6 +107,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
                 hasPlace.doClick();
             }
         }
+        loadRuleLabelComponnets();
     }
 
     /**
@@ -202,6 +203,7 @@ public class NewAssetFrame extends javax.swing.JFrame {
         saveAssetbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         primaryTab.setVisible(true);
 
@@ -1370,9 +1372,21 @@ public class NewAssetFrame extends javax.swing.JFrame {
     public void loadRuleLabelComponnets() {
         rulePanel.removeAll();
         rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
+        ArrayList<ApplyRule> aprs = new ArrayList<>();
+//        for (Asset asset: AssetCatalogue.getInstace().getAssets()){
+        Asset asset = finalAsset;
+        for (ApplyRule apr : asset.getRules()) {
+            aprs.add(apr);
+        }
+        for (AttachedLabel atl : asset.getAttachedLabels()) {
+            for (ApplyRule apr : atl.getRules()) {
+                aprs.add(apr);
+            }
+        }
+//        }
         int ruleDep = 30;
         int ruleIndex = 1;
-        for (rule.ApplyRule apr : finalAsset.getRules()) {
+        for (rule.ApplyRule apr : aprs) {
             rulePanel.add(new RuleLabelPanel(new Integer(ruleIndex++).toString(), apr, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, ruleDep, 780, 30));
             ruleDep += 30;
         }
@@ -1459,7 +1473,7 @@ class LabelPanel extends javax.swing.JPanel {
 
 class RuleLabelPanel extends javax.swing.JPanel {
 
-    public RuleLabelPanel(String number,final ApplyRule apr, final NewAssetFrame newAssetFrame) {
+    public RuleLabelPanel(String number, final ApplyRule apr, final NewAssetFrame newAssetFrame) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -1554,7 +1568,6 @@ class RuleLabelPanel extends javax.swing.JPanel {
 ////                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 //            }
 //        });
-
         JButton closeButton = new JButton();
 
         closeButton.setForeground(new java.awt.Color(215, 215, 215));

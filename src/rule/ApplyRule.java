@@ -100,6 +100,7 @@ public class ApplyRule  implements Serializable{
         return baseLabel;
     }
 
+    
     public boolean verify(double inMeasure, double base) {
         switch (rule+1) {
             case 1: {
