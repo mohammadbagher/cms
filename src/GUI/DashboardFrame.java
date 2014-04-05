@@ -52,7 +52,7 @@ public class DashboardFrame extends javax.swing.JFrame implements Serializable {
                 if (PromptResult == JOptionPane.YES_OPTION) {
                     OOD ood = OOD.getInstance();
                     try {
-                        FileOutputStream fout = new FileOutputStream("ood.cms");
+                        FileOutputStream fout = new FileOutputStream("cms.data");
                         ObjectOutputStream oos = new ObjectOutputStream(fout);
                         oos.writeObject(ood);
                         oos.close();
@@ -67,7 +67,7 @@ public class DashboardFrame extends javax.swing.JFrame implements Serializable {
         });
         
         try {
-            FileInputStream fin = new FileInputStream("ood.cms");
+            FileInputStream fin = new FileInputStream("cms.data");
             ObjectInputStream oos = new ObjectInputStream(fin);
             OOD ood = (OOD)oos.readObject();
             oos.close();

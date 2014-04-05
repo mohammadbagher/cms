@@ -8,7 +8,6 @@ import asset.Asset;
 import asset.AssetCatalogue;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.swing.UIManager;
 import label.Label;
 import label.LabelCatalogue;
 import rule.ApplyRule;

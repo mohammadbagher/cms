@@ -16,8 +16,6 @@ import asset.Place;
 import gis.GISInfo;
 import java.util.ArrayList;
 import javax.swing.JButton;
-import label.Label;
-//import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
@@ -185,7 +183,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
         ruleHeaderPanel = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -777,12 +774,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
         ruleHeaderPanel.add(jLabel17);
         jLabel17.setBounds(620, 0, 110, 30);
 
-        jLabel18.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("ویرایش");
-        ruleHeaderPanel.add(jLabel18);
-        jLabel18.setBounds(50, 0, 70, 30);
-
         jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("حذف");
@@ -989,14 +980,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_assetNameActionPerformed
-
-    private void assetUIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetUIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_assetUIDActionPerformed
-
     private void isCompositeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isCompositeActionPerformed
         if (isComposite.isSelected()) {
             newAssetFrame.setEnabledAt(1, true);
@@ -1082,25 +1065,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
     private void humanAssetCommentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_humanAssetCommentsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_humanAssetCommentsActionPerformed
-
-    private void assetNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetNameFocusLost
-        finalAssetName.setText(assetName.getText());
-        if (mode == MOD_NEW) {
-            finalAsset.setName(assetName.getText());
-        }
-        subAssetTree.repaint();
-        loadRuleLabelComponnets();
-    }//GEN-LAST:event_assetNameFocusLost
-
-    private void assetUIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetUIDFocusLost
-        finalAssetUID.setText(assetUID.getText());
-        if (mode == MOD_NEW) {
-            finalAsset.setUID(assetUID.getText());
-        }
-//        finalAsset.setUID(assetUID.getText());
-//        loadLabelComponents();
-        setPlace();
-    }//GEN-LAST:event_assetUIDFocusLost
 
     private void addSubAssetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubAssetActionPerformed
 //        System.out.println(((Asset)assets.getSelectedItem()).getName());
@@ -1224,6 +1188,33 @@ public class NewAssetFrame extends javax.swing.JFrame {
         arf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_addRuleActionPerformed
 
+    private void assetUIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetUIDFocusLost
+        finalAssetUID.setText(assetUID.getText());
+        if (mode == MOD_NEW) {
+            finalAsset.setUID(assetUID.getText());
+        }
+        //        finalAsset.setUID(assetUID.getText());
+        //        loadLabelComponents();
+        setPlace();
+    }//GEN-LAST:event_assetUIDFocusLost
+
+    private void assetUIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetUIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assetUIDActionPerformed
+
+    private void assetNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_assetNameFocusLost
+        finalAssetName.setText(assetName.getText());
+        if (mode == MOD_NEW) {
+            finalAsset.setName(assetName.getText());
+        }
+        subAssetTree.repaint();
+        loadRuleLabelComponnets();
+    }//GEN-LAST:event_assetNameFocusLost
+
+    private void assetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assetNameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1295,7 +1286,6 @@ public class NewAssetFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1478,8 +1468,8 @@ class RuleLabelPanel extends javax.swing.JPanel {
         Asset baseAsset = apr.getBaseAsset();
         int inMeasureProperty = apr.getInMeasurePropertyNumber();
         int baseProperty = apr.getBasePropertyNumber();
-        Label inMeasureLabel = apr.getInMeasureLabel();
-        Label baseLabel = apr.getBaseLabel();
+        AttachedLabel inMeasureLabel = apr.getInMeasureLabel();
+        AttachedLabel baseLabel = apr.getBaseLabel();
         int rule = apr.getRule();
 
         //1
@@ -1509,7 +1499,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
         inMeasureTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         inMeasureTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         if (inMeasureProperty == -1) {
-            inMeasureTextLabel.setText(inMeasureLabel.getName());
+            inMeasureTextLabel.setText(inMeasureLabel.getLabel().getName());
         } else {
             inMeasureTextLabel.setText(Asset.getPropertyComment(inMeasureProperty));
         }
@@ -1543,7 +1533,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
         baseTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         baseTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         if (baseProperty == -1) {
-            baseTextLabel.setText(baseLabel.getName());
+            baseTextLabel.setText(baseLabel.getLabel().getName());
         } else {
             baseTextLabel.setText(Asset.getPropertyComment(baseProperty));
         }
@@ -1551,19 +1541,19 @@ class RuleLabelPanel extends javax.swing.JPanel {
         baseTextLabel.setBounds(120, 0, 110, 30);
 //        baseTextLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
 
-        JButton editButton = new JButton();
-
-        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
-        editButton.setBorderPainted(false);
-        this.add(editButton);
-        editButton.setBounds(60, 0, 50, 30);
-        editButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                JFrame newLabelFrame = new NewLabelFrame(asset, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
-//                newLabelFrame.setVisible(true);
-//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            }
-        });
+//        JButton editButton = new JButton();
+//
+//        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/file_edit.png"))); // NOI18N
+//        editButton.setBorderPainted(false);
+//        this.add(editButton);
+//        editButton.setBounds(60, 0, 50, 30);
+//        editButton.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+////                JFrame newLabelFrame = new NewLabelFrame(asset, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
+////                newLabelFrame.setVisible(true);
+////                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+//            }
+//        });
 
         JButton closeButton = new JButton();
 

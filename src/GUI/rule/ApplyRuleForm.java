@@ -11,7 +11,7 @@ import asset.Asset;
 import asset.AssetCatalogue;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
-import label.*;
+import label.AttachedLabel;
 import rule.*;
 
 /**
@@ -39,6 +39,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         inMeasureAssetName.setText(inMeasureAsset.getName());
         baseAsset.setModel(new JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
         rulesComboBox.setModel(new JComboBox<Rule>(ConsistencyRules.getInstance().getRules().toArray(new Rule[ConsistencyRules.getInstance().getRules().size()])).getModel());
+        importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
     }
 
     public ApplyRuleForm(ApplyRule applyRuleForm, int mode) {
@@ -65,12 +66,12 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             baseData.setSelectedItem(applyRuleForm.getBaseLabel());
         }
         rulesComboBox.setSelectedIndex(applyRuleForm.getRule());
-
+        importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
         inMeasureAssetName.setText(inMeasureAsset.getName());
 
     }
 
-    public ApplyRuleForm(Asset asset, Label label, int mode, AssetAttachLabelFrame alf) {
+    public ApplyRuleForm(Asset asset, AttachedLabel label, int mode, AssetAttachLabelFrame alf) {
         initComponents();
         this.mode = mode;
         this.attachLabelFrame =alf;
@@ -80,10 +81,11 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         inMeasureProperty.setEnabled(false);
         baseProperty.doClick();
         inMeasureAssetName.setText(inMeasureAsset.getName());
-        Label[] imMeasureL = {label};
-        inMeasureData.setModel(new JComboBox<Label>(imMeasureL).getModel());
+        AttachedLabel[] imMeasureL = {label};
+        inMeasureData.setModel(new JComboBox<AttachedLabel>(imMeasureL).getModel());
         baseAsset.setModel(new JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
         rulesComboBox.setModel(new JComboBox<Rule>(ConsistencyRules.getInstance().getRules().toArray(new Rule[ConsistencyRules.getInstance().getRules().size()])).getModel());
+        importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
     }
 
     /**
@@ -118,6 +120,8 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
+        jLabel60 = new javax.swing.JLabel();
+        importantComboBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -355,27 +359,47 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel60.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel60.setText("سطح اهمیت:");
+
+        importantComboBox.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        importantComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "قانون مورد نظر را انتخاب کنید", " " }));
+        importantComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                importantComboBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(rulesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel57)
-                                    .addGap(29, 29, 29)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(rulesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(importantComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                    .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -386,17 +410,23 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rulesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(importantComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -410,34 +440,34 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
             if (inMeasureProperty.isSelected() && baseProperty.isSelected()) {
                 System.out.print(inMeasureData.getSelectedIndex());
-                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex()));
+                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex()));
+                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 }
             } else if (inMeasureProperty.isSelected() && baseLabel.isSelected()) {
-                Label selectedBaseLabel = (Label) baseData.getSelectedItem();
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 }
             } else if (baseProperty.isSelected() && inMeasureLabel.isSelected()) {
-                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 }
             } else if (baseLabel.isSelected() && inMeasureLabel.isSelected()) {
-                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
-                Label selectedBaseLabel = (Label) baseData.getSelectedItem();
+                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
 
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
             }
             this.newAssetFrame.loadRuleLabelComponnets();
         } else if (mode == MOD_UPDATE) {
@@ -453,14 +483,14 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                     apr.setBaseLabel(null);
                 } else {
                     apr.setBasePropertyNumber(-1);
-                    apr.setBaseLabel((Label) baseData.getSelectedItem());
+                    apr.setBaseLabel((AttachedLabel) baseData.getSelectedItem());
                 }
                 if (inMeasureProperty.isSelected()) {
                     apr.setInMeasurePropertyNumber(inMeasureData.getSelectedIndex());
                     apr.setInMeasureLabel(null);
                 } else {
                     apr.setInMeasurePropertyNumber(-1);
-                    apr.setInMeasureLabel((Label) inMeasureData.getSelectedItem());
+                    apr.setInMeasureLabel((AttachedLabel) inMeasureData.getSelectedItem());
                 }
                 apr.setRule(rulesComboBox.getSelectedIndex());
             }
@@ -469,19 +499,19 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
             if (baseProperty.isSelected()) {
                 //TODO improve adding applyrule
-                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
                 } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex()));
+                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
                 }
             } else if (baseLabel.isSelected()) {
-                Label selectedInMeasureLabel = (Label) inMeasureData.getSelectedItem();
-                Label selectedBaseLabel = (Label) baseData.getSelectedItem();
+                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
 
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
             }
             this.attachLabelFrame.loadRuleLabelComponnets();
         }
@@ -543,6 +573,10 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    private void importantComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importantComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_importantComboBoxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -589,6 +623,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
     private javax.swing.ButtonGroup baseLoP;
     private javax.swing.JRadioButton baseProperty;
     private javax.swing.JButton cancel;
+    private javax.swing.JComboBox importantComboBox;
     private javax.swing.JLabel inMeasureAssetName;
     private javax.swing.JComboBox inMeasureData;
     private javax.swing.JRadioButton inMeasureLabel;
@@ -602,6 +637,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox rulesComboBox;

@@ -5,7 +5,6 @@
  */
 package rule;
 
-import asset.Asset;
 import java.io.Serializable;
 import java.util.ArrayList;
 

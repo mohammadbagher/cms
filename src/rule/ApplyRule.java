@@ -8,7 +8,7 @@ package rule;
 import java.util.ArrayList;
 import asset.Asset;
 import java.io.Serializable;
-import label.Label;
+import label.AttachedLabel;
 
 /**
  *
@@ -16,14 +16,22 @@ import label.Label;
  */
 public class ApplyRule  implements Serializable{
     private static final long serialVersionUID = 1L;
+    private int importance;
+    public static final String[] importanceComment = {"بحرانی-امن","بحرانی","مهم","عادی"};
+    public int getImportance() {
+        return importance;
+    }
 
+    public void setImportance(int importance) {
+        this.importance = importance;
+    }
     private int rule;
     private Asset inMeasureAsset;
     private Asset baseAsset;
     private int inMeasurePropertyNumber = -1;
     private int basePropertyNumber = -1;
-    private Label inMeasureLabel;
-    private Label baseLabel;
+    private AttachedLabel inMeasureLabel;
+    private AttachedLabel baseLabel;
 
     public void setRule(int rule) {
         this.rule = rule;
@@ -45,16 +53,17 @@ public class ApplyRule  implements Serializable{
         this.basePropertyNumber = basePropertyNumber;
     }
 
-    public void setInMeasureLabel(Label inMeasureLabel) {
+    public void setInMeasureLabel(AttachedLabel inMeasureLabel) {
         this.inMeasureLabel = inMeasureLabel;
     }
 
-    public void setBaseLabel(Label baseLabel) {
+    public void setBaseLabel(AttachedLabel baseLabel) {
         this.baseLabel = baseLabel;
     }
 
-    public ApplyRule(Asset inMeasureAsset, Asset baseAsset, int inMeasurePropertyNumber, int basePropertyNumber, Label inMeasureLabel, Label baseLabel, int rule) {
+    public ApplyRule(Asset inMeasureAsset, Asset baseAsset, int inMeasurePropertyNumber, int basePropertyNumber, AttachedLabel inMeasureLabel, AttachedLabel baseLabel, int rule, int importance) {
         this.rule = rule;
+        this.importance = importance;
         this.baseAsset= baseAsset;
         this.baseLabel=baseLabel;
         this.basePropertyNumber= basePropertyNumber;
@@ -83,11 +92,11 @@ public class ApplyRule  implements Serializable{
         return basePropertyNumber;
     }
 
-    public Label getInMeasureLabel() {
+    public AttachedLabel getInMeasureLabel() {
         return inMeasureLabel;
     }
 
-    public Label getBaseLabel() {
+    public AttachedLabel getBaseLabel() {
         return baseLabel;
     }
 

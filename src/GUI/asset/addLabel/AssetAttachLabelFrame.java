@@ -395,7 +395,7 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
         
         
         
-        ApplyRuleForm arf = new ApplyRuleForm(asset,label, ApplyRuleForm.MOD_LABEL,this);
+        ApplyRuleForm arf = new ApplyRuleForm(asset,this.attachedLabel, ApplyRuleForm.MOD_LABEL,this);
         arf.setVisible(true);
         arf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_addRuleActionPerformed
@@ -441,7 +441,7 @@ public class AssetAttachLabelFrame extends javax.swing.JFrame {
         rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
         int ruleDep = 30;
         int ruleIndex = 1;
-        Label label = (Label)labelScrollPane.getSelectedItem();
+        AttachedLabel label = (AttachedLabel)labelScrollPane.getSelectedItem();
         for (rule.ApplyRule apr : label.getRules()) {
             rulePanel.add(new RuleLabelPanel(new Integer(ruleIndex++).toString(),apr, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, ruleDep, 780, 30));
             ruleDep += 30;
@@ -491,8 +491,8 @@ class RuleLabelPanel extends javax.swing.JPanel {
         Asset baseAsset = apr.getBaseAsset();
         int inMeasureProperty = apr.getInMeasurePropertyNumber();
         int baseProperty = apr.getBasePropertyNumber();
-        Label inMeasureLabel = apr.getInMeasureLabel();
-        Label baseLabel = apr.getBaseLabel();
+        AttachedLabel inMeasureLabel = apr.getInMeasureLabel();
+        AttachedLabel baseLabel = apr.getBaseLabel();
         int rule = apr.getRule();
 
 
@@ -524,7 +524,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
         inMeasureTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         inMeasureTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         if (inMeasureProperty == -1) {
-            inMeasureTextLabel.setText(inMeasureLabel.getName());
+            inMeasureTextLabel.setText(inMeasureLabel.getLabel().getName());
         } else {
             inMeasureTextLabel.setText(Asset.getPropertyComment(inMeasureProperty));
         }
@@ -558,7 +558,7 @@ class RuleLabelPanel extends javax.swing.JPanel {
         baseTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         baseTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         if (baseProperty == -1) {
-            baseTextLabel.setText(baseLabel.getName());
+            baseTextLabel.setText(baseLabel.getLabel().getName());
         } else {
             baseTextLabel.setText(Asset.getPropertyComment(baseProperty));
         }
