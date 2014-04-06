@@ -22,9 +22,11 @@ public class EventCatalogue  implements Serializable{
     private ArrayList<Event> events = new ArrayList<>();
     
     private EventCatalogue(){
-        Event event = new Event(OperationCatalogue.getInstace().getOperations().get(0));
-        event.setName("بلای آسمانی");
-        addEvent(event);
+        try{
+            Event event = new Event(OperationCatalogue.getInstace().getOperations().get(0));
+            event.setName("بلای آسمانی");
+            addEvent(event);
+        }catch(Exception e){}
     }
     
     public static EventCatalogue getInstace(){

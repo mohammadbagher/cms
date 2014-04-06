@@ -1089,6 +1089,14 @@ public class NewAssetFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "برای دارایی UID انتخاب نشده است.", "خطا", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        boolean repeated = false;
+        for(Asset asset: AssetCatalogue.getInstace().getAssets())
+            if(asset.getUID().equals(assetUID.getText()))
+                repeated = true;
+        if (repeated) {
+            JOptionPane.showMessageDialog(null, "برای دارایی UID تکراری انتخاب شده است.", "خطا", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         finalAsset.setUID(assetUID.getText());
 
         if (isHuman.isSelected()) {
@@ -1161,13 +1169,14 @@ public class NewAssetFrame extends javax.swing.JFrame {
             finalAsset.setSubAssets(subAssets);
         }
         this.assetListManagementFrame.loadLabelComponents();
-        this.dispose();
         if (this.mode == NewAssetFrame.MOD_NEW) {
             AssetCatalogue.getInstace().getAssets().add(finalAsset);
             JOptionPane.showMessageDialog(null, "دارایی مورد نظر با موفقیت ایجاد و ذخیره گردید.", "پیام", JOptionPane.INFORMATION_MESSAGE);
         } else {
+            assetListManagementFrame.loadLabelComponents();
             JOptionPane.showMessageDialog(null, "دارایی مورد نظر با موفقیت بروزرسانی شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
         }
+        this.dispose();
 
     }//GEN-LAST:event_saveAssetbtnActionPerformed
 
