@@ -17,4 +17,18 @@ public class CMSSpnt {
         this.name= name;
         this.time=time;
     }
+
+    @Override
+    public String toString() {
+        return name; //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getTime() {
+        return time;
+    }
+   
 }

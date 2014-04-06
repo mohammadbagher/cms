@@ -41,6 +41,7 @@ public class Snapshot extends javax.swing.JFrame {
             System.out.println("Error setting native LAF: " + e);
         }
         initComponents();
+        loadLabelComponents();
     }
 
     /**
@@ -55,7 +56,7 @@ public class Snapshot extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        eventsPanel = new javax.swing.JPanel();
+        snptsPanel = new javax.swing.JPanel();
         headerPanel = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -92,7 +93,7 @@ public class Snapshot extends javax.swing.JFrame {
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        eventsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        snptsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         headerPanel.setBackground(new java.awt.Color(160, 196, 255));
         headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -122,9 +123,9 @@ public class Snapshot extends javax.swing.JFrame {
         jLabel20.setText("بازگرداندن سیستم به مبنا");
         headerPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 140, 30));
 
-        eventsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
+        snptsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
 
-        jScrollPane2.setViewportView(eventsPanel);
+        jScrollPane2.setViewportView(snptsPanel);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 580, 327));
 
@@ -143,7 +144,7 @@ public class Snapshot extends javax.swing.JFrame {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         OOD ood = OOD.getInstance();
         try {
-            FileOutputStream fout = new FileOutputStream("snapshots/"+timeStamp + ".data");
+            FileOutputStream fout = new FileOutputStream("snapshots/" + timeStamp + ".data");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
             oos.writeObject(ood);
             oos.close();
@@ -168,7 +169,6 @@ public class Snapshot extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel eventsPanel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel17;
@@ -178,12 +178,24 @@ public class Snapshot extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel snptsPanel;
     // End of variables declaration//GEN-END:variables
+public void loadLabelComponents() {
+        int dep = 30;
+        int index = 1;
+        for (CMSSpnt snpt : snapshot.Snapshot.getInstance().getSnapshots()) {
+            snptsPanel.add(new LabelPanel(new Integer(index++).toString(), snpt, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 580, 30));
+            dep += 30;
+        }
+
+        validate();
+        repaint();
+    }
 }
 
 class LabelPanel extends javax.swing.JPanel {
 
-    public LabelPanel(String number, final Asset asset, final EventManagementFrame eventManagementFrame) {
+    public LabelPanel(String number, final snapshot.CMSSpnt snpt, final Snapshot Snapshot) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -196,21 +208,21 @@ class LabelPanel extends javax.swing.JPanel {
         this.add(numberLabel);
         numberLabel.setBounds(500, 0, 70, 30);
 
-        JLabel eventNameLabel = new JLabel();
+        JLabel nameLabel = new JLabel();
 
-        eventNameLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
-        eventNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eventNameLabel.setText(asset.getName());
-        this.add(eventNameLabel);
-        eventNameLabel.setBounds(330, 0, 150, 30);
+        nameLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameLabel.setText(snpt.getName());
+        this.add(nameLabel);
+        nameLabel.setBounds(330, 0, 150, 30);
 
-        JLabel operationLabel = new JLabel();
+        JLabel timeLabel = new JLabel();
 
-        operationLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
-        operationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        operationLabel.setText(asset.getName());
-        this.add(operationLabel);
-        operationLabel.setBounds(160, 0, 150, 30);
+        timeLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        timeLabel.setText(snpt.getTime());
+        this.add(timeLabel);
+        timeLabel.setBounds(160, 0, 150, 30);
 
         JButton closeButton = new JButton();
 
@@ -222,8 +234,8 @@ class LabelPanel extends javax.swing.JPanel {
         closeButton.setBounds(10, 0, 58, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AssetCatalogue.getInstace().remove(asset);
-                eventManagementFrame.loadLabelComponents();
+//                AssetCatalogue.getInstace().remove(asset);
+                Snapshot.loadLabelComponents();
 //                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
 //                newLabelFrame.setVisible(true);
 //                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -232,7 +244,7 @@ class LabelPanel extends javax.swing.JPanel {
 
         JButton actionButton = new JButton();
 
-        actionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/action.png"))); // NOI18N
+        actionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/base.png"))); // NOI18N
         actionButton.setBorderPainted(false);
         this.add(actionButton);
         actionButton.setBounds(90, 0, 50, 30);
