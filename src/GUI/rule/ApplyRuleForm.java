@@ -74,7 +74,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
     public ApplyRuleForm(Asset asset, AttachedLabel label, int mode, AssetAttachLabelFrame alf) {
         initComponents();
         this.mode = mode;
-        this.attachLabelFrame =alf;
+        this.attachLabelFrame = alf;
         this.inMeasureAsset = asset;
         inMeasureLabel.setSelected(true);
         inMeasureLabel.setEnabled(false);
@@ -439,35 +439,34 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         if (mode == MOD_NEW) {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
             if (inMeasureProperty.isSelected() && baseProperty.isSelected()) {
-                System.out.print(inMeasureData.getSelectedIndex());
-                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
-
-                } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                }
+                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+//
+//                } else {
+//                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+//                }
             } else if (inMeasureProperty.isSelected() && baseLabel.isSelected()) {
                 AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+//                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
-                } else {
-                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                }
+//                } else {
+                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                }
             } else if (baseProperty.isSelected() && inMeasureLabel.isSelected()) {
                 AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
-
-                } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                }
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+//
+//                } else {
+//                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                }
             } else if (baseLabel.isSelected() && inMeasureLabel.isSelected()) {
                 AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
                 AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
 
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
             }
             this.newAssetFrame.loadRuleLabelComponnets();
         } else if (mode == MOD_UPDATE) {
@@ -500,18 +499,18 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             if (baseProperty.isSelected()) {
                 //TODO improve adding applyrule
                 AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
-                } else {
-                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                }
+//                } else {
+//                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                }
             } else if (baseLabel.isSelected()) {
                 AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
                 AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
 
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
+                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+//                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
             }
             this.attachLabelFrame.loadRuleLabelComponnets();
         }

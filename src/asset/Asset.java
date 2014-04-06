@@ -256,4 +256,10 @@ public class Asset implements Serializable{
     public void removeApplyRule(ApplyRule apr ){
         this.rules.remove(apr);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return ((Asset)obj).getUID().equals(this.getUID());
+    }
+    
 }

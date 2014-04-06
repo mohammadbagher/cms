@@ -10,6 +10,7 @@
  */
 package GUI.label;
 
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -53,6 +54,9 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        searchName = new javax.swing.JTextField();
+        search = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -117,7 +121,29 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
 
         labelsScrollPane.setViewportView(labelsPanel);
 
-        getContentPane().add(labelsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 320, 270));
+        getContentPane().add(labelsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 320, 270));
+
+        jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("نام:");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 30, 30));
+
+        searchName.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
+        searchName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(searchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 110, -1));
+
+        search.setBackground(new java.awt.Color(60, 0, 91));
+        search.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        search.setForeground(new java.awt.Color(1, 1, 1));
+        search.setText("جستجو");
+        search.setFocusPainted(false);
+        search.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 70, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +167,27 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
         newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_newLabelButtonActionPerformed
 
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        ArrayList<Label> retrivedLabels= new ArrayList<>();
+        String searchN = searchName.getText();
+        //        retrivedAssets.add(AssetCatalogue.getInstace().getAssets().get(0));
+        for (Label label: LabelCatalogue.getInstace().getLabels()) {
+            if(label.getName().contains(searchN)){
+                retrivedLabels.add(label);
+            }
+        }
+        labelsPanel.removeAll();
+        labelsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 30));
+        int dep = 30;
+        int index = 1;
+        for(Label label :retrivedLabels){
+            labelsPanel.add(new LabelPanel(new Integer(index++).toString(), label, this), new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 320, 30));
+            dep += 30;
+        }
+        validate();
+        repaint();
+    }//GEN-LAST:event_searchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -158,9 +205,12 @@ public class LabelListManagementFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel labelsPanel;
     private javax.swing.JScrollPane labelsScrollPane;
     private javax.swing.JButton newLabelButton;
+    private javax.swing.JButton search;
+    private javax.swing.JTextField searchName;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
