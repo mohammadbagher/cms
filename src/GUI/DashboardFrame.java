@@ -12,6 +12,7 @@ package GUI;
 
 import GUI.asset.AssetListManagementFrame;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
+import GUI.asset.showLabel.ShowAssetAttachedLabelFrame;
 import GUI.event.EventManagementFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
@@ -210,12 +211,12 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 BaselineManagementButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(BaselineManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 130, 60));
+        getContentPane().add(BaselineManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 130, 60));
 
         SettingsButton.setBackground(new java.awt.Color(2, 80, 130));
         SettingsButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         SettingsButton.setForeground(new java.awt.Color(1, 1, 1));
-        SettingsButton.setText("تنظیم سیستم");
+        SettingsButton.setText("برچسب‌های الصاق‌شده");
         SettingsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SettingsButton.setFocusPainted(false);
         SettingsButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -224,7 +225,7 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 SettingsButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(SettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 130, 60));
+        getContentPane().add(SettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,7 +273,9 @@ public class DashboardFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_BaselineManagementButtonActionPerformed
 
     private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
-        // TODO add your handling code here:
+        JFrame jFrame = new ShowAssetAttachedLabelFrame();
+        jFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        jFrame.setVisible(true);
     }//GEN-LAST:event_SettingsButtonActionPerformed
 
     /**
