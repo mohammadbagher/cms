@@ -30,9 +30,13 @@ public class OperationCatalogue  implements Serializable{
         operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operation = new Operation();
         operation.setName("تعمیر برج آزادی");
+        operation.setAsset(AssetCatalogue.getInstace().getAssets().get(0));
+        operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operations.add(operation);
         operation = new Operation();
         operation.setName("تزئین برج آزادی");
+        operation.setAsset(AssetCatalogue.getInstace().getAssets().get(0));
+        operation.setAttachedLabel(AssetCatalogue.getInstace().getAssets().get(0).getAttachedLabels()[0]);
         operations.add(operation);
     }
     
