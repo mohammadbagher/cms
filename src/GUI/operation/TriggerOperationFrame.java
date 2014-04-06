@@ -142,8 +142,8 @@ public class TriggerOperationFrame extends javax.swing.JFrame {
 
         jLabel51.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel51.setText("مجموعه مقادیر الصاق شده");
-        chooseValue.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, -1));
+        jLabel51.setText("مجموعه مقادیر بعداز اعمال عملیات");
+        chooseValue.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 200, -1));
 
         jLabel52.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

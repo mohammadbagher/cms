@@ -43,6 +43,9 @@ public class Operation  implements Serializable{
     public void setAttachedLabel(AttachedLabel attachedLabel) {
         this.attachedLabel = attachedLabel;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

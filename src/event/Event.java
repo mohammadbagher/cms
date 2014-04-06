@@ -7,6 +7,7 @@
 package event;
 
 import exceptions.DuplicatedValueException;
+import java.io.Serializable;
 import label.AttachedLabel;
 import operation.Operation;
 
@@ -14,17 +15,20 @@ import operation.Operation;
  *
  * @author ali
  */
-public class Event {
+public class Event implements Serializable{
+    private static final long serialVersionUID = 1L;
+    
+    private String name;
     private Operation operation;
     private AttachedLabel lastAttachedLabel;
     private AttachedLabel nextAttachedLabel;
 
-    public Event(Operation operation, AttachedLabel attachedLabel) {
+    public Event(Operation operation) {
         this.operation = operation;
-        this.lastAttachedLabel = attachedLabel;
+        this.lastAttachedLabel = operation.getAttachedLabel();
         this.nextAttachedLabel = new AttachedLabel();
-        this.nextAttachedLabel.setAsset(attachedLabel.getAsset());
-        this.nextAttachedLabel.setLabel(attachedLabel.getLabel());
+        this.nextAttachedLabel.setAsset(operation.getAttachedLabel().getAsset());
+        this.nextAttachedLabel.setLabel(operation.getAttachedLabel().getLabel());
     }
     
     public Operation getOperation() {
@@ -33,13 +37,18 @@ public class Event {
 
     public void setOperation(Operation operation) {
         this.operation = operation;
+        this.lastAttachedLabel = operation.getAttachedLabel();
+        this.nextAttachedLabel = new AttachedLabel();
+        this.nextAttachedLabel.setAsset(operation.getAttachedLabel().getAsset());
+        this.nextAttachedLabel.setLabel(operation.getAttachedLabel().getLabel());
     }
 
-    public void setAttachedLabel(AttachedLabel attachedLabel) {
-        this.lastAttachedLabel = attachedLabel;
-        this.nextAttachedLabel = new AttachedLabel();
-        this.nextAttachedLabel.setAsset(attachedLabel.getAsset());
-        this.nextAttachedLabel.setLabel(attachedLabel.getLabel());
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     public boolean addValue(String value) throws DuplicatedValueException {
@@ -51,5 +60,9 @@ public class Event {
         for(Object value: nextAttachedLabel.getValues()){
             lastAttachedLabel.addValue(value.toString());
         }
+    }
+    
+    public Object[] getValues(){
+        return nextAttachedLabel.getValues();
     }
 }

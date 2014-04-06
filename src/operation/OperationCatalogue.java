@@ -8,7 +8,7 @@ package operation;
 
 import asset.AssetCatalogue;
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,7 +19,7 @@ public class OperationCatalogue  implements Serializable{
     
     private static OperationCatalogue instance = null;
     
-    private final Vector<Operation> operations = new Vector<Operation>();
+    private ArrayList<Operation> operations = new ArrayList<>();
     
     private OperationCatalogue(){
         /*mocking*/
@@ -54,7 +54,11 @@ public class OperationCatalogue  implements Serializable{
         return operations.remove(operation);
     }
     
-    public Vector<Operation> getOperations(){
+    public ArrayList<Operation> getOperations(){
         return operations;
+    }
+
+    public void setOperations(ArrayList<Operation> operations) {
+        this.operations = operations;
     }
 }
