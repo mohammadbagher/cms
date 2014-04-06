@@ -12,6 +12,7 @@ package GUI;
 
 import GUI.asset.AssetListManagementFrame;
 import GUI.asset.addLabel.AssetAttachLabelFrame;
+import GUI.event.EventManagementFrame;
 import GUI.label.LabelListManagementFrame;
 import GUI.operation.OperaionListManagementFrame;
 import GUI.report.Report;
@@ -91,23 +92,26 @@ public class DashboardFrame extends javax.swing.JFrame  {
 
         titleLabel = new javax.swing.JLabel();
         operationManagementButton = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        attachLabelButton = new javax.swing.JButton();
         assetManagementButton = new javax.swing.JButton();
         labelManagementButton = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        consistencyRule = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        EventManamgementButton = new javax.swing.JButton();
+        consistencyRuleButton = new javax.swing.JButton();
+        BaselineManagementButton = new javax.swing.JButton();
+        SettingsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
         setBounds(new java.awt.Rectangle(50, 50, 750, 500));
         setMinimumSize(new java.awt.Dimension(750, 500));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleLabel.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("پیش‌خوان سامانه‌ی مدیریت پیکربندی شهرداری");
         titleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 431, 70));
 
         operationManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         operationManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -121,19 +125,21 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 operationManagementButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(operationManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 130, 60));
 
-        jButton10.setBackground(new java.awt.Color(2, 80, 130));
-        jButton10.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(1, 1, 1));
-        jButton10.setText("الصاق برچسب به دارایی");
-        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton10.setFocusPainted(false);
-        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        attachLabelButton.setBackground(new java.awt.Color(2, 80, 130));
+        attachLabelButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        attachLabelButton.setForeground(new java.awt.Color(1, 1, 1));
+        attachLabelButton.setText("الصاق برچسب به دارایی");
+        attachLabelButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        attachLabelButton.setFocusPainted(false);
+        attachLabelButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        attachLabelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                attachLabelButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(attachLabelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 130, 60));
 
         assetManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         assetManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -147,6 +153,7 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 assetManagementButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(assetManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 130, 60));
 
         labelManagementButton.setBackground(new java.awt.Color(2, 80, 130));
         labelManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -160,89 +167,63 @@ public class DashboardFrame extends javax.swing.JFrame  {
                 labelManagementButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(labelManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 130, 60));
 
-        jButton14.setBackground(new java.awt.Color(2, 80, 130));
-        jButton14.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(1, 1, 1));
-        jButton14.setText("تعریف و مدیریت رخداد");
-        jButton14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton14.setFocusPainted(false);
-        jButton14.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        EventManamgementButton.setBackground(new java.awt.Color(2, 80, 130));
+        EventManamgementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        EventManamgementButton.setForeground(new java.awt.Color(1, 1, 1));
+        EventManamgementButton.setText("تعریف و مدیریت رخداد");
+        EventManamgementButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventManamgementButton.setFocusPainted(false);
+        EventManamgementButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        EventManamgementButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                EventManamgementButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(EventManamgementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 130, 60));
 
-        consistencyRule.setBackground(new java.awt.Color(2, 80, 130));
-        consistencyRule.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        consistencyRule.setForeground(new java.awt.Color(1, 1, 1));
-        consistencyRule.setText("مشاهده‌ی گزارش قوانین سازگارسنجی");
-        consistencyRule.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        consistencyRule.setFocusPainted(false);
-        consistencyRule.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        consistencyRule.addActionListener(new java.awt.event.ActionListener() {
+        consistencyRuleButton.setBackground(new java.awt.Color(2, 80, 130));
+        consistencyRuleButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        consistencyRuleButton.setForeground(new java.awt.Color(1, 1, 1));
+        consistencyRuleButton.setText("گزارش سازگارسنجی");
+        consistencyRuleButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        consistencyRuleButton.setFocusPainted(false);
+        consistencyRuleButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        consistencyRuleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consistencyRuleActionPerformed(evt);
+                consistencyRuleButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(consistencyRuleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 130, 60));
 
-        jButton16.setBackground(new java.awt.Color(2, 80, 130));
-        jButton16.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(1, 1, 1));
-        jButton16.setText("ذخیره و بازیابی مبنا");
-        jButton16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton16.setFocusPainted(false);
-        jButton16.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        BaselineManagementButton.setBackground(new java.awt.Color(2, 80, 130));
+        BaselineManagementButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        BaselineManagementButton.setForeground(new java.awt.Color(1, 1, 1));
+        BaselineManagementButton.setText("ذخیره و بازیابی مبنا");
+        BaselineManagementButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BaselineManagementButton.setFocusPainted(false);
+        BaselineManagementButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        BaselineManagementButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                BaselineManagementButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BaselineManagementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 130, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(operationManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(184, 184, 184))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(operationManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(assetManagementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(consistencyRule, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        SettingsButton.setBackground(new java.awt.Color(2, 80, 130));
+        SettingsButton.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        SettingsButton.setForeground(new java.awt.Color(1, 1, 1));
+        SettingsButton.setText("تنظیم سیستم");
+        SettingsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SettingsButton.setFocusPainted(false);
+        SettingsButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        SettingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,11 +234,11 @@ public class DashboardFrame extends javax.swing.JFrame  {
         operationFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_operationManagementButtonActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void attachLabelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attachLabelButtonActionPerformed
         JFrame frame = new AssetAttachLabelFrame();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_attachLabelButtonActionPerformed
 
     private void assetManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetManagementButtonActionPerformed
         JFrame assetFrame = new AssetListManagementFrame();
@@ -271,19 +252,25 @@ public class DashboardFrame extends javax.swing.JFrame  {
         labelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_labelManagementButtonActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    private void EventManamgementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventManamgementButtonActionPerformed
+        JFrame jFrame = new EventManagementFrame();
+        jFrame.setVisible(true);
+        jFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_EventManamgementButtonActionPerformed
 
-    private void consistencyRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consistencyRuleActionPerformed
+    private void consistencyRuleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consistencyRuleButtonActionPerformed
         Report rp = new Report();
         rp.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         rp.setVisible(true);
-    }//GEN-LAST:event_consistencyRuleActionPerformed
+    }//GEN-LAST:event_consistencyRuleButtonActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void BaselineManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaselineManagementButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_BaselineManagementButtonActionPerformed
+
+    private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SettingsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,11 +284,12 @@ public class DashboardFrame extends javax.swing.JFrame  {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BaselineManagementButton;
+    private javax.swing.JButton EventManamgementButton;
+    private javax.swing.JButton SettingsButton;
     private javax.swing.JButton assetManagementButton;
-    private javax.swing.JButton consistencyRule;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton16;
+    private javax.swing.JButton attachLabelButton;
+    private javax.swing.JButton consistencyRuleButton;
     private javax.swing.JButton labelManagementButton;
     private javax.swing.JButton operationManagementButton;
     private javax.swing.JLabel titleLabel;
