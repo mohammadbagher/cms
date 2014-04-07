@@ -40,6 +40,10 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         baseAsset.setModel(new JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
         rulesComboBox.setModel(new JComboBox<Rule>(ConsistencyRules.getInstance().getRules().toArray(new Rule[ConsistencyRules.getInstance().getRules().size()])).getModel());
         importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
+        this.constantField.setVisible(false);
+        jPanel1.add(constantField);
+        constantField.setLocation(baseAsset.getX(), baseAsset.getY());
+
     }
 
     public ApplyRuleForm(ApplyRule applyRuleForm, int mode) {
@@ -68,6 +72,9 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         rulesComboBox.setSelectedIndex(applyRuleForm.getRule());
         importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
         inMeasureAssetName.setText(inMeasureAsset.getName());
+        jPanel1.add(constantField);
+        this.constantField.setVisible(false);
+        constantField.setLocation(baseAsset.getX(), baseAsset.getY());
 
     }
 
@@ -86,6 +93,10 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         baseAsset.setModel(new JComboBox<Asset>(AssetCatalogue.getInstace().getAssets().toArray(new Asset[AssetCatalogue.getInstace().getAssets().size()])).getModel());
         rulesComboBox.setModel(new JComboBox<Rule>(ConsistencyRules.getInstance().getRules().toArray(new Rule[ConsistencyRules.getInstance().getRules().size()])).getModel());
         importantComboBox.setModel(new JComboBox<String>(ApplyRule.importanceComment).getModel());
+        jPanel1.add(constantField);
+        this.constantField.setVisible(false);
+        constantField.setLocation(baseAsset.getX(), baseAsset.getY());
+
     }
 
     /**
@@ -106,10 +117,11 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         baseAsset = new javax.swing.JComboBox();
         baseData = new javax.swing.JComboBox();
         jLabel52 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
+        AoC = new javax.swing.JLabel();
         baseProperty = new javax.swing.JRadioButton();
         baseLabel = new javax.swing.JRadioButton();
-        jLabel59 = new javax.swing.JLabel();
+        conCommeent = new javax.swing.JLabel();
+        isConstant = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
@@ -122,8 +134,10 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         cancel = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
         importantComboBox = new javax.swing.JComboBox();
+        constantField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         saveRule.setBackground(new java.awt.Color(205, 141, 238));
         saveRule.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -136,6 +150,7 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 saveRuleActionPerformed(evt);
             }
         });
+        getContentPane().add(saveRule, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 250, 130, 30));
 
         rulesComboBox.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         rulesComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "قانون مورد نظر را انتخاب کنید", " " }));
@@ -144,11 +159,13 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 rulesComboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(rulesComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 95, 151, -1));
 
         jLabel3.setFont(new java.awt.Font("Web Yekan", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("تعریف قانون سازگار سنجی");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 240, 51));
 
         jPanel1.setBackground(new java.awt.Color(213, 177, 213));
 
@@ -172,9 +189,9 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel52.setText("مقدار مبنا");
 
-        jLabel54.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel54.setText("دارایی:");
+        AoC.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        AoC.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        AoC.setText("دارایی:");
 
         baseLoP.add(baseProperty);
         baseProperty.setSelected(true);
@@ -197,9 +214,19 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel59.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
-        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel59.setText("قانون سازگار سنجی روی:");
+        conCommeent.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        conCommeent.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        conCommeent.setText("قانون سازگار سنجی روی:");
+
+        isConstant.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        isConstant.setText("مقدار ثابت");
+        isConstant.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        isConstant.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        isConstant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                isConstantActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -211,15 +238,16 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(baseAsset, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(baseData, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel52))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(baseAsset, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(isConstant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(AoC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,28 +255,32 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                                 .addComponent(baseLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(baseProperty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(conCommeent, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(isConstant))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AoC, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(baseAsset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(baseProperty)
                     .addComponent(baseLabel))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(conCommeent, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(baseData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 69, 226, -1));
 
         jPanel2.setBackground(new java.awt.Color(213, 177, 213));
 
@@ -343,9 +375,12 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(404, 69, -1, -1));
+
         jLabel57.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel57.setText("قانون سازگار سنجی:");
+        getContentPane().add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 63, -1, 26));
 
         cancel.setBackground(new java.awt.Color(205, 141, 238));
         cancel.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
@@ -358,10 +393,12 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 cancelActionPerformed(evt);
             }
         });
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 292, 130, 30));
 
         jLabel60.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel60.setText("سطح اهمیت:");
+        getContentPane().add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 147, -1, 26));
 
         importantComboBox.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
         importantComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "قانون مورد نظر را انتخاب کنید", " " }));
@@ -370,67 +407,20 @@ public class ApplyRuleForm extends javax.swing.JFrame {
                 importantComboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(importantComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 179, 151, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(rulesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(importantComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rulesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(importantComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(saveRule, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        constantField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        constantField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                constantFieldActionPerformed(evt);
+            }
+        });
+        constantField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                constantFieldFocusLost(evt);
+            }
+        });
+        getContentPane().add(constantField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 150, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -438,35 +428,29 @@ public class ApplyRuleForm extends javax.swing.JFrame {
     private void saveRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRuleActionPerformed
         if (mode == MOD_NEW) {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
-            if (inMeasureProperty.isSelected() && baseProperty.isSelected()) {
-                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
-//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
-//
-//                } else {
-//                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-//                }
-            } else if (inMeasureProperty.isSelected() && baseLabel.isSelected()) {
-                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
-//                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(),importantComboBox.getSelectedIndex()));
-//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
+            if (isConstant.isSelected()) {
+                if (inMeasureProperty.isSelected()) {
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), constantField.getText()));
+                } else if (inMeasureLabel.isSelected()) {
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), constantField.getText()));
+                }
+            } else {
+                if (inMeasureProperty.isSelected() && baseProperty.isSelected()) {
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
 
-//                } else {
-                inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
-//                }
-            } else if (baseProperty.isSelected() && inMeasureLabel.isSelected()) {
-                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
-//                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
-//
-//                } else {
-//                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
-//                }
-            } else if (baseLabel.isSelected() && inMeasureLabel.isSelected()) {
-                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
-
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
-//                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+                } else if (inMeasureProperty.isSelected() && baseLabel.isSelected()) {
+                    AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), -1, null, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
+                } else if (baseProperty.isSelected() && inMeasureLabel.isSelected()) {
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
+                } else if (baseLabel.isSelected() && inMeasureLabel.isSelected()) {
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
+                }
             }
             this.newAssetFrame.loadRuleLabelComponnets();
         } else if (mode == MOD_UPDATE) {
@@ -496,25 +480,33 @@ public class ApplyRuleForm extends javax.swing.JFrame {
             this.newAssetFrame.loadRuleLabelComponnets();
         } else if (mode == MOD_LABEL) {
             Asset selectedBaseAsset = (Asset) baseAsset.getSelectedItem();
-            if (baseProperty.isSelected()) {
-                //TODO improve adding applyrule
-                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+            if (isConstant.isSelected()) {
+                if (inMeasureProperty.isSelected()) {
+                    inMeasureAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, inMeasureData.getSelectedIndex(), baseData.getSelectedIndex(), null, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), constantField.getText()));
+                } else if (inMeasureLabel.isSelected()) {
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), constantField.getText()));
+                }
+            } else {
+                if (baseProperty.isSelected()) {
+                    //TODO improve adding applyrule
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
 //                if (inMeasureAsset.getUID().equals(selectedBaseAsset.getUID())) {
 
 //                } else {
 //                    selectedBaseAsset.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, baseData.getSelectedIndex(), selectedInMeasureLabel, null, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
 //                }
-            } else if (baseLabel.isSelected()) {
-                AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
-                AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
-
-                selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+                } else if (baseLabel.isSelected()) {
+                    AttachedLabel selectedInMeasureLabel = (AttachedLabel) inMeasureData.getSelectedItem();
+                    AttachedLabel selectedBaseLabel = (AttachedLabel) baseData.getSelectedItem();
+                    selectedInMeasureLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex(), null));
 //                selectedBaseLabel.getRules().add(new ApplyRule(inMeasureAsset, selectedBaseAsset, -1, -1, selectedInMeasureLabel, selectedBaseLabel, rulesComboBox.getSelectedIndex(), importantComboBox.getSelectedIndex()));
+                }
             }
             this.attachLabelFrame.loadRuleLabelComponnets();
         }
-
         this.dispose();
         if (this.mode == MOD_NEW) {
             JOptionPane.showMessageDialog(null, "قانون مورد نظر شما با موفقیت ثبت شد.", "پیام", JOptionPane.INFORMATION_MESSAGE);
@@ -576,6 +568,39 @@ public class ApplyRuleForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_importantComboBoxActionPerformed
 
+    private void isConstantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isConstantActionPerformed
+        if (isConstant.isSelected()) {
+            baseAsset.setVisible(false);
+            constantField.setVisible(true);
+            AoC.setText("مقدار ثابت");
+            baseLabel.setVisible(false);
+            baseData.setVisible(false);
+            baseProperty.setVisible(false);
+            conCommeent.setVisible(false);
+        } else {
+            baseAsset.setVisible(true);
+            constantField.setVisible(false);
+            AoC.setText("دارایی");
+            baseLabel.setVisible(true);
+            baseData.setVisible(true);
+            baseProperty.setVisible(true);
+            conCommeent.setVisible(false);
+        }
+    }//GEN-LAST:event_isConstantActionPerformed
+
+    private void constantFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_constantFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_constantFieldActionPerformed
+
+    private void constantFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_constantFieldFocusLost
+//        finalAssetName.setText(constantField.getText());
+//        if (mode == MOD_NEW) {
+//            finalAsset.setName(constantField.getText());
+//        }
+//        subAssetTree.repaint();
+//        loadRuleLabelComponnets();
+    }//GEN-LAST:event_constantFieldFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -616,26 +641,28 @@ public class ApplyRuleForm extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AoC;
     private javax.swing.JComboBox baseAsset;
     private javax.swing.JComboBox baseData;
     private javax.swing.JRadioButton baseLabel;
     private javax.swing.ButtonGroup baseLoP;
     private javax.swing.JRadioButton baseProperty;
     private javax.swing.JButton cancel;
+    private javax.swing.JLabel conCommeent;
+    private javax.swing.JTextField constantField;
     private javax.swing.JComboBox importantComboBox;
     private javax.swing.JLabel inMeasureAssetName;
     private javax.swing.JComboBox inMeasureData;
     private javax.swing.JRadioButton inMeasureLabel;
     private javax.swing.ButtonGroup inMeasureLoP;
     private javax.swing.JRadioButton inMeasureProperty;
+    private javax.swing.JCheckBox isConstant;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

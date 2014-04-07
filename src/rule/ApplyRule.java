@@ -14,16 +14,15 @@ import label.AttachedLabel;
  *
  * @author bagher
  */
-public class ApplyRule  implements Serializable{
+public class ApplyRule implements Serializable {
+
     private static final long serialVersionUID = 1L;
     private int importance;
-    public static final String[] importanceComment = {"بحرانی-امن","بحرانی","مهم","عادی"};
-    public int getImportance() {
-        return importance;
-    }
+    public static final String[] importanceComment = {"بحرانی-امن", "بحرانی", "مهم", "عادی"};
+    private String constant;
 
-    public void setImportance(int importance) {
-        this.importance = importance;
+    public String getConstant() {
+        return constant;
     }
     private int rule;
     private Asset inMeasureAsset;
@@ -35,6 +34,14 @@ public class ApplyRule  implements Serializable{
 
     public void setRule(int rule) {
         this.rule = rule;
+    }
+
+    public int getImportance() {
+        return importance;
+    }
+
+    public void setImportance(int importance) {
+        this.importance = importance;
     }
 
     public void setInMeasureAsset(Asset inMeasureAsset) {
@@ -61,15 +68,16 @@ public class ApplyRule  implements Serializable{
         this.baseLabel = baseLabel;
     }
 
-    public ApplyRule(Asset inMeasureAsset, Asset baseAsset, int inMeasurePropertyNumber, int basePropertyNumber, AttachedLabel inMeasureLabel, AttachedLabel baseLabel, int rule, int importance) {
+    public ApplyRule(Asset inMeasureAsset, Asset baseAsset, int inMeasurePropertyNumber, int basePropertyNumber, AttachedLabel inMeasureLabel, AttachedLabel baseLabel, int rule, int importance, String constant) {
+        this.constant=constant;
         this.rule = rule;
         this.importance = importance;
-        this.baseAsset= baseAsset;
-        this.baseLabel=baseLabel;
-        this.basePropertyNumber= basePropertyNumber;
+        this.baseAsset = baseAsset;
+        this.baseLabel = baseLabel;
+        this.basePropertyNumber = basePropertyNumber;
         this.inMeasureAsset = inMeasureAsset;
         this.inMeasureLabel = inMeasureLabel;
-        this.inMeasurePropertyNumber= inMeasurePropertyNumber;
+        this.inMeasurePropertyNumber = inMeasurePropertyNumber;
     }
 
     public int getRule() {
@@ -100,9 +108,8 @@ public class ApplyRule  implements Serializable{
         return baseLabel;
     }
 
-    
     public boolean verify(double inMeasure, double base) {
-        switch (rule+1) {
+        switch (rule + 1) {
             case 1: {
                 return (base == inMeasure);
             }
@@ -138,7 +145,7 @@ public class ApplyRule  implements Serializable{
     }
 
     public boolean verify(Object inMeasure, ArrayList<Object> base) {
-        switch (rule+1) {
+        switch (rule + 1) {
             case 6: {
                 return (base.contains(inMeasure));
             }
@@ -150,7 +157,7 @@ public class ApplyRule  implements Serializable{
     }
 
     public boolean verify(ArrayList<Object> inMeasure, Object base) {
-        switch (rule+1) {
+        switch (rule + 1) {
             case 7: {
                 return (inMeasure.contains(base));
             }
@@ -162,7 +169,7 @@ public class ApplyRule  implements Serializable{
     }
 
     public boolean verify(boolean inMeasure, boolean base) {
-        switch (rule+1) {
+        switch (rule + 1) {
             case 1: {
                 return (base == inMeasure);
             }
@@ -172,15 +179,15 @@ public class ApplyRule  implements Serializable{
         }
         return false;
     }
-    public static boolean isIn(ApplyRule apr, ArrayList<ApplyRule> aprs){
+
+    public static boolean isIn(ApplyRule apr, ArrayList<ApplyRule> aprs) {
         boolean flag = false;
-        for (ApplyRule applyRule: aprs){
-            if(applyRule.getBaseAsset().getUID().equals(apr.getBaseAsset().getUID()) &&
-                    applyRule.getInMeasureAsset().getUID().equals(apr.getInMeasureAsset().getUID())
-                    ){
-                
+        for (ApplyRule applyRule : aprs) {
+            if (applyRule.getBaseAsset().getUID().equals(apr.getBaseAsset().getUID())
+                    && applyRule.getInMeasureAsset().getUID().equals(apr.getInMeasureAsset().getUID())) {
+
             }
         }
-    return true;
+        return true;
     }
 }

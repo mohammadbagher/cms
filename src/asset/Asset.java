@@ -52,7 +52,17 @@ public class Asset implements Serializable{
     private String docComment;      //14
     private String physicalProperties;//15
     
+    private final ArrayList<PrimaryProperty> properties = new ArrayList<PrimaryProperty>();
     private ArrayList<ApplyRule> rules = new ArrayList<>();
+    private final ArrayList<AssetFile> files = new ArrayList<AssetFile>();
+
+    public ArrayList<AssetFile> getFiles() {
+        return files;
+    }
+    
+    public ArrayList<PrimaryProperty> getProperties() {
+        return properties;
+    }
 
     public ArrayList<ApplyRule> getRules() {
         return rules;

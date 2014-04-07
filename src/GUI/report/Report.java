@@ -332,8 +332,8 @@ public final class Report extends javax.swing.JFrame {
                         flag = false;
                     }
                 }
-            }catch(Exception e){
-                flag=false;
+            } catch (Exception e) {
+                flag = false;
             }
 
             if (asset.isSelected()) {
@@ -349,10 +349,10 @@ public final class Report extends javax.swing.JFrame {
                 }
             }
             if (consis.isSelected()) {
-                if(consistency.getSelectedIndex() == 0){
-                    flag=false;
-                }else{
-                    
+                if (consistency.getSelectedIndex() == 0) {
+                    flag = false;
+                } else {
+
                 }
             }
             if (flag) {
@@ -566,7 +566,11 @@ class RuleLabelPanel extends javax.swing.JPanel {
 
         baseAssetLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         baseAssetLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        baseAssetLabel.setText(baseAsset.getName());
+        if (apr.getConstant() == null) {
+            baseAssetLabel.setText(baseAsset.getName());
+        } else {
+            baseAssetLabel.setText("----");
+        }
         this.add(baseAssetLabel);
         baseAssetLabel.setBounds(240, 0, 110, 30);
 //        baseAssetLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
@@ -576,11 +580,16 @@ class RuleLabelPanel extends javax.swing.JPanel {
 
         baseTextLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         baseTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        if (baseProperty == -1) {
-            baseTextLabel.setText(baseLabel.getLabel().getName());
+        if (apr.getConstant() == null) {
+            if (baseProperty == -1) {
+                baseTextLabel.setText(baseLabel.getLabel().getName());
+            } else {
+                baseTextLabel.setText(Asset.getPropertyComment(baseProperty));
+            }
         } else {
-            baseTextLabel.setText(Asset.getPropertyComment(baseProperty));
+            baseTextLabel.setText(apr.getConstant());
         }
+
         this.add(baseTextLabel);
         baseTextLabel.setBounds(120, 0, 110, 30);
 

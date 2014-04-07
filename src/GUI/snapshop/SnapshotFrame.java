@@ -185,6 +185,9 @@ public class SnapshotFrame extends javax.swing.JFrame {
     private javax.swing.JPanel snptsPanel;
     // End of variables declaration//GEN-END:variables
 public void loadLabelComponents() {
+        snptsPanel.removeAll();
+        snptsPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 30));
+
         int dep = 30;
         int index = 1;
         for (CMSSpnt snpt : snapshot.Snapshot.getInstance().getSnapshots()) {
@@ -257,7 +260,7 @@ class LabelPanel extends javax.swing.JPanel {
         actionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
-                    FileInputStream fin = new FileInputStream("snapshots/"+snpt.getTime()+".data");
+                    FileInputStream fin = new FileInputStream("snapshots/" + snpt.getTime() + ".data");
                     ObjectInputStream oos = new ObjectInputStream(fin);
                     OOD ood = (OOD) oos.readObject();
                     oos.close();
