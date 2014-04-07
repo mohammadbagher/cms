@@ -15,6 +15,7 @@ import asset.Asset;
 import label.Label;
 import asset.AssetCatalogue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
@@ -350,9 +351,23 @@ public final class Report extends javax.swing.JFrame {
             }
             if (consis.isSelected()) {
                 if (consistency.getSelectedIndex() == 0) {
-                    flag = false;
+                    if (apr.getConstant() != null) {
+                        ArrayList<String> strs;
+                        strs = new ArrayList<>();
+                        strs.addAll(Arrays.asList(apr.getConstant().split("،")));
+                        if (strs.contains(apr.getInMeasureAsset().getName())) {
+                            flag = false;
+                        }
+                    }
                 } else {
-
+                    if (apr.getConstant() != null) {
+                        ArrayList<String> strs;
+                        strs = new ArrayList<>();
+                        strs.addAll(Arrays.asList(apr.getConstant().split("،")));
+                        if (!strs.contains(apr.getInMeasureAsset().getName())) {
+                            flag = false;
+                        }
+                    }
                 }
             }
             if (flag) {
