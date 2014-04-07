@@ -91,4 +91,13 @@ public class LabelCatalogue  implements Serializable{
     public void setLabels(ArrayList<Label>labels){
         this.labels=labels;
     }
+    public ArrayList<Label> getAssetKindLabels(){
+        ArrayList<Label> ls = new ArrayList<>();
+        for(Label l : LabelCatalogue.getInstace().getLabels()){
+            if(l.isIsAssetKind()){
+                ls.add(l);
+            }
+        }
+        return ls;
+    }
 }

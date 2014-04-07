@@ -83,6 +83,7 @@ public class NewLabelFrame extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         addValueButton = new javax.swing.JButton();
         labelNameTextField = new javax.swing.JTextField();
+        assetKindB = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("سامانه‌ی مدیریت ‍پیکربندی شهردای");
@@ -204,6 +205,16 @@ public class NewLabelFrame extends javax.swing.JFrame {
         });
         getContentPane().add(labelNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 150, -1));
 
+        assetKindB.setText("تعریف‌گر نوع دارایی");
+        assetKindB.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        assetKindB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        assetKindB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assetKindBActionPerformed(evt);
+            }
+        });
+        getContentPane().add(assetKindB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -230,6 +241,9 @@ public class NewLabelFrame extends javax.swing.JFrame {
         if (labelNameTextField.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "برای برچسب نامی انتخاب نشده است.", "خطا", JOptionPane.ERROR_MESSAGE);
             return;
+        }
+        if (assetKindB.isSelected()) {
+            label.setIsAssetKind(true);
         }
         label.setName(labelNameTextField.getText());
         if (mod == MOD_NEW) {
@@ -281,8 +295,23 @@ public class NewLabelFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_labelNameTextFieldActionPerformed
 
+    private void assetKindBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetKindBActionPerformed
+        if(assetKindB.isSelected()){
+            stringRadioButton.setEnabled(false);
+            doubleRadioButton.setEnabled(false);
+            intRadioButton.setEnabled(false);
+            booleanRadioButton.setEnabled(false);
+        }else{
+            stringRadioButton.setEnabled(true);
+            doubleRadioButton.setEnabled(true);
+            intRadioButton.setEnabled(true);
+            booleanRadioButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_assetKindBActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addValueButton;
+    private javax.swing.JCheckBox assetKindB;
     private javax.swing.JRadioButton booleanRadioButton;
     private javax.swing.JRadioButton doubleRadioButton;
     private javax.swing.JRadioButton intRadioButton;

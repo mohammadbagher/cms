@@ -19,7 +19,15 @@ public class Label  implements Serializable{
     private String name;
     private ArrayList<Object> values;
     private LabelType type;
-    
+    private boolean isAssetKind=false;
+
+    public void setIsAssetKind(boolean isAssetKind) {
+        this.isAssetKind = isAssetKind;
+    }
+
+    public boolean isIsAssetKind() {
+        return isAssetKind;
+    }
     
     public String getName() {
         return name;

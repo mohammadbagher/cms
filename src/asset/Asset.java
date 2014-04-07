@@ -8,6 +8,7 @@ package asset;
 import java.io.Serializable;
 import java.util.ArrayList;
 import label.AttachedLabel;
+import label.Label;
 import rule.ApplyRule;
 
 /**
@@ -52,9 +53,18 @@ public class Asset implements Serializable{
     private String docComment;      //14
     private String physicalProperties;//15
     
+    private label.Label assetKind;
     private final ArrayList<PrimaryProperty> properties = new ArrayList<PrimaryProperty>();
     private ArrayList<ApplyRule> rules = new ArrayList<>();
     private final ArrayList<AssetFile> files = new ArrayList<AssetFile>();
+
+    public Label getAssetKind() {
+        return assetKind;
+    }
+
+    public void setAssetKind(Label assetKind) {
+        this.assetKind = assetKind;
+    }
 
     public ArrayList<AssetFile> getFiles() {
         return files;
