@@ -1369,7 +1369,7 @@ public final class NewAssetFrame extends javax.swing.JFrame {
                 repeated = true;
             }
         }
-        if (repeated) {
+        if (repeated && this.mode == MOD_NEW) {
             JOptionPane.showMessageDialog(null, "برای دارایی UID تکراری انتخاب شده است.", "خطا", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -1480,9 +1480,6 @@ public final class NewAssetFrame extends javax.swing.JFrame {
         if (mode == MOD_NEW) {
             finalAsset.setUID(assetUID.getText());
         }
-        //        finalAsset.setUID(assetUID.getText());
-        //        loadLabelComponents();
-        setPlace();
     }//GEN-LAST:event_assetUIDFocusLost
 
     private void assetUIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetUIDActionPerformed
@@ -1739,6 +1736,7 @@ public final class NewAssetFrame extends javax.swing.JFrame {
     }
 
     public void loadRuleLabelComponnets() {
+        setPlace();
         rulePanel.removeAll();
         rulePanel.add(ruleHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
         ArrayList<ApplyRule> aprs = new ArrayList<>();

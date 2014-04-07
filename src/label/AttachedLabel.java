@@ -43,7 +43,7 @@ public class AttachedLabel implements Serializable {
     }
     
     public String getHumanReadableValues(){
-        if(values.size() == 0)
+        if(values.isEmpty())
             return "مقداری تعیین نشده است.";
         if(values.size() == 1)
             return values.get(0);
@@ -77,14 +77,13 @@ public class AttachedLabel implements Serializable {
     @Override
     public String toString() {
         if (label != null) {
-            return label.getName();
+            return label.getName() + ": " + getHumanReadableValues();
         } else {
             System.err.println(asset);
             System.err.println(label);
             System.err.println(values);
             return "";
         }
-
     }
 
     public ArrayList<ApplyRule> getRules() {

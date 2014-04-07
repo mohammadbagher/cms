@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="attachAssetLabel" min="-2" pref="798" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="attachAssetLabel" alignment="1" min="-2" pref="487" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="attachAssetLabel">
+      <Properties>
+        <Property name="tabPlacement" type="int" value="4"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="attachAssetLabelMouseClicked"/>
+      </Events>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="chooseAsset">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&#x6f1;- &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;">
+                <Property name="tabTitle" type="java.lang.String" value="&#x6f1;- &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="&#x645;&#x634;&#x627;&#x647;&#x62f;&#x647;&#x200c;&#x6cc; &#x628;&#x631;&#x686;&#x633;&#x628;&#x200c;&#x647;&#x627;&#x6cc; &#x627;&#x644;&#x635;&#x627;&#x642;&#x200c;&#x634;&#x62f;&#x647; &#x628;&#x647; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; - &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="50" y="0" width="570" height="70"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel53">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="&#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; &#x645;&#x648;&#x631;&#x62f; &#x646;&#x638;&#x631; &#x631;&#x627; &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x6a9;&#x646;&#x6cc;&#x62f; &#x62a;&#x627; &#x62f;&#x631; &#x645;&#x631;&#x62d;&#x644;&#x647;&#x200c;&#x6cc; &#x628;&#x639;&#x62f; &#x644;&#x6cc;&#x633;&#x62a; &#x628;&#x631;&#x686;&#x633;&#x628;&#x200c;&#x647;&#x627;&#x6cc; &#x627;&#x644;&#x635;&#x627;&#x642; &#x634;&#x62f;&#x647; &#x631;&#x627; &#x628;&#x628;&#x6cc;&#x646;&#x6cc;&#x62f;."/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="70" y="80" width="500" height="30"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="chooseLabel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&#x6f2;- &#x628;&#x631;&#x686;&#x633;&#x628;">
+                <Property name="tabTitle" type="java.lang.String" value="&#x6f2;- &#x628;&#x631;&#x686;&#x633;&#x628;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="&#x645;&#x634;&#x627;&#x647;&#x62f;&#x647;&#x200c;&#x6cc; &#x628;&#x631;&#x686;&#x633;&#x628;&#x200c;&#x647;&#x627;&#x6cc; &#x627;&#x644;&#x635;&#x627;&#x642;&#x200c;&#x634;&#x62f;&#x647; &#x628;&#x647; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; - &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x628;&#x631;&#x686;&#x633;&#x628;"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="30" y="0" width="580" height="70"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel54">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="&#x647;&#x645;&#x686;&#x646;&#x6cc;&#x646; &#x628;&#x627; &#x6a9;&#x644;&#x6cc;&#x6a9; &#x628;&#x631; &#x631;&#x648;&#x6cc; &#x62f;&#x6a9;&#x645;&#x647;&#x200c;&#x6cc; &#x62d;&#x630;&#x641;&#x60c; &#x628;&#x631;&#x686;&#x633;&#x628; &#x627;&#x644;&#x635;&#x627;&#x642; &#x634;&#x62f;&#x647; &#x627;&#x632; &#x631;&#x648;&#x6cc; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc; &#x62c;&#x62f;&#x627; &#x645;&#x6cc;&#x200c;&#x634;&#x648;&#x62f;."/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="50" y="100" width="540" height="40"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel55">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="&#x628;&#x631;&#x686;&#x633;&#x628; &#x627;&#x644;&#x635;&#x627;&#x642; &#x634;&#x62f;&#x647;&#x200c;&#x6cc; &#x645;&#x648;&#x631;&#x62f; &#x646;&#x638;&#x631; &#x62e;&#x648;&#x62f; &#x631;&#x627; &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x6a9;&#x646;&#x6cc;&#x62f; &#x62a;&#x627; &#x62f;&#x631; &#x645;&#x631;&#x62d;&#x644;&#x647;&#x200c;&#x6cc; &#x628;&#x639;&#x62f; &#x628;&#x62a;&#x648;&#x627;&#x646;&#x6cc;&#x62f; &#x645;&#x642;&#x62f;&#x627;&#x631; &#x622;&#x646; &#x631;&#x627; &#x62a;&#x63a;&#x6cc;&#x6cc;&#x631; &#x62f;&#x647;&#x6cc;&#x62f;."/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="50" y="70" width="540" height="40"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="chooseValue">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&#x6f3;- &#x645;&#x642;&#x62f;&#x627;&#x631;">
+                <Property name="tabTitle" type="java.lang.String" value="&#x6f3;- &#x645;&#x642;&#x62f;&#x627;&#x631;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="addValueButton">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="5b" green="0" red="3c" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="1" green="1" red="1" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&#x627;&#x636;&#x627;&#x641;&#x647;&#x200c;&#x6a9;&#x631;&#x62f;&#x646;"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addValueButtonActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="30" y="100" width="90" height="30"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="labelValueTextField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="XB Zar" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="130" y="100" width="170" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="&#x645;&#x634;&#x627;&#x647;&#x62f;&#x647;&#x200c;&#x6cc; &#x628;&#x631;&#x686;&#x633;&#x628;&#x200c;&#x647;&#x627;&#x6cc; &#x627;&#x644;&#x635;&#x627;&#x642;&#x200c;&#x634;&#x62f;&#x647; &#x628;&#x647; &#x62f;&#x627;&#x631;&#x627;&#x6cc;&#x6cc;&#x60c; &#x645;&#x642;&#x62f;&#x627;&#x631; &#x628;&#x631;&#x686;&#x633;&#x628;"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="-10" y="0" width="650" height="70"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel51">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="&#x645;&#x62c;&#x645;&#x648;&#x639;&#x647; &#x645;&#x642;&#x627;&#x62f;&#x6cc;&#x631; &#x627;&#x644;&#x635;&#x627;&#x642; &#x634;&#x62f;&#x647;"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="160" y="70" width="170" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel52">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Web Yekan" size="15" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="&#x645;&#x642;&#x627;&#x62f;&#x6cc;&#x631; &#x645;&#x645;&#x6a9;&#x646; &#x628;&#x631;&#x686;&#x633;&#x628;"/>
+                <Property name="verticalAlignment" type="int" value="1"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="430" y="70" width="150" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="370" y="100" width="210" height="290"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="hintPane">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="XB Zar" size="15" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="&#x647;&#x646;&#x648;&#x632; &#x628;&#x631;&#x686;&#x633;&#x6cc; &#x627;&#x646;&#x62a;&#x62e;&#x627;&#x628; &#x646;&#x634;&#x62f;&#x647; &#x627;&#x633;&#x62a;."/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

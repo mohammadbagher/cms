@@ -6,29 +6,27 @@
 
 package GUI.utility;
 
-import java.util.Vector;
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
  * @author ali
  */
 public class ScrollableListPanel extends JScrollPane{
-    private JPanel labelValuesPanel = new javax.swing.JPanel();
+    private final JPanel labelValuesPanel = new javax.swing.JPanel();
     
-    private JPanel headerPanel = new javax.swing.JPanel();
-    private JLabel jLabel19 = new javax.swing.JLabel();
-    private JLabel jLabel20 = new javax.swing.JLabel();
+    private final JPanel headerPanel = new javax.swing.JPanel();
+    private final JLabel jLabel19 = new javax.swing.JLabel();
+    private final JLabel jLabel20 = new javax.swing.JLabel();
     private ButtonGroup buttonGroup = null;
     private Object selectedItem;
-    private Vector<Callback> callbacks;
+    private final ArrayList<Callback> callbacks;
+    private int width = 180;
     
     public void addCallback(Callback callback){
         callbacks.add(callback);
@@ -67,24 +65,52 @@ public class ScrollableListPanel extends JScrollPane{
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText(title);
         headerPanel.add(jLabel20);
-        jLabel20.setBounds(30, 0, 180, 30);
+        jLabel20.setBounds(30, 0, width, 30);
 
         labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
         if(hasButton)
             buttonGroup = new ButtonGroup();
         this.setViewportView(labelValuesPanel);
         
-        callbacks = new Vector<>();
+        callbacks = new ArrayList<>();
+    }
+    
+    public ScrollableListPanel(String title, boolean hasButton, int width) {
+        super();
+        this.width = width;
+        this.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        labelValuesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        headerPanel.setBackground(new java.awt.Color(160, 196, 255));
+        headerPanel.setLayout(null);
+
+        jLabel19.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("ردیف");
+        headerPanel.add(jLabel19);
+        jLabel19.setBounds(width + 30, 0, 40, 30);
+
+        jLabel20.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText(title);
+        headerPanel.add(jLabel20);
+        jLabel20.setBounds(30, 0, width, 30);
+
+        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, width + 90, 30));
+        if(hasButton)
+            buttonGroup = new ButtonGroup();
+        this.setViewportView(labelValuesPanel);
+        
+        callbacks = new ArrayList<>();
     }
     
     public void reloadValues(Object[] values){
         labelValuesPanel.removeAll();
-        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
+        labelValuesPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, width + 90, 30));
         int dep = 30;
         int index = 1;
         for(Object object :values){
-            labelValuesPanel.add(new ListItemPanel(new Integer(index++).toString(), object, new java.awt.Color(254, 254, 254), buttonGroup, this),
-                    new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, 270, 30));
+            labelValuesPanel.add(new ListItemPanel(new Integer(index++).toString(), object, new java.awt.Color(254, 254, 254), buttonGroup, this, width),
+                    new org.netbeans.lib.awtextra.AbsoluteConstraints(0, dep, width + 90, 30));
             dep += 30;
         }
         validate();
@@ -94,7 +120,7 @@ public class ScrollableListPanel extends JScrollPane{
 
 class ListItemPanel extends javax.swing.JPanel{
 
-    public ListItemPanel(String number, final Object value, java.awt.Color color, ButtonGroup buttonGroup, final ScrollableListPanel list) {
+    public ListItemPanel(String number, final Object value, java.awt.Color color, ButtonGroup buttonGroup, final ScrollableListPanel list, int width) {
         super();
         this.setBackground(new java.awt.Color(254, 254, 254));
         this.setLayout(null);
@@ -103,14 +129,14 @@ class ListItemPanel extends javax.swing.JPanel{
         numberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numberLabel.setText(number);
         this.add(numberLabel);
-        numberLabel.setBounds(210, 0, 40, 30);
+        numberLabel.setBounds(width + 30, 0, 40, 30);
         
         JLabel valueLabel = new JLabel();
         valueLabel.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         valueLabel.setText(value.toString());
         this.add(valueLabel);
-        valueLabel.setBounds(30, 0, 180, 30);
+        valueLabel.setBounds(30, 0, width, 30);
         
         this.setBackground(color);
         
