@@ -1369,10 +1369,10 @@ public final class NewAssetFrame extends javax.swing.JFrame {
                 repeated = true;
             }
         }
-        if (repeated && this.mode == MOD_NEW) {
-            JOptionPane.showMessageDialog(null, "برای دارایی UID تکراری انتخاب شده است.", "خطا", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+//        if (repeated && this.mode == MOD_NEW) {
+//            JOptionPane.showMessageDialog(null, "برای دارایی UID تکراری انتخاب شده است.", "خطا", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
         finalAsset.setUID(assetUID.getText());
 
         if (isHuman.isSelected()) {
