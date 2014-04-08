@@ -7,6 +7,7 @@ package asset;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import label.AttachedLabel;
 import label.Label;
 import rule.ApplyRule;
@@ -163,6 +164,15 @@ public class Asset implements Serializable{
     
     public void detachLabel(AttachedLabel attachedLabel){
         attachedLabels.remove(attachedLabel);
+    
+    }
+    
+    public void removeLabel(Label label){
+        Iterator<AttachedLabel> i = attachedLabels.iterator();
+        while (i.hasNext()) {
+            AttachedLabel attachedLabel = i.next();
+            i.remove();
+        }
     }
 
     public String getUID() {

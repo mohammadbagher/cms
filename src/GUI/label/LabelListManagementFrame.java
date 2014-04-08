@@ -10,13 +10,17 @@
  */
 package GUI.label;
 
+import asset.Asset;
+import asset.AssetCatalogue;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.tree.DefaultMutableTreeNode;
+import label.AttachedLabel;
 import label.Label;
 import label.LabelCatalogue;
 
@@ -242,11 +246,27 @@ class LabelPanel extends javax.swing.JPanel{
         closeButton.setBounds(10, 0, 58, 30);
         closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                
+                JLabel jlabel = new JLabel();
+                jlabel.setFont(new java.awt.Font("Web Yekan", 0, 15)); // NOI18N
+                jlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jlabel.setText("با حذف برچسب، شما می‌توانید برچسب‌های الصاق‌شده مربوط به این برچسب را هم حذف کنید و یا آنها\n"
+                        + " را نگه دارید. لطفا گزینه‌ی مورد نظر را انتخاب کنید.");
+                Object[] options = {"حذف برچسب‌های الصاق شده", "حذف نشدن برچسب‌های الصاق شده", "لغو"};
+                int reply = JOptionPane.showOptionDialog(null, jlabel,
+                        "حذف برچسب", 
+                  JOptionPane.YES_NO_CANCEL_OPTION, 
+                  JOptionPane.WARNING_MESSAGE, 
+                  null, options, options[2]);
+                System.err.println("ret: " + reply);
+                if(reply == 2)
+                    return;
                 LabelCatalogue.getInstace().remove(label);
                 labelListManagementFrame.loadLabelComponents();
-//                JFrame newLabelFrame = new NewLabelFrame(label, labelListManagementFrame, NewLabelFrame.MOD_UPDATE);
-//                newLabelFrame.setVisible(true);
-//                newLabelFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                if(reply == 0){
+                    for(Asset asset: AssetCatalogue.getInstace().getAssets())
+                        asset.removeLabel(label);
+                }
             }
         });
         
