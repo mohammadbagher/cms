@@ -6,13 +6,16 @@
 
 package GUI.asset.showLabel;
 
+import GUI.utility.DeleteCallback;
 import GUI.utility.ScrollableListPanel;
+import GUI.utility.ScrollableListPanelWithDeleteButton;
 import asset.Asset;
 import asset.AssetCatalogue;
 import exceptions.DuplicatedValueException;
 import java.awt.ComponentOrientation;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -24,9 +27,9 @@ import label.AttachedLabel;
  */
 public class ShowAssetAttachedLabelFrame extends javax.swing.JFrame {
 
-    private ScrollableListPanel labelScrollPane;
-    private ScrollableListPanel assetScrollPane;
-    private ScrollableListPanel valueScrollPane;
+    private final ScrollableListPanelWithDeleteButton labelScrollPane;
+    private final ScrollableListPanel assetScrollPane;
+    private final ScrollableListPanelWithDeleteButton valueScrollPane;
     private Asset asset;
     private AttachedLabel attachedLabel;
     /**
@@ -35,19 +38,40 @@ public class ShowAssetAttachedLabelFrame extends javax.swing.JFrame {
     public ShowAssetAttachedLabelFrame() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception e) {
+        } catch(ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
           System.out.println("Error setting native LAF: " + e);
         }
         initComponents();
         assetScrollPane = new ScrollableListPanel("نام دارایی", true);
-        labelScrollPane = new ScrollableListPanel("نام برچسب و مقدار", true, 250);
-        valueScrollPane = new ScrollableListPanel("مقدار برچسب", false);
+        labelScrollPane = new ScrollableListPanelWithDeleteButton("نام برچسب و مقدار", true, new DeleteCallback() {
+            @Override
+            public void deleteItem(Object item) {
+                asset = (Asset)assetScrollPane.getSelectedItem();
+                if(asset != null)
+                    asset.detachLabel((AttachedLabel)item);
+                labelScrollPane.reloadValues(asset.getAttachedLabels());
+            }
+        });
+        valueScrollPane = new ScrollableListPanelWithDeleteButton("مقدار", false, new DeleteCallback() {
+            @Override
+            public void deleteItem(Object item) {
+                asset = (Asset)assetScrollPane.getSelectedItem();
+                if(asset == null)
+                    return;
+                attachedLabel = (AttachedLabel)labelScrollPane.getSelectedItem();
+                if(attachedLabel == null)
+                    return;
+                boolean res = attachedLabel.removeValue((String)item);
+                
+                valueScrollPane.reloadValues(attachedLabel.getValues());
+            }
+        });
         assetScrollPane.reloadValues(AssetCatalogue.getInstace().getAssets().toArray());
         labelScrollPane.reloadValues(new Object[0]);
         valueScrollPane.reloadValues(new Object[0]);
         chooseAsset.add(assetScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 270, 190));
-        chooseLabel.add(labelScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 270, 190));
-        chooseValue.add(valueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 270, 190));
+        chooseLabel.add(labelScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 370, 190));
+        chooseValue.add(valueScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 370, 190));
         StyledDocument doc = hintPane.getStyledDocument();
         SimpleAttributeSet right = new SimpleAttributeSet();
         StyleConstants.setAlignment(right, StyleConstants.ALIGN_RIGHT);
@@ -160,13 +184,13 @@ public class ShowAssetAttachedLabelFrame extends javax.swing.JFrame {
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel52.setText("مقادیر ممکن برچسب");
         jLabel52.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        chooseValue.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 150, -1));
+        chooseValue.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 150, -1));
 
         hintPane.setFont(new java.awt.Font("XB Zar", 0, 15)); // NOI18N
         hintPane.setText("هنوز برچسی انتخاب نشده است.");
         jScrollPane2.setViewportView(hintPane);
 
-        chooseValue.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 210, 290));
+        chooseValue.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 210, 290));
 
         attachAssetLabel.addTab("۳- مقدار", chooseValue);
 

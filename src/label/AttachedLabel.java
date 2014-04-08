@@ -37,6 +37,10 @@ public class AttachedLabel implements Serializable {
         }
         return false;
     }
+    
+    public boolean removeValue(String value){
+        return values.remove(value);
+    }
 
     public Object[] getValues() {
         return values.toArray();

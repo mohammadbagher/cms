@@ -160,6 +160,10 @@ public class Asset implements Serializable{
     public void attachLable(AttachedLabel attachedLabel) {
         attachedLabels.add(attachedLabel);
     }
+    
+    public void detachLabel(AttachedLabel attachedLabel){
+        attachedLabels.remove(attachedLabel);
+    }
 
     public String getUID() {
         return UID;
